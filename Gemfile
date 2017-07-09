@@ -20,6 +20,10 @@ gem 'uglifier', '3.2.0'
 gem 'jquery-rails', '4.3.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '4.2.2'
+# Use Devise for user authentication
+gem 'devise', '4.3.0'
+# Use Hirb for better database display in terminal
+gem 'hirb', '0.7.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '5.0.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
