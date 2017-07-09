@@ -1,1 +1,5 @@
-<h1 class="text-center">Welcome to Quill!</h1>
+<% if user_signed_in? %>
+    <h1 class="text-center">You're logged in!</h1>
+<% else %>
+    <h1 class="text-center">Welcome to Quill!</h1>
+<% end %>
