@@ -17,10 +17,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$header-height: 40.0;
+
 h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-.glyphicon {
-    margin-left: 5px;
+.navbar {
+    height: $header-height + 'px' !important;
+}
+
+.header-logo-image {
+    height: $header-height * 0.8 + 'px';
+    position: absolute;
+    top: $header-height * 0.1 + 'px';
 }

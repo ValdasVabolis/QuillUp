@@ -1,7 +1,9 @@
 <nav class="navbar navbar-inverse navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Quill</a>
+      <%= link_to root_path do %>
+        <%= image_tag("quill_logo.png", class: "header-logo-image") %>
+      <% end %>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
