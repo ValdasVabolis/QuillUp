@@ -3,10 +3,12 @@
         <div class="row-fluid">
             <div class="col-md-6 col-md-offset-3 text-center">
                 <h1>You're logged in as: <%= current_user.email %></h1><br>
-                <%= link_to "Create a new post", "#", class: "btn btn-default" %>
+                <%= link_to "Create Post", new_users_posts_path, class: "btn btn-default" %>
+                <%= link_to "View Posts", users_posts_path, class: "btn btn-default" %>
             </div>
         </div>
     </div>
 <% else %>
     <h1 class="text-center">Welcome to Quill!</h1>
+    <h3 class="text-center">A place where people can ask questions and get opinions from other people.</h2>
 <% end %>
