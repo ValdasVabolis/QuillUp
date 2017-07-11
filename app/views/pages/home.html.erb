@@ -1,14 +1,29 @@
+<h1 class="text-center">Users Posts</h1>
 <% if user_signed_in? %>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="col-md-6 col-md-offset-3 text-center">
-                <h1>You're logged in as: <%= current_user.email %></h1><br>
-                <%= link_to "Create Post", new_users_posts_path, class: "btn btn-default" %>
-                <%= link_to "View Posts", users_posts_path, class: "btn btn-default" %>
-            </div>
-        </div>
-    </div>
-<% else %>
-    <h1 class="text-center">Welcome to Quill!</h1>
-    <h3 class="text-center">A place where people can ask questions and get opinions from other people.</h2>
+    <%= link_to "Create New Post", new_users_posts_path, class: "btn btn-default" %>
+    <%= link_to "View Post History", users_posts_path, class: "btn btn-default" %>
 <% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_posts.each do |users_post| %>
+      <tr>
+        <td><%= users_post.title %></td>
+        <td><%= users_post.body %></td>
+        <td><%= users_post.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users Post', new_users_post_path %>
