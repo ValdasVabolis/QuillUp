@@ -4,12 +4,13 @@ class Users::PostsController < ApplicationController
   # GET /users/posts
   # GET /users/posts.json
   def index
-    @users_posts = Users::Post.all
+    @users_posts = current_user.posts
   end
 
   # GET /users/posts/1
   # GET /users/posts/1.json
   def show
+    
   end
 
   # GET /users/posts/new
@@ -25,7 +26,7 @@ class Users::PostsController < ApplicationController
   # POST /users/posts.json
   def create
     @users_post = Users::Post.new(users_post_params)
-
+    @users_post.user = current_user
     respond_to do |format|
       if @users_post.save
         format.html { redirect_to @users_post, notice: 'Post was successfully created.' }
