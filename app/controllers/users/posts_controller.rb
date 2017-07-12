@@ -61,6 +61,14 @@ class Users::PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def vote
+    id = params[:id]
+    type = params[:type]
+    post = Users::Post.find(id) 
+    post.vote_by voter: current_user, vote: type
+    render json: { partial: render_to_string('shared/_post_votes', layout: false, locals: { post: post }) }
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

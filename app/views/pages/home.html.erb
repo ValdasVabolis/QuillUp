@@ -1,29 +1,26 @@
-<h1 class="text-center">Users Posts</h1>
-<% if user_signed_in? %>
-    <%= link_to "Create New Post", new_users_posts_path, class: "btn btn-default" %>
-    <%= link_to "View Post History", users_posts_path, class: "btn btn-default" %>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users_posts.each do |users_post| %>
-      <tr>
-        <td><%= users_post.title %></td>
-        <td><%= users_post.body %></td>
-        <td><%= users_post.user.email %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="text-center">
+                <h1 class>Users Posts</h1>
+                <% if user_signed_in? %>
+                    <%= link_to "Create New Post", new_users_posts_path, class: "btn btn-default" %>
+                    <%= link_to "View Post History", users_posts_path, class: "btn btn-default" %>
+                <% end %>
+            </div>
+            <% @users_posts.each do |post| %>
+              <% unless !user_signed_in? || post.user == current_user %>
+                <%= render partial: 'shared/post_votes', locals: { post: post } %>
+              <% end %>
+              <h4>'<%= post.title %>' by <%= post.user.email %></h4>
+              <tr>
+                <div class="well">
+                    <td><%= post.body %></td>
+                </div>
+              </tr>
+            <% end %>
+        </div>
+    </div>
+</div>
 
 <%= link_to 'New Users Post', new_users_post_path %>

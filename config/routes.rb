@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :users do
     authenticate :user do
       resource :posts
+      match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
     end
   end
   

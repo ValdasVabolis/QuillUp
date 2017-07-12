@@ -22,6 +22,8 @@ gem 'jquery-rails', '4.3.1'
 gem 'coffee-rails', '4.2.2'
 # Use Devise for user authentication
 gem 'devise', '4.3.0'
+# Use Act As Votable for user post votes
+gem 'acts_as_votable', '~> 0.10.0'
 # Use Hirb for better database display in terminal
 gem 'hirb', '0.7.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
