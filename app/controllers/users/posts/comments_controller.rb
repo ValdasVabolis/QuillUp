@@ -4,7 +4,7 @@ class Users::Posts::CommentsController < ApplicationController
   # GET /users/posts/comments
   # GET /users/posts/comments.json
   def index
-    @users_posts_comments = Comment.all
+    @comments = Comment.all
   end
 
   # GET /users/posts/comments/1
@@ -14,7 +14,7 @@ class Users::Posts::CommentsController < ApplicationController
 
   # GET /users/posts/comments/new
   def new
-    @users_posts_comment = Comment.new
+    @comment = Comment.new
   end
 
   # GET /users/posts/comments/1/edit
@@ -26,27 +26,42 @@ class Users::Posts::CommentsController < ApplicationController
   def create
     post_id = params[:post_id]
     post = Post.find(post_id)
-    @users_posts_comment = post.comments.new(users_posts_comment_params)
-    @users_posts_comment.user = current_user
-    respond_to do |format|
-      if @users_posts_comment.save
-        format.json { render :show, status: :created, location: @users_posts_comment }
-      else
-        format.json { render json: @users_posts_comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @comment = post.comments.new(users_posts_comment_params)
+    @comment.user = current_user
+    @comment.save
+
+    form = render_to_string('users/posts/comments/_form',
+      layout: false,
+      locals: {
+        url: users_posts_comments_path,
+        post: post,
+        comment: Comment.new
+      }
+    )
+
+    comments = render_to_string('shared/_post_comments',
+      layout: false,
+      locals: {
+        post: post
+      }
+    )
+
+    render json: {
+      form: form,
+      comments: comments
+    }
   end
 
   # PATCH/PUT /users/posts/comments/1
   # PATCH/PUT /users/posts/comments/1.json
   def update
     respond_to do |format|
-      if @users_posts_comment.update(users_posts_comment_params)
-        format.html { redirect_to @users_posts_comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @users_posts_comment }
+      if @comment.update(users_posts_comment_params)
+        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
-        format.json { render json: @users_posts_comment.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +69,7 @@ class Users::Posts::CommentsController < ApplicationController
   # DELETE /users/posts/comments/1
   # DELETE /users/posts/comments/1.json
   def destroy
-    @users_posts_comment.destroy
+    @comment.destroy
     respond_to do |format|
       format.html { redirect_to users_posts_comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,7 +79,7 @@ class Users::Posts::CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_users_posts_comment
-      @users_posts_comment = Comment.find(params[:id])
+      @comment = Comment.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
