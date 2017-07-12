@@ -1,4 +1,4 @@
-<%= form_with(model: users_posts_comment, url: url, local: true) do |form| %>
+<%= form_with(model: users_posts_comment, url: url, local: true, id: "comment-form") do |form| %>
   <%= hidden_field_tag :post_id, post.id %>
 
   <% if users_posts_comment.errors.any? %>

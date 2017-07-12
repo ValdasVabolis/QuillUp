@@ -30,10 +30,8 @@ class Users::Posts::CommentsController < ApplicationController
     @users_posts_comment.user = current_user
     respond_to do |format|
       if @users_posts_comment.save
-        format.html { redirect_to @users_posts_comment, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @users_posts_comment }
       else
-        format.html { render :new }
         format.json { render json: @users_posts_comment.errors, status: :unprocessable_entity }
       end
     end
