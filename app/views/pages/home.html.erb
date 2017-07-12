@@ -9,9 +9,7 @@
                 <% end %>
             </div>
             <% @users_posts.each do |post| %>
-              <% unless !user_signed_in? || post.user == current_user %>
-                <%= render partial: 'shared/post_votes', locals: { post: post } %>
-              <% end %>
+              <%= render partial: 'shared/post_votes', locals: { post: post } %>
               <h4>'<%= post.title %>' by <%= post.user.email %></h4>
               <tr>
                 <div class="well">

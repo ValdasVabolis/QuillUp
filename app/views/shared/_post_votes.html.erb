@@ -1,7 +1,7 @@
 <div class="post-votes" data-id="<%= post.id %>">
   <div class="score">Score: <%= post.score %></div>
-  <div>upvotes: <%= post.votes_for.up.size %></div>
-  <div>downvotes: <%= post.votes_for.down.size %></div>
-  <button id="post-vote-up" class="post-vote-up">Up</button>
-  <button id="post-vote-down" class="post-vote-down">Down</button>
+  <% unless !user_signed_in? || post.user == current_user %>
+    <button id="post-vote-up" class="post-vote-up">Up</button>
+    <button id="post-vote-down" class="post-vote-down">Down</button>
+  <% end %>
 </div>
