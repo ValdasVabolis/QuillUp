@@ -10,12 +10,12 @@ class Users::PostsController < ApplicationController
   # GET /users/posts/1
   # GET /users/posts/1.json
   def show
-    
+
   end
 
   # GET /users/posts/new
   def new
-    @users_post = Users::Post.new
+    @users_post = current_user.posts.new
   end
 
   # GET /users/posts/1/edit
@@ -61,11 +61,11 @@ class Users::PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def vote
     id = params[:id]
     type = params[:type]
-    post = Users::Post.find(id) 
+    post = Post.find(id)
     post.vote_by voter: current_user, vote: type
     render json: { partial: render_to_string('shared/_post_votes', layout: false, locals: { post: post }) }
   end
@@ -73,7 +73,7 @@ class Users::PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_users_post
-      @users_post = Users::Post.find(params[:id])
+      @users_post = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

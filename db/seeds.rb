@@ -6,7 +6,7 @@ def seed_development
             password_confirmation: "asdf1234"
         })
     end
-    
+
     posts = [
         { title: 'How do I tie my shoes?', body: 'Hello, Quill! I got brand new Nike shoes for my birthday, however, I realized that I do not know how to use shoelaces. It is really embarrassing and I do not want my mother to find out. Do you have any tips on how to learn this skill quickly. What are some good techniques? Thank you. ' },
         { title: 'How often do I need to brush my teeth?', body: 'Also whats some good toothpaste' },
@@ -14,10 +14,10 @@ def seed_development
         { title: 'Which tea do you prefer', body: 'I like green tea, however, it is hard to sleep at night when I drink too much of it. What tea do you drink? Leave a comment below.' },
         { title: 'How do I improve my posture', body: 'I have a geek neck and my back hurts a lot when I am sitting in front of my computer. Are there are any good exercises to help me with this issue? Any help would be appreciated, thanks!' }
     ]
-    
+
     users.each do |u|
         posts.each do |h|
-            post = Users::Post.new(h)
+            post = Post.new(h)
             post.user = u
             post.save
         end

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users Posts Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>User</th>
+      <th>Post</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_posts_comments.each do |users_posts_comment| %>
+      <tr>
+        <td><%= users_posts_comment.body %></td>
+        <td><%= users_posts_comment.user %></td>
+        <td><%= users_posts_comment.post %></td>
+        <td><%= link_to 'Show', users_posts_comment %></td>
+        <td><%= link_to 'Edit', edit_users_posts_comment_path(users_posts_comment) %></td>
+        <td><%= link_to 'Destroy', users_posts_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users Posts Comment', new_users_posts_comment_path %>

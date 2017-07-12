@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
    def home
-      @users_posts = Users::Post.all
+      @users_posts = Post.all
    end
 end
