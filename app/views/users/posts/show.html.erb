@@ -12,8 +12,13 @@
 
 <p>
   <strong>User:</strong>
-  <%= @users_post.user %>
+  <%= @users_post.user.email %>
 </p>
+
+<!-- For each comment in this post, display it -->
+<% @users_post.comments.each do |comment| %>
+  <p><%= comment.body %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_users_post_path(@users_post) %> |
 <%= link_to 'Back', users_posts_path %>

@@ -15,10 +15,23 @@ def seed_development
         { title: 'How do I improve my posture', body: 'I have a geek neck and my back hurts a lot when I am sitting in front of my computer. Are there are any good exercises to help me with this issue? Any help would be appreciated, thanks!' }
     ]
 
+    comments = [
+        {  body: 'Lawyer up. Hit the gym. Delete facebook.' },
+        {  body: 'me too thanks' },
+        {  body: 'Do you even know how Rails works? ' },
+        {  body: 'Learn python first, then C/C++' },
+        {  body: 'Honestly, I dont think you should use thenewboston, its a terrible resource' }
+    ]
+
     users.each do |u|
         posts.each do |h|
             post = Post.new(h)
             post.user = u
+            post.comments = comments.map do |kv|
+              comment = Comment.new(kv)
+              comment.user = User.all.sample
+              comment
+            end
             post.save
         end
     end
