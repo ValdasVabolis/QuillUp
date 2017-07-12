@@ -16,7 +16,9 @@
 </p>
 
 <!-- For each comment in this post, display it -->
+<h2>Comments</h2>
 <% @users_post.comments.each do |comment| %>
+  <h4>User #<%= comment.user_id %></h4>
   <p><%= comment.body %></p>
 <% end %>
 

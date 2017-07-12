@@ -25,11 +25,11 @@ class Users::PostsController < ApplicationController
   # POST /users/posts
   # POST /users/posts.json
   def create
-    @users_post = Users::Post.new(users_post_params)
+    @users_post = Post.new(users_post_params)
     @users_post.user = current_user
     respond_to do |format|
       if @users_post.save
-        format.html { redirect_to @users_post, notice: 'Post was successfully created.' }
+        format.html { redirect_to users_post_url(@users_post), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @users_post }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Users::PostsController < ApplicationController
   def update
     respond_to do |format|
       if @users_post.update(users_post_params)
-        format.html { redirect_to @users_post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to users_post_url(@users_post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @users_post }
       else
         format.html { render :edit }
@@ -78,6 +78,6 @@ class Users::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_post_params
-      params.require(:users_post).permit(:title, :body, :user_id)
+      params.require(:post).permit(:title, :body, :user_id)
     end
 end
