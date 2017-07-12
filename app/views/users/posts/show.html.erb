@@ -15,12 +15,11 @@
   <%= @users_post.user.email %>
 </p>
 
-<h2>New Comment</h2>
 <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @users_post } %>
 
 <!-- For each comment in this post, display it -->
 <h2>Comments</h2>
-<% @users_post.comments.each do |comment| %>
+<% @users_post.comments.reverse.each do |comment| %>
   <h4>User #<%= comment.user_id %></h4>
   <p><%= comment.body %></p>
 <% end %>

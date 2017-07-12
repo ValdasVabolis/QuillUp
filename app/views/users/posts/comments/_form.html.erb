@@ -1,5 +1,5 @@
 <%= form_with(model: users_posts_comment, url: url, local: true) do |form| %>
-  <%= form.hidden_field :post_id, id: :users_posts_comment_post_id %>
+  <%= hidden_field_tag :post_id, post.id %>
 
   <% if users_posts_comment.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +14,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :body %>
     <%= form.text_area :body, id: :users_posts_comment_body %>
   </div>
 

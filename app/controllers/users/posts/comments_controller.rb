@@ -24,8 +24,10 @@ class Users::Posts::CommentsController < ApplicationController
   # POST /users/posts/comments
   # POST /users/posts/comments.json
   def create
-    @users_posts_comment = Comment.new(users_posts_comment_params)
-
+    post_id = params[:post_id]
+    post = Post.find(post_id)
+    @users_posts_comment = post.comments.new(users_posts_comment_params)
+    @users_posts_comment.user = current_user
     respond_to do |format|
       if @users_posts_comment.save
         format.html { redirect_to @users_posts_comment, notice: 'Comment was successfully created.' }
@@ -69,6 +71,6 @@ class Users::Posts::CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_posts_comment_params
-      params.require(:users_posts_comment).permit(:body, :user_id, :post_id)
+      params.require(:comment).permit(:body, :user_id)
     end
 end
