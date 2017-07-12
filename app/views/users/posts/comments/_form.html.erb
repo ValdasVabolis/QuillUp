@@ -1,4 +1,6 @@
-<%= form_with(model: users_posts_comment, local: true) do |form| %>
+<%= form_with(model: users_posts_comment, url: url, local: true) do |form| %>
+  <%= form.hidden_field :post_id, id: :users_posts_comment_post_id %>
+
   <% if users_posts_comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(users_posts_comment.errors.count, "error") %> prohibited this users_posts_comment from being saved:</h2>
@@ -14,16 +16,6 @@
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body, id: :users_posts_comment_body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :users_posts_comment_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.text_field :post_id, id: :users_posts_comment_post_id %>
   </div>
 
   <div class="actions">

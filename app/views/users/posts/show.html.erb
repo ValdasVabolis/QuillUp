@@ -15,6 +15,9 @@
   <%= @users_post.user.email %>
 </p>
 
+<h2>New Comment</h2>
+<%= render template: 'users/posts/comments/new', layout: false, locals: { post: @users_post } %>
+
 <!-- For each comment in this post, display it -->
 <h2>Comments</h2>
 <% @users_post.comments.each do |comment| %>
