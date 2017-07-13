@@ -16,6 +16,6 @@
 </p>
 
 <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @users_post } %>
-<%= render partial: 'shared/post_comments', locals: { post: @users_post } %>
+<%= render partial: 'shared/post_comments',  locals: { post: @users_post } %>
 <%= link_to 'Edit', edit_users_post_path(@users_post) %> |
 <%= link_to 'Back', users_posts_path %>
