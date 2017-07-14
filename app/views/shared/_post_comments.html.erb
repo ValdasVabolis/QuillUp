@@ -2,7 +2,11 @@
   <h2>Comments</h2>
   <% post.comments.reverse.each do |comment| %>
     <%= render partial: 'shared/comment_votes', locals: { comment: comment } %>
-    <h4>User #<%= comment.user_id %></h4>
+    <% if comment.user == current_user %>
+      <h4>User <%= '#' + comment.user_id.to_s + ' (You)' %></h4>
+    <% else %>
+      <h4>User <%='#' + comment.user_id.to_s %></h4>
+    <% end %>
     <p><%= comment.body %></p>
   <% end %>
 </div>

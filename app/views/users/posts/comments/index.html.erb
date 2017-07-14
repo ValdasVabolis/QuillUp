@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Users Posts Comments</h1>
-
 <table>
   <thead>
     <tr>
@@ -15,6 +12,7 @@
   <tbody>
     <% @users_posts_comments.each do |users_posts_comment| %>
       <tr>
+        <%= render partial: 'shared/post_votes', locals: { post: post } %>
         <td><%= users_posts_comment.body %></td>
         <td><%= users_posts_comment.user %></td>
         <td><%= users_posts_comment.post %></td>

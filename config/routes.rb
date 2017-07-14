@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
       namespace :posts do
         resources :comments
+        match ':post_id/comments/:comment_id/vote/:type', to: 'comments#vote', via: :post
       end
     end
   end
