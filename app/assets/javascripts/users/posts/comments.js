@@ -24,6 +24,7 @@ $(function() {
       }
     });
   });
+
   // AJAX for comment voting
   $.each(['up', 'down'], function(i, o) {
     $(document).on('click', 'button.comment-vote-' + o, function() {
