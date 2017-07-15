@@ -13,7 +13,7 @@
 
     <p>
       <strong>User:</strong>
-      <%= @users_post.user.email %>
+      <%= @users_post.user.username %>
     </p>
 
     <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @users_post } %>

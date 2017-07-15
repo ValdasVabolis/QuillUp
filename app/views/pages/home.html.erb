@@ -11,7 +11,7 @@
       <% @users_posts.each do |post| %>
         <div class='home-post'>
           <%= render partial: 'shared/post_votes', locals: { post: post } %>
-          <h4>'<%= post.title %>' by <%= post.user.email %></h4>
+          <h4>'<%= post.title %>' by <%= post.user.username %></h4>
           <div class='well'>
             <%= post.body %>
           </div>
