@@ -16,38 +16,38 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+a.btn {
+  @extend .btn-default;
+}
 
 $header-height: 45px;
-
-h1, h2 {
-    font-family: 'Roboto', sans-serif;
+h1,
+h2 {
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
-    height: $header-height !important;
+  height: $header-height !important;
 }
 
 .header-logo-image {
-    height: $header-height * 0.8;
-    position: absolute;
-    top: $header-height * 0.1;
+  height: $header-height * 0.8;
+  position: absolute;
+  top: $header-height * 0.1;
 }
 
 .home-post {
-    border: 1px solid rgba(0, 0, 0, 0.50);
-    border-radius: 10px;
-    background-color: #fff !important;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
-    transition: all 0.25s ease;
-    transform: scale(1);
-    padding: 10px;
-    margin: 20px 10px 10px;
-    z-index: 1;
-
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
-        z-index: 2;
-    }
+  border: 1px solid rgba(0, 0, 0, 0.50);
+  border-radius: 10px;
+  background-color: #fff !important;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+  padding: 10px;
+  margin: 20px 10px 10px;
+  z-index: 1;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+  }
 }
