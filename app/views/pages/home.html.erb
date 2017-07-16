@@ -8,7 +8,7 @@
         <%= link_to 'View Post History', users_posts_path, class: 'btn btn-default' %>
         <% end %>
       </div>
-      <% @users_posts.each do |post| %>
+      <% @users_posts.reverse.each do |post| %>
         <div class='home-post'>
           <%= render partial: 'shared/post_votes', locals: { post: post } %>
           <h4>'<%= post.title %>' by <%= post.user.username %></h4>
