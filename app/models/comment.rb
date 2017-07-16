@@ -7,5 +7,4 @@ class Comment < ApplicationRecord
   def score
     self.votes_for.up.size - self.votes_for.down.size
   end
-
 end
