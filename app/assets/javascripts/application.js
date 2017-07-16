@@ -31,7 +31,8 @@ $(function() {
   show_hide_alert();
 
   $.each(['up', 'down'], function(i, o) {
-    $(document).on('click', "button.post-vote-" + o, function() {
+    $(document).on('click', ".post-vote-" + o, function(e) {
+      e.preventDefault();
       var el = $(this).closest(".post-votes");
       var id = el.data("id");
       var url = "/users/posts/" + id + "/vote/" + o;
