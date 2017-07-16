@@ -18,7 +18,18 @@
 
 /* global $*/
 
+var show_hide_alert = function() {
+  var el = $('.alert');
+  el.addClass('shown');
+  setTimeout(function() {
+    el.removeClass('shown');
+  }, 3000);
+
+};
+
 $(function() {
+  show_hide_alert();
+
   $.each(['up', 'down'], function(i, o) {
     $(document).on('click', "button.post-vote-" + o, function() {
       var el = $(this).closest(".post-votes");
