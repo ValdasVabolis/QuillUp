@@ -28,6 +28,31 @@ h2 {
 
 .navbar {
   height: $header-height !important;
+  margin-bottom: 0px;
+}
+
+body {
+  &>p.alert {
+    transition: top 1s ease;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -10px;
+    width: 420px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    &.shown {
+      top: 50px;
+    }
+  }
+}
+
+.container-fluid {
+  top: 50px;
 }
 
 .header-logo-image {
