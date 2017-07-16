@@ -22,6 +22,8 @@ gem 'jquery-rails', '4.3.1'
 gem 'coffee-rails', '4.2.2'
 # Use Devise for user authentication
 gem 'devise', '4.3.0'
+# Use Act As Votable for user post votes
+gem 'acts_as_votable', '~> 0.10.0'
 # Use Hirb for better database display in terminal
 gem 'hirb', '0.7.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -34,7 +36,7 @@ gem 'jbuilder', '2.7.0'
 # gem 'bcrypt', '3.1.7'
 # Use bootstrap library for styling and layout
 gem 'bootstrap-sass', '3.3.7'
-
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -61,6 +63,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '2.0.0'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 

@@ -1,0 +1,8 @@
+<div class="comment-votes" data-id="<%= comment.id %>">
+  <div class="score">Score: <%= comment.score %></div>
+  <!-- Render comment up/down vote buttons only if the user is signed in or the comment is not the signed in user -->
+  <% unless !user_signed_in? || comment.user == current_user %>
+    <button id="comment-vote-up" class="comment-vote-up">Up</button>
+    <button id="comment-vote-down" class="comment-vote-down">Down</button>
+  <% end %>
+</div>
