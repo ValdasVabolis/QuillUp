@@ -12,8 +12,10 @@ describe Comment do
       expect(c.save).to be false
     end
 
-    # it 'must have confirmed account' do
-    #   u = build(:user, confirmed_at: nil)
-    # end
+    it 'must have confirmed account' do
+      u = build(:user, confirmed_at: nil)
+      c = build(:comment, user: u)
+      expect(c.save).to be false
+    end
   end
 end
