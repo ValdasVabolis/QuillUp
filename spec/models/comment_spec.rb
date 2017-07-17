@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  body       :text
+#  user_id    :integer
+#  post_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  comment_id :integer
+#
+
 require 'rails_helper'
 
 describe Comment do
@@ -15,6 +28,21 @@ describe Comment do
     it 'must have confirmed account' do
       u = build(:user, confirmed_at: nil)
       c = build(:comment, user: u)
+      expect(c.save).to be false
+    end
+  end
+
+  describe '#post' do
+    it 'is required' do
+      p = build(:comment, post: nil)
+      expect(p.save).to be false
+    end
+  end
+
+  # shouldn't this be in the post section
+  describe '#body' do
+    it 'is rqeuired' do
+      c = build(:comment, body: nil)
       expect(c.save).to be false
     end
   end

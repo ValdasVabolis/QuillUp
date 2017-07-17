@@ -8,6 +8,7 @@ end
 ruby '2.4.0'
 
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'annotate'
 gem 'bootstrap-sass', '3.3.7'
 gem 'coffee-rails', '4.2.2'
 gem 'devise', '4.3.0'
