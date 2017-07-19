@@ -16,7 +16,7 @@ class Comment < ApplicationRecord
 
   belongs_to :user
   belongs_to :post
-  
+
   validates :body, presence: true
   validate :user_account_confirmed, if: :user
 

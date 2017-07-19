@@ -1,10 +1,11 @@
 def seed_development
-    users = (1..10).to_a.map do | i|
+    users = (1..10).to_a.map do |i|
         User.create({
             username: Faker::Name.unique.name.gsub(/[\s\.\']/, ''),
             email: Faker::Internet.unique.email,
             password: "asdf1234",
-            password_confirmation: "asdf1234"
+            password_confirmation: "asdf1234",
+            confirmed_at: DateTime.now
         })
     end
 
