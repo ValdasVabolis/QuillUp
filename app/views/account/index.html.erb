@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h1>Your account</h1>
+  <p>View your history and settings</p>
+</div>
+<div class="container-fluid">
+  <div class="settings-container">
+    <h2>Settings</h2>
+    <%= render "devise/registrations/edit" %>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="history-container">
+    <h2>Post history</h2>
+    <%= render "users/posts/index" %>
+  </div>
+</div>

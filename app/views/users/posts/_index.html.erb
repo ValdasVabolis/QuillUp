@@ -1,7 +1,5 @@
+<h4>View your recent posts</h4>
 <p id="notice"><%= notice %></p>
-
-<h1>Users Posts</h1>
-
 <table>
   <thead>
     <tr>
@@ -13,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @users_posts.each do |post| %>
+    <% users_posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
