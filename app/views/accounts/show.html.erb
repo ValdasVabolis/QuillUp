@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="info-container">
+    <h2>Account information</h2>
+    <%= render partial: "accounts/profile", locals: { user: @user_show } %>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="history-container">
+    <h2>Post history</h2>
+    <%= render partial: "accounts/history", locals: { user: @user_show } %>
+  </div>
+</div>

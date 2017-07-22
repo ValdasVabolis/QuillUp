@@ -3,6 +3,12 @@
   <p>View your history and settings</p>
 </div>
 <div class="container-fluid">
+  <div class="info-container">
+    <h2>Account information</h2>
+    <%= render partial: "accounts/info" %>
+  </div>
+</div>
+<div class="container-fluid">
   <div class="settings-container">
     <h2>Settings</h2>
     <%= render "devise/registrations/edit" %>

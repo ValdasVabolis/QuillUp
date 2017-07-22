@@ -7,7 +7,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <li><%= link_to("My account", account_index_path) %></li>
+        <li><%= link_to("My account", accounts_index_path) %></li>
         <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
       <% else %>
         <li><%= link_to("Sign up", new_user_registration_path) %></li>

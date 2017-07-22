@@ -4,14 +4,13 @@
       <div class='text-center'>
         <h1>Cover page</h1>
         <% if user_signed_in? %>
-          <%= link_to 'New post', new_users_post_path, class: 'btn btn-default' %>
-          <%= link_to 'My posts', users_posts_path, class: 'btn btn-default' %>
+          <%= link_to('Create post', new_users_post_path, class: 'btn btn-default') %>
         <% end %>
       </div>
       <% @users_posts.reverse.each do |post| %>
         <div class='home-post'>
           <%= render partial: 'shared/post_votes', locals: { post: post } %>
-          <h4>'<%= post.title %>' by <%= post.user.username %></h4>
+          <h4>'<%= post.title %>' by <%= link_to("#{post.user.username}", user_profile_path(post.user.username))%></h4>
           <div class='well'>
             <%= post.body %>
           </div>
