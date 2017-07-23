@@ -1,6 +1,5 @@
 <%= form_with(model: comment, url: url, local: true, id: "comment-form") do |form| %>
   <%= hidden_field_tag :post_id, post.id %>
-
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>

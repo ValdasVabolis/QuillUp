@@ -9,15 +9,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 744.09448819 1052.3622047"
-   id="svg2"
+   width="90mm"
+   height="50mm"
+   viewBox="0 0 90 50"
+   id="svg8089"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="quill_logo_clean.svg">
+   sodipodi:docname="quill_logo.svg">
   <defs
-     id="defs4" />
+     id="defs3" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,20 +25,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="530.90243"
-     inkscape:cy="1015.9085"
-     inkscape:document-units="px"
+     inkscape:zoom="1.6970563"
+     inkscape:cx="86.12222"
+     inkscape:cy="72.771435"
+     inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:snap-text-baseline="true" />
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata7">
+     id="metadata8093">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -54,27 +53,10 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g8118"
-       transform="translate(71.720831,58.588848)">
-      <ellipse
-         ry="89.398499"
-         rx="99.500023"
-         cy="246.81017"
-         cx="67.34124"
-         id="path8079"
-         style="opacity:1;fill:none;fill-opacity:0.94117647;stroke:#f44336;stroke-width:19.77519608;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647" />
-      <rect
-         transform="matrix(0.81365742,-0.58134465,0.58134465,0.81365742,0,0)"
-         y="327.35355"
-         x="-107.89959"
-         height="77.781746"
-         width="20.203054"
-         id="rect8116"
-         style="opacity:1;fill:#f44336;fill-opacity:0.94117647;stroke:none;stroke-width:19.77519608;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647" />
-    </g>
-    <g
-       transform="translate(71.720831,58.588848)"
-       id="g8126">
+       transform="matrix(0.15289874,0,0,0.15289871,7.1158513,-15.238072)"
+       id="g8126"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
       <ellipse
          style="opacity:1;fill:none;fill-opacity:0.94117647;stroke:#f44336;stroke-width:19.77519608;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
          id="ellipse8128"

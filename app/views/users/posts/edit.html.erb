@@ -1,6 +1,12 @@
-<h1>Editing Users Post</h1>
+<div class="container-fluid">
+  <div class="row-fluid top-buffer">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="well">
+        <h2>Editing post</h2>
+        <h4>"<%= @users_post.title %>"</h4>
+        <%= render 'form', users_post: @users_post, url: users_post_path(@users_post) %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', users_post: @users_post, url: users_post_path(@users_post) %>
-
-<%= link_to 'Show', @users_post %> |
-<%= link_to 'Back', users_posts_path %>

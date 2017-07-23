@@ -1,0 +1,13 @@
+<!-- actions for a comment -->
+<div class="comment-votes" data-id="<%= comment.id %>">
+  <div class="score">Score: <%= comment.score %></div>
+  <!-- upvote/downvote -->
+  <% if user_signed_in? && comment.user != current_user %>
+    <%= link_to 'Up', '#', id: "comment-vote-up", class: "btn comment-vote-up" %>
+    <%= link_to 'Down', '#', id: "comment-vote-down", class: "btn comment-vote-down" %>
+  <% end %>
+  <% if comment.user == current_user %>
+    <%= link_to('Edit', edit_users_posts_comment_path(current_user.id), class: "btn btn-info") %>
+    <%= link_to('Delete', '#', method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>
+  <% end %>
+</div>

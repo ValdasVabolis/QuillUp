@@ -56,9 +56,7 @@ body {
 }
 
 .header-logo-image {
-  height: 144px;
-  position: absolute;
-  top: -20px;
+  height: 50px;
 }
 
 @mixin submission {
@@ -84,4 +82,12 @@ body {
 .post-comment {
   @include submission;
   margin: 10px 5px 5px;
+}
+
+.top-buffer {
+  margin-top: 40px;
+}
+
+textarea {
+  resize: none;
 }

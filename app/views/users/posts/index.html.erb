@@ -1,4 +1,4 @@
-<h3>Post submissions</h3>
+<h2>Post history</h2>
 <p id="notice"><%= notice %></p>
 <% users_posts.each do |post| %>
   <div class="well">
@@ -9,7 +9,7 @@
     <%= link_to('Destroy', users_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>
   </div>
 <% end %>
-<h3>Comment submissions</h3>
+<h2>Comment history</h2>
 <div class="well">
   <%= "Placeholder (TODO)" %>
 </div>
