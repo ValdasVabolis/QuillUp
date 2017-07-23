@@ -1,21 +1,12 @@
 <p id="notice"><%= notice %></p>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% user.posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<h2>Post history</h2>
+<% user.posts.each do |post| %>
+  <div class="well">
+    <h4><%= post.title %></h4>
+    <p><%= post.body %></p>
+  </div>
+<% end %>
+<h2>Comment history</h2>
+<div class="well">
+  <h4><%= current_user %></h4>
+</div>

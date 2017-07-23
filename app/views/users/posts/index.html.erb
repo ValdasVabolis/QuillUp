@@ -1,26 +1,16 @@
-<h4>View your recent posts</h4>
+<h3>Post submissions</h3>
 <p id="notice"><%= notice %></p>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% users_posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', users_post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_users_post_path(post) %></td>
-        <td><%= link_to 'Destroy', users_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% users_posts.each do |post| %>
+  <div class="well">
+    <h4><%= post.title %></h4>
+    <p><%= post.body %></p>
+    <%= link_to('Show', users_post_path(post), class: "btn btn-primary") %>
+    <%= link_to('Edit', edit_users_post_path(post), class: "btn btn-info") %>
+    <%= link_to('Destroy', users_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>
+  </div>
+<% end %>
+<h3>Comment submissions</h3>
+<div class="well">
+  <%= "Placeholder (TODO)" %>
+</div>
 

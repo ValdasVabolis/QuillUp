@@ -1,7 +1,7 @@
 <div class="post-votes" data-id="<%= post.id %>">
   <div class="score">Score: <%= post.score %></div>
   <% unless !user_signed_in? || post.user == current_user %>
-    <%= link_to 'Up', '#', id: "post-vote-up", class: "btn post-vote-up" %>
-    <%= link_to 'Down', '#', id: "post-vote-down", class: "btn post-vote-down" %>
+    <%= link_to('Up', '#', id: "post-vote-up", class: "btn post-vote-up") %>
+    <%= link_to('Down', '#', id: "post-vote-down", class: "btn post-vote-down") %>
   <% end %>
 </div>
