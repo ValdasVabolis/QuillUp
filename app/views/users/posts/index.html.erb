@@ -4,9 +4,9 @@
   <div class="well">
     <h4><%= post.title %></h4>
     <p><%= post.body %></p>
-    <%= link_to('Show', users_post_path(post), class: "btn btn-primary") %>
+    <%= link_to('View', users_post_path(post), class: "btn btn-primary") %>
     <%= link_to('Edit', edit_users_post_path(post), class: "btn btn-info") %>
-    <%= link_to('Destroy', users_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>
+    <%= link_to('Delete', users_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>
   </div>
 <% end %>
 <h2>Comment history</h2>
