@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
   def users_post_path(post)
     "/users/post/#{post.id}"
   end
+
+  helper_method :history_comment_post_link
+  def history_comment_post_link(post_id)
+    "/users/post/#{post_id}"
+  end
 end
