@@ -15,7 +15,7 @@
             <%= post.body %>
           </div>
           <div class="show-post-wrapper">
-            <%= link_to("Comments (#{post.comments.count})", users_post_path(post), class: 'btn pull-right') %>
+            <%= link_to("Comments (#{post.comments.count})", users_post_path(post), class: 'btn btn-default pull-right') %>
           </div>
         </div>
       <% end %>

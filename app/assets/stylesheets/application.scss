@@ -16,9 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-a.btn {
-  @extend .btn-default;
-}
+
 
 $header-height: 45px;
 h1,

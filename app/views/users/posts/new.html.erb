@@ -1,5 +1,10 @@
-<h1>New Users Post</h1>
-
-<%= render 'form', users_post: @users_post, url: users_posts_path %>
-
-<%= link_to 'Back', users_posts_path %>
+<div class="container-fluid top-buffer">
+  <div class="row-fluid">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="well">
+        <h1>Create a new post</h1>
+        <%= render 'form_new_post', users_post: @users_post, url: users_posts_path %>
+      </div>
+    </div>
+  </div>
+</div>
