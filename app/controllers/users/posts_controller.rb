@@ -65,9 +65,8 @@ class Users::PostsController < ApplicationController
   def vote
     id = params[:id]
     type = params[:type]
-    post = Post.find(id)
-    post.vote_by voter: current_user, vote: type
-    render json: { partial: render_to_string('shared/_post_votes', layout: false, locals: { post: post }) }
+    @post = Post.find(id)
+    @post.vote_by voter: current_user, vote: type
   end
 
   private

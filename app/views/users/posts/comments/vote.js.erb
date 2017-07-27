@@ -1,0 +1,1 @@
+$('.comment-votes[data-id=<%= @comment.id %>]').replaceWith($('<%= j render(partial: "shared/comment_actions", locals: { comment: @comment }) %>'));
