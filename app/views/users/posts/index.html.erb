@@ -11,7 +11,7 @@
 <h2>Comment history</h2>
 <% current_user.comments.each do |comment| %>
   <div class="well">
-    <h4><%= link_to("#{comment.post_id}", history_comment_post_link(comment.post_id)) %></h4>
+    <h4><%= link_to("#{comment.post.title}", users_post_path(comment.post)) %></h4>
     <p><%= comment.body %></p>
     <%= link_to('Edit', edit_users_posts_comment_path(comment.post_id), class: "btn btn-info") %>
     <%= link_to('Delete', users_posts_comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>

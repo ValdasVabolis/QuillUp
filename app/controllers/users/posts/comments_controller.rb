@@ -57,7 +57,7 @@ class Users::Posts::CommentsController < ApplicationController
     type = params[:type]
     comment = Comment.find(id)
     comment.vote_by voter: current_user, vote: type
-    render json: { partial: render_to_string('shared/_comment_votes', layout: false, locals: { comment: comment }) }
+    render json: { partial: render_to_string('shared/_comment_actions', layout: false, locals: { comment: comment }) }
   end
 
   # PATCH/PUT /users/posts/comments/1
