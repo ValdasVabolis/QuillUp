@@ -1,0 +1,7 @@
+<h2>Comment history</h2>
+<% user.comments.each do |comment| %>
+  <div class="well">
+    <h4><%= link_to("#{comment.title}", users_post_path(comment.post)) %></h4>
+    <p><%= comment.body %></p>
+  </div>
+<% end %>

@@ -1,12 +1,9 @@
 <div class="container-fluid">
-  <div class="tabs tabs-private" id='account-tabs'>
+  <div class="tabs tabs-public" id='account-tabs'>
     <div class="tabs-nav">
       <ul>
         <li>
           <a href="#">Profile</a>
-        </li>
-        <li>
-          <a href="#">Settings</a>
         </li>
         <li>
           <a href="#">Posts</a>
@@ -19,16 +16,13 @@
     <div class="tabs-content">
       <ul>
         <li>
-          <%= render partial: "accounts/info" %>
+          <%= render partial: "users/profile", locals: { user: @user_show } %>
         </li>
         <li>
-          <%= render template: "devise/registrations/edit" %>
+          <%= render partial: "users/history_posts", locals: { user: @user_show } %>
         </li>
         <li>
-          <%= render partial: "accounts/history_posts" %>
-        </li>
-        <li>
-          <%= render partial: "accounts/history_comments" %>
+          <%= render partial: "users/history_comments", locals: { user: @user_show } %>
         </li>
       </ul>
     </div>

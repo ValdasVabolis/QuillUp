@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'accounts/index'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
@@ -7,7 +6,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get 'users/post/:id', to: 'users/posts#show'
-  get 'users/:username', to: 'accounts#show', as: 'user_profile'
+  # public profiles
+  get 'users/:username', to: 'users#show', as: 'user_profile'
+  # private profiles
+  get 'account', to: 'accounts#index', as: 'my_account'
   # /users
   namespace :users do
     authenticate :user do
