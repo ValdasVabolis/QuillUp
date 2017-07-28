@@ -1,0 +1,51 @@
+.tabs {
+  margin-top: 32px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tabs-nav {
+    ul, li, a {
+      position: relative;
+    }
+
+    ul {
+      display: block;
+      width: 100%;
+    }
+
+    li {
+      display: inline-block;
+      width: 33%;
+
+      &.selected {
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        border-left: 1px solid rgba(0, 0, 0, 0.5);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+
+    a {
+      display: block;
+      font-size: 32px;
+      text-align: center;
+      text-decoration: none;      
+    }
+  }
+
+  .tabs-content {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    li {
+      display: none;
+    }
+
+    li.selected {
+      display: inherit;
+    }
+  }
+}

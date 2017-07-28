@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
-<h2>Post history</h2>
-<% user.posts.each do |post| %>
-  <div class="well">
-    <h4><%= link_to("#{post.title}", users_post_path(post)) %></h4>
-    <p><%= post.body %></p>
-  </div>
-<% end %>
-<h2>Comment history</h2>
-<% user.comments.each do |comment| %>
-  <div class="well">
-    <h4><%= link_to("#{comment.title}", users_post_path(comment.post)) %></h4>
-    <p><%= comment.body %></p>
-  </div>
-<% end %>
+<div class="history-container">
+  <p id="notice"><%= notice %></p>
+  <h2>Post history</h2>
+  <% user.posts.each do |post| %>
+    <div class="well">
+      <h4><%= link_to("#{post.title}", users_post_path(post)) %></h4>
+      <p><%= post.body %></p>
+    </div>
+  <% end %>
+  <h2>Comment history</h2>
+  <% user.comments.each do |comment| %>
+    <div class="well">
+      <h4><%= link_to("#{comment.title}", users_post_path(comment.post)) %></h4>
+      <p><%= comment.body %></p>
+    </div>
+  <% end %>
+</div>
