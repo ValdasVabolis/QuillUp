@@ -1,7 +1,7 @@
 <div id="post-comments">
   <h2>Comments</h2>
   <% post.comments.reverse.each do |comment| %>
-    <div class="post-comment">
+    <div class="post-comment comment" data-id="<%= comment.id %>">
       <%= render partial: 'shared/comment_actions', locals: { comment: comment } %>
       <h4><%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %></h4>
       <p><%= comment.body %></p>
