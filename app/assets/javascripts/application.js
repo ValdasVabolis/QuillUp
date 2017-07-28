@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 /* global $*/
 
 var show_hide_alert = function() {

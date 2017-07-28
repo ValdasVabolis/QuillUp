@@ -4,13 +4,13 @@
   <!-- upvote/downvote -->
   <% if user_signed_in? && comment.user != current_user %>
 
-    <%= link_to 'Up', "/users/posts/#{comment.post.id}/comments/#{comment.id}/vote/up", 
+    <%= link_to 'Up', "/users/posts/comments/#{comment.id}/vote/up", 
       method: :post,
       remote: true,
       id: "comment-vote-up", 
       class: "btn btn-default comment-vote-up" %>
 
-    <%= link_to 'Down', "/users/posts/#{comment.post.id}/comments/#{comment.id}/vote/down", 
+    <%= link_to 'Down', "/users/posts/comments/#{comment.id}/vote/down", 
       method: :post,
       remote: true,
       id: "comment-vote-down", 
