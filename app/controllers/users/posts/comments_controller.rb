@@ -78,7 +78,7 @@ class Users::Posts::CommentsController < ApplicationController
   def destroy
     @comment.destroy
   end
-
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_users_posts_comment

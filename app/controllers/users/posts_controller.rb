@@ -55,11 +55,7 @@ class Users::PostsController < ApplicationController
   # DELETE /users/posts/1
   # DELETE /users/posts/1.json
   def destroy
-    @users_post.destroy
-    respond_to do |format|
-      format.html { redirect_to users_posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @post.destroy
   end
 
   def vote
