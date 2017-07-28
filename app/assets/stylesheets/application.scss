@@ -17,6 +17,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+  box-sizing: border-box;
+}
 
 $header-height: 45px;
 h1,
@@ -49,8 +52,13 @@ body {
   }
 }
 
-.container-fluid {
-  top: 50px;
+.top-buffer {
+  margin-top: 40px;
+}
+
+.main-content {
+  @extend .top-buffer;
+  margin-top: 100px;
 }
 
 .header-logo-image {
@@ -80,10 +88,6 @@ body {
 .post-comment {
   @include submission;
   margin: 10px 5px 5px;
-}
-
-.top-buffer {
-  margin-top: 40px;
 }
 
 textarea {

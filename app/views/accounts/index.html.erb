@@ -1,22 +1,30 @@
-<div class="text-center">
-  <h1>Your account</h1>
-  <p>View your history and settings</p>
-</div>
 <div class="container-fluid">
-  <div class="info-container">
-    <h2>Account information</h2>
-    <%= render partial: "accounts/info" %>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="settings-container">
-    <h2>Settings</h2>
-    <%= render "devise/registrations/edit" %>
-  </div>
-</div>
-<!-- post and comment history -->
-<div class="container-fluid">
-  <div class="history-container">
-    <%= render template: "users/posts/index" %>
+  <div class="tabs tabs-private" id='account-tabs'>
+    <div class="tabs-nav">
+      <ul>
+        <li>
+          <a href="#">Profile</a>
+        </li>
+        <li>
+          <a href="#">Settings</a>
+        </li>
+        <li>
+          <a href="#">Posts</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tabs-content">
+      <ul>
+        <li>
+          <%= render partial: "accounts/info" %>
+        </li>
+        <li>
+          <%= render template: "devise/registrations/edit" %>
+        </li>
+        <li>
+          <%= render template: "users/posts/index" %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -1,12 +1,24 @@
 <div class="container-fluid">
-  <div class="info-container">
-    <h2>Account information</h2>
-    <%= render partial: "accounts/profile", locals: { user: @user_show } %>
-  </div>
-</div>
-<!-- post and comment history -->
-<div class="container-fluid">
-  <div class="history-container">
-    <%= render partial: "accounts/history", locals: { user: @user_show } %>
+  <div class="tabs tabs-public" id='account-tabs'>
+    <div class="tabs-nav">
+      <ul>
+        <li>
+          <a href="#">Profile</a>
+        </li>
+        <li>
+          <a href="#">History</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tabs-content">
+      <ul>
+        <li>
+          <%= render partial: "accounts/profile", locals: { user: @user_show } %>
+        </li>
+        <li>
+          <%= render partial: "accounts/history", locals: { user: @user_show } %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
