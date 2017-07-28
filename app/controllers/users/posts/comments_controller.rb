@@ -77,10 +77,6 @@ class Users::Posts::CommentsController < ApplicationController
   # DELETE /users/posts/comments/1.json
   def destroy
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to my_account_path, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
