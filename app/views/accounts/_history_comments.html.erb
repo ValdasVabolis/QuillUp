@@ -1,8 +1,10 @@
-<h2>Comment history</h2>
 <% current_user.comments.each do |comment| %>
   <div class="well comment" data-id="<%= comment.id %>">
     <%= render partial: "shared/comment_actions", locals: { comment: comment } %>
-    <h4><%= link_to("#{comment.title}", users_post_path(comment.post)) %></h4>
+
     <p><%= comment.body %></p>
   </div>
+<% end %>
+<% if current_user.comments.empty? %>
+  <h2>You haven't submitted any comments yet!</h2>
 <% end %>

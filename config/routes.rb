@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # /users
   namespace :users do
     authenticate :user do
-      resources :posts, except: [:show]
+      resources :posts
       match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
       namespace :posts do
         resources :comments

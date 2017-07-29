@@ -1,8 +1,10 @@
-<h2>Post history</h2>
 <% current_user.posts.each do |post| %>
-  <div class="well">
+  <div class="well post" data-id="<%= post.id %>">
     <%= render partial: "shared/post_actions", locals: { post: post} %>
     <h4><%= link_to("#{post.title}", users_post_path(post)) %></h4>
     <p><%= post.body %></p>
   </div>
+<% end %>
+<% if current_user.posts.empty? %>
+  <h2>You haven't submitted any posts yet!</h2>
 <% end %>

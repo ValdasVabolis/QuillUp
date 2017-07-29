@@ -24,12 +24,6 @@ class Comment < ApplicationRecord
     self.votes_for.up.size - self.votes_for.down.size
   end
 
-  def title
-    self.post.title
-  end
-
-
-
   private
 
   def user_account_confirmed

@@ -4,7 +4,7 @@ class Users::PostsController < ApplicationController
   # GET /users/posts
   # GET /users/posts.json
   def index
-    @users_posts = current_user.posts
+    @posts = current_user.posts
   end
 
   # GET /users/posts/1
@@ -15,7 +15,7 @@ class Users::PostsController < ApplicationController
 
   # GET /users/posts/new
   def new
-    @users_post = current_user.posts.new
+    @post = current_user.posts.new
   end
 
   # GET /users/posts/1/edit
@@ -25,15 +25,15 @@ class Users::PostsController < ApplicationController
   # POST /users/posts
   # POST /users/posts.json
   def create
-    @users_post = Post.new(users_post_params)
-    @users_post.user = current_user
+    @post = Post.new(users_post_params)
+    @post.user = current_user
     respond_to do |format|
-      if @users_post.save
-        format.html { redirect_to users_post_path(@users_post), notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @users_post }
+      if @post.save
+        format.html { redirect_to users_post_path(@post), notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
-        format.json { render json: @users_post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,12 +42,12 @@ class Users::PostsController < ApplicationController
   # PATCH/PUT /users/posts/1.json
   def update
     respond_to do |format|
-      if @users_post.update(users_post_params)
-        format.html { redirect_to users_post_url(@users_post), notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @users_post }
+      if @post.update(users_post_params)
+        format.html { redirect_to users_post_url(@post), notice: 'Post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
-        format.json { render json: @users_post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -68,7 +68,7 @@ class Users::PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_users_post
-      @users_post = Post.find(params[:id])
+      @post = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
