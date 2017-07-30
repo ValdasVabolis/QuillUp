@@ -21,4 +21,12 @@ class Post < ApplicationRecord
   def score
     self.votes_for.up.size - self.votes_for.down.size
   end
+
+  def friendly_date
+    self.created_at.to_date.strftime('%b %-m, %Y')
+  end
+
+  def friendly_time
+    self.created_at.to_datetime.strftime('%-I:%M %p')
+  end
 end

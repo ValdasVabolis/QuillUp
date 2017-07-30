@@ -10,14 +10,18 @@
   </head>
   <body>
     <%= render "layouts/navbar" %>
+    
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
     <div class="main-content">
       <%= yield %>
     </div>
+
+    <%= render partial: 'shared/popover' %>
   </body>
 </html>

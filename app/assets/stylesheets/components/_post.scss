@@ -1,0 +1,70 @@
+// popover hidden
+#post-popover-backdrop,
+#post-popover-view-wrapper {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background $delay ease;
+}
+
+#post-popover-backdrop {
+  background: rgba(255, 255, 255, 0);
+  min-height: 100%;
+  pointer-events: none;
+  top: 50px;
+  width: 100%;
+  z-index: 1001;
+}
+
+#post-popover-view-wrapper {
+  z-index: 1002;
+}
+
+#post-popover-view {
+  @include center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  margin-top: $header-height * 2;
+  opacity: 0;
+  padding: 20px;
+  transition: all $delay ease;
+  transform: scale(0.75);
+  width: 1024px;
+  z-index: 1003;
+}
+
+#post-popover-exit {
+  color: $palette-gray-dark;
+  position: absolute;
+  transition: color $delay ease;
+  top: 8px;
+  right: 15px;
+
+  &:hover {
+    color: $palette-red;
+    cursor: pointer;
+  }
+}
+
+
+
+// popover shown
+body.showing-post {
+  #post-popover-backdrop {
+    background: rgba(255, 255, 255, 0.5);
+    pointer-events: all;
+  }
+
+  #post-popover-view-wrapper {
+    pointer-events: all;
+  }
+
+  #post-popover-view {
+    background: #fff;
+    transform: scale(1);
+    opacity: 1;
+  }
+}

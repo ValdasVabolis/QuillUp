@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # /users
   namespace :users do
     authenticate :user do
+      get 'posts/exit', to: 'posts#exit', as: 'posts_exit'
       resources :posts
       match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
       namespace :posts do

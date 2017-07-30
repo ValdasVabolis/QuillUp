@@ -8,14 +8,18 @@
         <% end %>
       </div>
       <% @users_posts.reverse.each do |post| %>
-        <div class='home-post'>
+        <div class='home-post post'>
           <%= render partial: 'shared/post_votes', locals: { post: post } %>
           <h4>'<%= post.title %>' by <%= link_to("#{post.user.username}", user_profile_path(post.user.username))%></h4>
           <div class='well'>
             <%= post.body %>
           </div>
         <div class="show-post-wrapper">
-            <%= link_to("Comments (#{post.comments.count})", users_post_path(post), class: 'btn btn-default pull-right') %>
+            <%= link_to("Comments (#{post.comments.count})",
+              users_post_path(post),
+              remote: true,
+              method: :get,
+              class: 'btn btn-default pull-right') %>
           </div>
         </div>
       <% end %>

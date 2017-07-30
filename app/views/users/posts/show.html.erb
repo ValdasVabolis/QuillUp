@@ -1,23 +1,12 @@
 <div class="post" data-id="<%= @post.id %>">
-    <p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-    <p>
-      <strong>Title:</strong>
-      <%= @post.title %>
-    </p>
+  <%= content_tag :h2, @post.title %>
 
-    <p>
-      <strong>Body:</strong>
-      <%= @post.body %>
-    </p>
+  <p>Posted by <%= @post.user.username %> on <%= @post.friendly_date %> at <%= @post.friendly_time %>.</p>
 
-    <p>
-      <strong>User:</strong>
-      <%= @post.user.username %>
-    </p>
-
-    <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @post } %>
-    <%= render partial: 'shared/post_comments',  locals: { post: @post } %>
-    <%= link_to 'Edit', edit_users_post_path(@post) %> |
-    <%= link_to 'Back', users_posts_path %>
+  <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @post } %>
+  <%= render partial: 'shared/post_comments',  locals: { post: @post } %>
+  <%= link_to 'Edit', edit_users_post_path(@post) %> |
+  <%= link_to 'Back', users_posts_path %>
 </div>
