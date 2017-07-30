@@ -10,36 +10,44 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "font-awesome";
+
+@import "common/**/*";
+@import "components/**/*";
+@import "views/**/*";
+
 * {
   box-sizing: border-box;
 }
 
-$header-height: 45px;
 h1,
 h2 {
   font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
+  background: $palette-gray-dark;
   height: $header-height !important;
   margin-bottom: 0px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 body {
   &>p.alert {
+    @include center;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     font-size: 18px;
     left: 0;
-    margin-left: auto;
-    margin-right: auto;
     position: fixed;
     right: 0;
     text-align: center;
@@ -50,6 +58,10 @@ body {
       top: 50px;
     }
   }
+}
+
+#notice {
+  margin-bottom: 0px;
 }
 
 .top-buffer {
@@ -75,7 +87,7 @@ body {
   z-index: 1;
   &:hover {
     cursor: pointer;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     z-index: 2;
   }
 }

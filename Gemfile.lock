@@ -89,6 +89,8 @@ GEM
     faker (1.8.4)
       i18n (~> 0.5)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -231,6 +233,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
+    timecop (0.9.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -256,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   annotate
+  autoprefixer-rails
   bootstrap-sass (= 3.3.7)
   byebug
   capybara (= 2.13)
@@ -263,6 +267,7 @@ DEPENDENCIES
   devise (= 4.3.0)
   factory_girl_rails
   faker
+  font-awesome-rails
   guard-rspec (~> 4.7)
   hirb (= 0.7.3)
   jbuilder (= 2.7.0)
@@ -278,6 +283,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (= 2.0.0)
   sqlite3
+  timecop
   turbolinks (= 5.0.1)
   tzinfo-data
   uglifier (= 3.2.0)
