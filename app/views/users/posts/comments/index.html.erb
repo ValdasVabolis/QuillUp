@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <table>
   <thead>
     <tr>
@@ -10,19 +9,16 @@
   </thead>
 
   <tbody>
-    <% @users_posts_comments.each do |users_posts_comment| %>
+    <% @comments.each do |c| %>
       <tr>
         <%= render partial: 'shared/post_votes', locals: { post: post } %>
-        <td><%= users_posts_comment.body %></td>
-        <td><%= users_posts_comment.user %></td>
-        <td><%= users_posts_comment.post %></td>
-        <td><%= link_to 'Show', users_posts_comment %></td>
-        <td><%= link_to 'Edit', edit_users_posts_comment_path(users_posts_comment) %></td>
-        <td><%= link_to 'Destroy', users_posts_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= c.body %></td>
+        <td><%= c.user %></td>
+        <td><%= c.post %></td>
+        <td><%= link_to 'Show', c %></td>
+        <td><%= link_to 'Edit', edit_c_path(c) %></td>
+        <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-

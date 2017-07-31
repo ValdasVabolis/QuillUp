@@ -1,7 +1,6 @@
 <% current_user.comments.each do |comment| %>
-  <div class="well comment" data-id="<%= comment.id %>">
-    <%= render partial: "shared/comment_actions", locals: { comment: comment } %>
-
+  <div class='comment' data-id='<%= comment.id %>'>
+    <%= render partial: 'shared/comment_actions', locals: { comment: comment } %>
     <p><%= comment.body %></p>
   </div>
 <% end %>

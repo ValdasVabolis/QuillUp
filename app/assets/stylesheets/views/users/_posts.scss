@@ -1,8 +1,10 @@
-// Place all the styles related to the users/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .show-post-wrapper {
   height: 34px;
+}
+
+.home-post {
+  @extend submission;
+  margin: 20px 10px 10px;
 }
 
 .post {

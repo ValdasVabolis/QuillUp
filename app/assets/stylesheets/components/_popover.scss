@@ -1,6 +1,6 @@
 // popover hidden
-#post-popover-backdrop,
-#post-popover-view-wrapper {
+#popover-backdrop,
+#popover-view-wrapper {
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -10,7 +10,7 @@
   transition: background $delay ease;
 }
 
-#post-popover-backdrop {
+#popover-backdrop {
   background: rgba(255, 255, 255, 0);
   min-height: 100%;
   pointer-events: none;
@@ -19,15 +19,16 @@
   z-index: 1001;
 }
 
-#post-popover-view-wrapper {
+#popover-view-wrapper {
+  overflow: scroll;
   z-index: 1002;
 }
 
-#post-popover-view {
+#popover-view {
   @include center;
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  margin-top: $header-height * 2;
+  margin: $header-height * 2 auto;
   opacity: 0;
   padding: 20px;
   transition: all $delay ease;
@@ -36,7 +37,7 @@
   z-index: 1003;
 }
 
-#post-popover-exit {
+#popover-exit {
   color: $palette-gray-dark;
   position: absolute;
   transition: color $delay ease;
@@ -52,17 +53,19 @@
 
 
 // popover shown
-body.showing-post {
-  #post-popover-backdrop {
-    background: rgba(255, 255, 255, 0.5);
+#popover-parent.showing-popover {
+  overflow: hidden;
+
+  #popover-backdrop {
+    background: rgba(150, 150, 150, 1);
     pointer-events: all;
   }
 
-  #post-popover-view-wrapper {
+  #popover-view-wrapper {
     pointer-events: all;
   }
 
-  #post-popover-view {
+  #popover-view {
     background: #fff;
     transform: scale(1);
     opacity: 1;

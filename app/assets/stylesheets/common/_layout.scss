@@ -1,0 +1,8 @@
+.top-buffer {
+  margin-top: 40px;
+}
+
+.main-content {
+  @extend .top-buffer;
+  margin-top: 100px;
+}

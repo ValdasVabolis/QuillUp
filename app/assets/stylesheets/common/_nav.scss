@@ -1,0 +1,13 @@
+nav {
+  background: $palette-gray-dark;
+  height: $header-height !important;
+  left: 0;
+  margin-bottom: 0px;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  .nav-logo-image {
+    height: 50px;
+  }
+}

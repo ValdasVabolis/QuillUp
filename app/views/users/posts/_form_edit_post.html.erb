@@ -1,7 +1,7 @@
 <%= form_with(model: users_post, url: url, local: true) do |form| %>
   <% if users_post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(users_post.errors.count, "error") %> prohibited this users_post from being saved:</h2>
+    <div id='error_explanation'>
+      <h2><%= pluralize(users_post.errors.count, 'error') %> prohibited this users_post from being saved:</h2>
       <ul>
       <% users_post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -9,15 +9,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="field form-group">
+  <div>
     <%= form.label :title %>
-    <%= form.text_field :title, id: :users_post_title, readonly: true, class: "form-control" %>
+    <%= form.text_field :title, id: :users_post_title, readonly: true %>
   </div>
-  <div class="field form-group">
+  <div>
     <%= form.label :body %>
-    <%= form.text_area :body, id: :users_post_body, class: "form-control", rows: "5" %>
+    <%= form.text_area :body, id: :users_post_body, rows: '5' %>
   </div>
-  <div class="actions form-group">
-    <%= form.submit :Save, class: "btn btn-success" %>
+  <div>
+    <%= form.submit :Save, class: 'btn btn-success' %>
   </div>
 <% end %>

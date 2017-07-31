@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Quill</title>
-    <!-- import Google Roboto font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': false %>
-  </head>
-  <body>
-    <%= render "layouts/navbar" %>
-    
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <div class="main-content">
+  <%= render partial: 'shared/head' %>
+  <body id='popover-parent'>
+    <%= render partial: "shared/navbar" %>
+    <%= render partial: "shared/alert" %>
+    <%= render partial: "shared/notice" %>
+    <div class='main-content'>
       <%= yield %>
     </div>
-
     <%= render partial: 'shared/popover' %>
   </body>
 </html>

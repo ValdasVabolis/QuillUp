@@ -1,0 +1,15 @@
+.submission {
+  background-color: #fff !important;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  transition: all 0.25s ease;
+  z-index: 1;
+  
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+  }
+}

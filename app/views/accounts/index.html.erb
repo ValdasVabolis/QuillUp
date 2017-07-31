@@ -1,36 +1,18 @@
-<div class="container-fluid">
-  <div class="tabs tabs-private" id='account-tabs'>
-    <div class="tabs-nav">
-      <ul>
-        <li>
-          <a href="#">Profile</a>
-        </li>
-        <li>
-          <a href="#">Settings</a>
-        </li>
-        <li>
-          <a href="#">Posts</a>
-        </li>
-        <li>
-          <a href="#">Comments</a>
-        </li>
-      </ul>
-    </div>
-    <div class="tabs-content">
-      <ul>
-        <li>
-          <%= render partial: "accounts/info" %>
-        </li>
-        <li>
-          <%= render template: "devise/registrations/edit" %>
-        </li>
-        <li>
-          <%= render partial: "accounts/history_posts" %>
-        </li>
-        <li>
-          <%= render partial: "accounts/history_comments" %>
-        </li>
-      </ul>
-    </div>
+<div class="tabs tabs-private" id='account-tabs'>
+  <div class="tabs-nav">
+    <ul>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Posts</a></li>
+      <li><a href="#">Comments</a></li>
+    </ul>
+  </div>
+  <div class="tabs-content">
+    <ul>
+      <li><%= render partial: "accounts/info" %></li>
+      <li><%= render template: "devise/registrations/edit" %></li>
+      <li><%= render partial: "accounts/history_posts" %></li>
+      <li><%= render partial: "accounts/history_comments" %></li>
+    </ul>
   </div>
 </div>

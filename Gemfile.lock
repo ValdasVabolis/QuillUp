@@ -48,9 +48,6 @@ GEM
     autoprefixer-rails (7.1.2.1)
       execjs
     bcrypt (3.1.11)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.13.0)
@@ -260,7 +257,6 @@ DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   annotate
   autoprefixer-rails
-  bootstrap-sass (= 3.3.7)
   byebug
   capybara (= 2.13)
   coffee-rails (= 4.2.2)

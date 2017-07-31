@@ -1,7 +1,5 @@
 <div class="post" data-id="<%= @post.id %>">
-  <p id="notice"><%= notice %></p>
-
-  <%= content_tag :h2, @post.title %>
+  <h2><%= @post.title %></h2>
 
   <p>Posted by <%= @post.user.username %> on <%= @post.friendly_date %> at <%= @post.friendly_time %>.</p>
 
