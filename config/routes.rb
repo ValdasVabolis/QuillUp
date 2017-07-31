@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'pages#home'
+  root to: 'home#index'
   # get 'users/post/:id', to: 'users/posts#show'
   # public profiles
   get 'users/:username', to: 'users#show', as: 'user_profile'
