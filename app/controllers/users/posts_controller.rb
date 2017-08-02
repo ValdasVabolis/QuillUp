@@ -20,6 +20,7 @@ class Users::PostsController < ApplicationController
 
   # GET /users/posts/1/edit
   def edit
+    set_previous_path
   end
 
   # POST /users/posts
@@ -41,9 +42,9 @@ class Users::PostsController < ApplicationController
   # PATCH/PUT /users/posts/1
   # PATCH/PUT /users/posts/1.json
   def update
-    if @post.update(users_postsparams)
+    if @post.update(users_post_params)
       flash[:notice] = "Post updated succesfully!"
-      redirect_to root_url
+      redirect_to_previous_path
     else
       flash[:danger] = "Something went wrong. Please try again."
     end

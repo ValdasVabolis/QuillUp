@@ -1,9 +1,10 @@
-<%= form_with(model: users_post, url: url) do |form| %>
-  <% if users_post.errors.any? %>
+ljasflkjasfdlkjs
+<%= form_with(model: post, url: url, local: true) do |form| %>
+  <% if post.errors.any? %>
     <div id='error_explanation'>
-      <h2><%= pluralize(users_post.errors.count, 'error') %> prohibited this users_post from being saved:</h2>
+      <h2><%= pluralize(post.errors.count, 'error') %> prohibited this post from being saved:</h2>
       <ul>
-      <% users_post.errors.full_messages.each do |message| %>
+      <% post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -11,11 +12,11 @@
   <% end %>
   <div>
     <%= form.label :title %>
-    <%= form.text_field :title, id: :users_post_title, readonly: true %>
+    <%= form.text_field :title, id: :post_title, readonly: true %>
   </div>
   <div>
     <%= form.label :body %>
-    <%= form.text_area :body, id: :users_post_body, rows: '5' %>
+    <%= form.text_area :body, id: :post_body, rows: '5' %>
   </div>
   <div>
     <%= form.submit :Save %>
