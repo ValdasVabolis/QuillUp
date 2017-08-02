@@ -67,7 +67,7 @@ class Users::Posts::CommentsController < ApplicationController
   # DELETE /users/posts/comments/1
   # DELETE /users/posts/comments/1.json
   def destroy
-    @comment.destroy
+    @comment.soft_delete!
   end
  
   private

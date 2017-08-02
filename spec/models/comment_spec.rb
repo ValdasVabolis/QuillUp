@@ -46,4 +46,11 @@ describe Comment do
       expect(c.save).to be false
     end
   end
+
+  describe '#soft_delete!' do
+    it 'sets the deleted flag to true' do
+      c = create(:comment)
+      expect { c.soft_delete! }.to change { c.deleted? }.from(false).to(true)
+    end
+  end
 end
