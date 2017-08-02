@@ -1,4 +1,3 @@
-<h2>Comment history</h2>
 <% user.comments.each do |comment| %>
   <div>
     <h4><%= link_to("#{comment.post.title}", users_post_path(comment.post)) %></h4>

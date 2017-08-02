@@ -1,5 +1,5 @@
 class Users::Posts::CommentsController < ApplicationController
-  before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /users/posts/comments
   # GET /users/posts/comments.json
@@ -12,14 +12,8 @@ class Users::Posts::CommentsController < ApplicationController
   def show
   end
 
-  # GET /users/posts/comments/new
-  def new
-    @comment = Comment.new
-  end
-
   # GET /users/posts/comments/1/edit
   def edit
-    
   end
 
   # POST /users/posts/comments
@@ -54,24 +48,15 @@ class Users::Posts::CommentsController < ApplicationController
   end
 
   def vote
-    id = params[:id]
     type = params[:type]
-    @comment = Comment.find(id)
     @comment.vote_by voter: current_user, vote: type
   end
 
   # PATCH/PUT /users/posts/comments/1
   # PATCH/PUT /users/posts/comments/1.json
   def update
-    respond_to do |format|
-      if @comment.update(users_posts_comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
-      else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @comment.update(users_posts_comment_params)
+    #redirect_to "/"
   end
 
   # DELETE /users/posts/comments/1

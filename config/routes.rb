@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       resources :posts
       match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
       namespace :posts do
-        resources :comments
+        resources :comments, except: [:new, :show]
         match 'comments/:id/vote/:type', to: 'comments#vote', via: :post
       end
     end

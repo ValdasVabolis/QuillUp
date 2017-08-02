@@ -10,7 +10,7 @@ class Users::PostsController < ApplicationController
   # GET /users/posts/1
   # GET /users/posts/1.json
   def show
-
+    @comment = Comment.new if user_signed_in?
   end
 
   # GET /users/posts/new

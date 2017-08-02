@@ -1,4 +1,3 @@
-<h2>Post history</h2>
 <% user.posts.each do |post| %>
   <div>
     <h4><%= link_to("#{post.title}", users_post_path(post)) %></h4>

@@ -17,7 +17,7 @@
       class: "btn btn-default comment-vote-down" %>
   <% end %>
   <% if comment.user == current_user %>
-    <%= link_to('Edit', edit_users_posts_comment_path(current_user.id), class: "btn btn-primary") %>
+    <%= link_to('Edit', edit_users_posts_comment_path(comment), class: "btn btn-primary") %>
     <%= link_to('Delete', users_posts_comment_path(comment), remote: true, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger") %>
   <% end %>
 </div>
