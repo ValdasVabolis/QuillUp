@@ -19,6 +19,7 @@ class Users::Posts::CommentsController < ApplicationController
 
   # GET /users/posts/comments/1/edit
   def edit
+    
   end
 
   # POST /users/posts/comments
