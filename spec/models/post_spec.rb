@@ -30,9 +30,8 @@ describe Post do
 
   describe '#friendly_date' do
     before(:each) do
-      @year, @month, @day, @hour, @min = 2000, 1, 1, 12, 0
-      local = Time.local(@year, @month, @day, @hour, @min)
-      Timecop.freeze(local)
+      time = DateTime.new(2000, 1, 1)
+      Timecop.travel(time)
     end
 
     after(:each) do
@@ -49,9 +48,8 @@ describe Post do
 
   describe '#friendly_time' do
     before(:each) do
-      @year, @month, @day, @hour, @min = 2000, 1, 1, 6, 0
-      local = Time.local(@year, @month, @day, @hour, @min)
-      Timecop.freeze(local)
+      time = DateTime.new(2000, 1, 1)
+      Timecop.freeze(time)
     end
 
     after(:each) do
@@ -60,7 +58,7 @@ describe Post do
 
     it 'is formatted correctly' do
       p = create(:post)
-      expect(p.friendly_time).to eq '12:00 PM'
+      expect(p.friendly_time).to eq '12:00 AM'
     end
   end
 end
