@@ -55,8 +55,13 @@ class Users::Posts::CommentsController < ApplicationController
   # PATCH/PUT /users/posts/comments/1
   # PATCH/PUT /users/posts/comments/1.json
   def update
-    @comment.update(users_posts_comment_params)
-    #redirect_to "/"
+    if @comment.update(users_posts_comment_params)
+      flash[:notice] = "Comment updated succesfully!"
+      redirect_to root_url
+    else
+      flash[:danger] = "Something went wrong. Please try again."
+    end
+  
   end
 
   # DELETE /users/posts/comments/1

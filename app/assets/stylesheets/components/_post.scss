@@ -49,8 +49,6 @@
   }
 }
 
-
-
 // popover shown
 body.showing-post {
   #post-popover-backdrop {
@@ -67,4 +65,10 @@ body.showing-post {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.post-comment, .home-post {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
