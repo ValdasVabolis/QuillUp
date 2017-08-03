@@ -16,6 +16,7 @@ class Comment < ApplicationRecord
 
   belongs_to :user
   belongs_to :post
+  belongs_to :parent, optional: true, class_name: 'Comment', foreign_key: :comment_id
 
   validates :body, presence: true
   validate :user_account_confirmed, if: :user

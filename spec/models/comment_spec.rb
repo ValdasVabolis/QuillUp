@@ -19,6 +19,15 @@ describe Comment do
     expect(c.save).to be true
   end
 
+  describe '#parent' do
+    it 'can exist' do
+      c = build(:comment)
+      p = build(:comment)
+      c.parent = p
+      expect(c.save).to be true
+    end
+  end
+
   describe '#user' do
     it 'is required' do
       c = build(:comment, user: nil)
@@ -41,7 +50,7 @@ describe Comment do
 
   # shouldn't this be in the post section
   describe '#body' do
-    it 'is rqeuired' do
+    it 'is required' do
       c = build(:comment, body: nil)
       expect(c.save).to be false
     end
