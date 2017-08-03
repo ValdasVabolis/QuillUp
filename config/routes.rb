@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :inquiries, only: [:new, :create]
 
-  # get 'users/post/:id', to: 'users/posts#show'
+  # get 'users/post/:id', to: 'users/posts#show'db
   # public profiles
   get 'users/:username', to: 'users#show', as: 'user_profile'
   # private profiles

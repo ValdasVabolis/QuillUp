@@ -14,6 +14,7 @@ class Users::Posts::CommentsController < ApplicationController
 
   # GET /users/posts/comments/1/edit
   def edit
+    set_previous_path
   end
 
   # POST /users/posts/comments
@@ -36,7 +37,7 @@ class Users::Posts::CommentsController < ApplicationController
 
     comments = render_to_string('shared/_post_comments',
       layout: false,
-      locals: {
+    locals: {
         post: post
       }
     )
@@ -57,7 +58,7 @@ class Users::Posts::CommentsController < ApplicationController
   def update
     if @comment.update(users_posts_comment_params)
       flash[:notice] = "Comment updated succesfully!"
-      redirect_to root_url
+      redirect_to_previous_path
     else
       flash[:danger] = "Something went wrong. Please try again."
     end

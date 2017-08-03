@@ -1,4 +1,5 @@
 <%= form_with(model: comment, url: url, id: 'comment-form', local: true) do |form| %>
+asdfasfasf
   <%= hidden_field_tag :post_id, defined?(post) ? post.id : comment.post.id %>
   <% if comment.errors.any? %>
     <div id='error_explanation'>
