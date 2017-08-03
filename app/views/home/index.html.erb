@@ -15,12 +15,13 @@
     <div>
       <%= post.body %>
     </div>
-  <div class="show-post-wrapper">
+    <div class="show-post-wrapper">
       <%= link_to("Comments (#{post.comments.count})",
-        users_post_path(post),
-        remote: true,
-        method: :get,
-        class: 'btn btn-default') %>
+                  users_post_path(post),
+                  remote: true,
+                  method: :get,
+                  class: 'btn btn-default') %>
     </div>
   </div>
+</div>
 <% end %>
