@@ -7,7 +7,11 @@
 <% @users_posts.reverse.each do |post| %>
   <div class='home-post post'>
     <%= render partial: 'shared/post_votes', locals: { post: post } %>
-    <h4>'<%= post.title %>' by <%= link_to("#{post.user.username}", user_profile_path(post.user.username))%></h4>
+    <% if post.deleted? %>
+     <h4>'<%= post.title %>' by [deleted]</h4>
+    <% else %>
+      <h4>'<%= post.title %>' by <%= link_to("#{post.user.username}", user_profile_path(post.user.username))%></h4>
+    <% end %>
     <div>
       <%= post.body %>
     </div>

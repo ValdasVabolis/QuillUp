@@ -1,7 +1,11 @@
 <div class="post" data-id="<%= @post.id %>">
   <h2><%= @post.title %></h2>
-
-  <p>Posted by <%= @post.user.username %> on <%= @post.friendly_date %> at <%= @post.friendly_time %>.</p>
+  <p><%= @post.body %></p>
+  <% if @post.deleted? %>
+    <p>Posted on <%= @post.friendly_date %> at <%= @post.friendly_time %>.</p>
+  <% else %>
+    <p>Posted by <%= @post.user.username %> on <%= @post.friendly_date %> at <%= @post.friendly_time %>.</p>
+  <% end %>
   <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @post } %>
   <%= render partial: 'shared/post_comments',  locals: { post: @post } %>
 </div>

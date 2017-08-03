@@ -53,7 +53,7 @@ class Users::PostsController < ApplicationController
   # DELETE /users/posts/1
   # DELETE /users/posts/1.json
   def destroy
-    @post.destroy
+    @post.soft_delete!
   end
 
   def vote

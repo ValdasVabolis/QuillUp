@@ -1,6 +1,8 @@
 <% user.posts.each do |post| %>
-  <div>
-    <h4><%= link_to("#{post.title}", users_post_path(post)) %></h4>
-    <p><%= post.body %></p>
-  </div>
+  <% unless post.deleted? %>
+    <div>
+      <h4><%= link_to("#{post.title}", users_post_path(post)) %></h4>
+      <p><%= post.body %></p>
+    </div>
+  <% end %>
 <% end %>
