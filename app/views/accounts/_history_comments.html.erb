@@ -1,6 +1,7 @@
 <% current_user.comments.each do |comment| %>
   <div class='comment' data-id='<%= comment.id %>'>
     <%= render partial: 'shared/comment_actions', locals: { comment: comment } %>
+    <h4><%= link_to("#{comment.post.title}", users_post_path(comment.post)) %></h4>
     <p><%= comment.body %></p>
   </div>
 <% end %>

@@ -17,6 +17,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit comment.persisted? ? "Save" : "Create" %> 
   </div>
 <% end %>
