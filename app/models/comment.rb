@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  comment_id :integer
+#  deleted    :boolean          default(FALSE)
 #
 
 class Comment < ApplicationRecord
