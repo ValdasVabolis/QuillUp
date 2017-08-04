@@ -9,7 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  comment_id :integer
-#
+
 
 require 'rails_helper'
 
@@ -26,6 +26,23 @@ describe Comment do
       c.parent = p
       expect(c.save).to be true
     end
+  end
+
+  describe '#children' do
+    it 'can be populated' do
+      c = build(:comment)
+      3.times do
+        c.children << create(:comment)
+      end
+      expect(c.save).to be true
+    end
+
+    it 'can be empty' do
+      c = build(:comment)
+      c.children = []
+      expect(c.save).to be true
+    end
+
   end
 
   describe '#user' do
