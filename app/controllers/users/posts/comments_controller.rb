@@ -1,5 +1,5 @@
 class Users::Posts::CommentsController < ApplicationController
-  before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy, :vote, :reply]
+  before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /users/posts/comments
   # GET /users/posts/comments.json
@@ -11,6 +11,9 @@ class Users::Posts::CommentsController < ApplicationController
   end
 
   def reply
+    @parent = Comment.find(params[:id])
+    @comment = @parent.children.new
+    @comment.post = @parent.post
   end
 
   # GET /users/posts/comments/1/edit
@@ -25,6 +28,7 @@ class Users::Posts::CommentsController < ApplicationController
     post = Post.find(post_id)
     @comment = post.comments.new(users_posts_comment_params)
     @comment.user = current_user
+    @comment.parent = params[:parent_id]
     @comment.save
 
     form = render_to_string('users/posts/comments/_form',
@@ -47,6 +51,7 @@ class Users::Posts::CommentsController < ApplicationController
       form: form,
       comments: comments
     }
+
   end
 
   def vote

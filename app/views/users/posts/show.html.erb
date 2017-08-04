@@ -6,6 +6,6 @@
   <% else %>
     <p>Posted by <%= @post.user.username %> on <%= @post.friendly_date %> at <%= @post.friendly_time %>.</p>
   <% end %>
-  <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @post } %>
+  <%= render template: 'users/posts/comments/new', layout: false, locals: { post: @post, comment: @comment } %>
   <%= render partial: 'shared/post_comments',  locals: { post: @post } %>
 </div>
