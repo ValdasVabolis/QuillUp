@@ -1,5 +1,7 @@
-var form = '<%= j render(template: "/users/posts/comments/new", layout: false, locals: { post: @comment.post }) %>]';
+var form = '<%= j render "users/posts/comments/form", post: @comment.post, layout: false, comment: Comment.new, url: users_posts_comments_path %>';
 var comment = '.post-comment[data-id=<%= @comment.id %>]';
 if($(comment).next().attr('id') != 'comment-form') {
   $(form).insertAfter($(comment));
+} else {
+  $(comment).next().toggle();
 }
