@@ -8,11 +8,11 @@
   </div>
   <div class="tabs-content">
     <ul>
-      <li><%= render partial: "users/profile", locals: { user: @user_show } %>
+      <li><%= render partial: "users/profile", locals: { user: @user } %>
       </li>
-      <li><%= render partial: "users/history_posts", locals: { user: @user_show } %>
+      <li><%= render partial: "users/history_posts", locals: { user: @user } %>
       </li>
-      <li><%= render partial: "users/history_comments", locals: { user: @user_show } %>
+      <li><%= render partial: "users/history_comments", locals: { user: @user } %>
       </li>
     </ul>
   </div>

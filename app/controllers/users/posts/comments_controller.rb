@@ -1,24 +1,17 @@
 class Users::Posts::CommentsController < ApplicationController
   before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy, :vote]
 
-  # GET /users/posts/comments
-  # GET /users/posts/comments.json
   def index
     @comments = Comment.all
   end
 
-  # GET /users/posts/comments/1
-  # GET /users/posts/comments/1.json
   def show
   end
 
-  # GET /users/posts/comments/1/edit
   def edit
     set_previous_path
   end
 
-  # POST /users/posts/comments
-  # POST /users/posts/comments.json
   def create
     post_id = params[:post_id]
     post = Post.find(post_id)
@@ -53,31 +46,25 @@ class Users::Posts::CommentsController < ApplicationController
     @comment.vote_by voter: current_user, vote: type
   end
 
-  # PATCH/PUT /users/posts/comments/1
-  # PATCH/PUT /users/posts/comments/1.json
   def update
     if @comment.update(users_posts_comment_params)
-      flash[:notice] = "Comment updated succesfully!"
+      flash[:notice] = 'Comment updated succesfully!'
       redirect_to_previous_path
     else
-      flash[:danger] = "Something went wrong. Please try again."
+      flash[:danger] = 'Something went wrong. Please try again.'
     end
   
   end
 
-  # DELETE /users/posts/comments/1
-  # DELETE /users/posts/comments/1.json
   def destroy
     @comment.soft_delete!
   end
  
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_users_posts_comment
       @comment = Comment.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def users_posts_comment_params
       params.require(:comment).permit(:body, :user_id)
     end

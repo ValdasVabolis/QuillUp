@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @users_posts = Post.all
+    @posts = Post.all
   end
 end

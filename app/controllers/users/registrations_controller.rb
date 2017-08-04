@@ -1,4 +1,4 @@
-exitclass Users::RegistrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 

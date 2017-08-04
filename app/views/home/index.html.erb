@@ -4,7 +4,7 @@
     <%= link_to('Create post', new_users_post_path, class: 'btn btn-default') %>
   <% end %>
 </div>
-<% @users_posts.reverse.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <div class='home-post post'>
     <%= render partial: 'shared/post_votes', locals: { post: post } %>
     <% if post.deleted? %>
