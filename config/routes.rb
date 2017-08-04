@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'users/:username', to: 'users#show', as: 'user_profile'
   # private profiles
   get 'account', to: 'accounts#index', as: 'my_account'
+
   # /users
   namespace :users do
     authenticate :user do
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
       match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
       namespace :posts do
         resources :comments, except: [:new, :show]
+        match 'comments/:id/reply', to: 'comments#reply', via: :get
         match 'comments/:id/vote/:type', to: 'comments#vote', via: :post
       end
     end

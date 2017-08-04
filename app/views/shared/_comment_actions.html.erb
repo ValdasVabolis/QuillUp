@@ -15,9 +15,18 @@
       remote: true,
       id: "comment-vote-down", 
       class: "btn btn-default comment-vote-down" %>
+
   <% end %>
   <% if comment.user == current_user %>
     <%= link_to('Edit', edit_users_posts_comment_path(comment), class: "btn btn-primary") %>
     <%= link_to('Delete', users_posts_comment_path(comment), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) %>
   <% end %>
+  <% if user_signed_in? %>
+      <%= link_to 'Reply', "/users/posts/comments/#{comment.id}/reply", 
+      method: :get,
+      remote: true,
+      id: "comment-reply", 
+      class: "btn btn-default" %>
+  <% end %>
+
 </div>

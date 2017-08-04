@@ -1,0 +1,1 @@
+$('.post-comment[data-id=<%= @comment.id %>]').insertAfter($('<%= j render(template: "/users/posts/comments/new", layout: false, locals: { post: @comment.post }) %>'));

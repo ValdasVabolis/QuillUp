@@ -1,5 +1,5 @@
 class Users::Posts::CommentsController < ApplicationController
-  before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_users_posts_comment, only: [:show, :edit, :update, :destroy, :vote, :reply]
 
   # GET /users/posts/comments
   # GET /users/posts/comments.json
@@ -7,9 +7,10 @@ class Users::Posts::CommentsController < ApplicationController
     @comments = Comment.all
   end
 
-  # GET /users/posts/comments/1
-  # GET /users/posts/comments/1.json
   def show
+  end
+
+  def reply
   end
 
   # GET /users/posts/comments/1/edit
@@ -37,7 +38,7 @@ class Users::Posts::CommentsController < ApplicationController
 
     comments = render_to_string('shared/_post_comments',
       layout: false,
-    locals: {
+      locals: {
         post: post
       }
     )
