@@ -1,7 +1,8 @@
-var form = '<%= j render partial: "users/posts/comments/form", layout: false, locals: { parent: @parent, post: @comment.post, comment: @comment, url: users_posts_comments_path } %>';
-var comment = '.post-comment[data-id=<%= @parent.id %>]';
-if($(comment).next().attr('id') != 'comment-form') {
-  $(form).insertAfter(comment + ' > .content');
+var parent = $('.comment[data-id=<%= @parent.id %>]');
+var form = parent.find('#comment-form');
+if(form.length === 0) {
+	var form = $('<%= j render(partial: "form", locals: { parent: @parent, post: @parent.post, comment: @comment, url: users_posts_comments_path }) %>');
+	parent.append(form);
 } else {
-  $(comment).next().toggle();
+	form.toggle();
 }

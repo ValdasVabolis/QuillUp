@@ -32,7 +32,6 @@ class Users::Posts::CommentsController < ApplicationController
     @comment.save
 
 
-
     #form = render_to_string('users/posts/comments/_form',
     #  layout: false,
     #  locals: {
