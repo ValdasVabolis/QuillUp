@@ -1,7 +1,7 @@
 var form = '<%= j render partial: "users/posts/comments/form", layout: false, locals: { parent: @parent, post: @comment.post, comment: @comment, url: users_posts_comments_path } %>';
 var comment = '.post-comment[data-id=<%= @parent.id %>]';
 if($(comment).next().attr('id') != 'comment-form') {
-  $(form).insertAfter($(comment));
+  $(form).insertAfter(comment + ' > .content');
 } else {
   $(comment).next().toggle();
 }

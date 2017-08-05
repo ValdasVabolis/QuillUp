@@ -1,6 +1,5 @@
 <div id="post-comments">
   <% post.comments.reverse.each do |comment| %>
-    <% if @comment.parent.nil? %>
     <div class="post-comment comment" data-id="<%= comment.id %>">
       <div class="content">
         <% if comment.deleted? %>
@@ -10,7 +9,7 @@
           <h4><%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %></h4>
         <% end %> 
         <p><%= comment.body %></p>
-        </div>
       </div>
+    </div>
   <% end %>
 </div>
