@@ -1,2 +1,10 @@
-var comment = '<div class="post-comment comment" data-id="<%= @comment.id %>"><%= j render partial: "shared/comment_actions", locals: { comment: @comment } %><h4><%= link_to("#{@comment.user.username}", user_profile_path(@comment.user.username)) %></h4><p><%= @comment.body %></p></div>';
-$('#post-comments').prepend(comment);
+<% if @comment.parent.nil? %>
+  var comment = '<div class="post-comment comment" data-id="<%= @comment.id %>"><%= j render partial: "shared/comment_actions", locals: { comment: @comment } %><h4><%= link_to("#{@comment.user.username}", user_profile_path(@comment.user.username)) %></h4><p><%= @comment.body %></p></div>';
+  $('#post-comments').prepend(comment);
+<% else %>
+  var child = '<div class="post-comment comment-child" data-id="<%= @comment.id %>"><%= j render partial: "shared/comment_actions", locals: { comment: @comment } %><h4><%= link_to("#{@comment.user.username}", user_profile_path(@comment.user.username)) %></h4><p><%= @comment.body %></p></div>';
+  var parent = '.post-comment comment[<%= @comment.id %>]';
+  $(parent).append(child);
+<% end %>
+
+

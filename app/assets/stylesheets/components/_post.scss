@@ -71,4 +71,8 @@ body.showing-post {
   border: 1px solid black;
   border-radius: 5px;
   margin-bottom: 5px;
+
+  & > .comment-child {
+    margin-left: 10px;
+  }
 }

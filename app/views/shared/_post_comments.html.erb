@@ -1,13 +1,15 @@
 <div id="post-comments">
   <% post.comments.reverse.each do |comment| %>
-    <div class="post-comment comment" data-id="<%= comment.id %>">
-      <% if comment.deleted? %>
-        <h4>[deleted]</h4>
-      <% else %>
-        <%= render partial: 'shared/comment_actions', locals: { comment: comment } %>
-        <h4><%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %></h4>
-      <% end %> 
-      <p><%= comment.body %></p>
-    </div>
+    <div class="post-comment <%= comment.parent.nil? ? 'comment' : 'comment-child' %>" data-id="<%= comment.id %>">
+      <div class="content">
+        <% if comment.deleted? %>
+          <h4>[deleted]</h4>
+        <% else %>
+          <%= render partial: 'shared/comment_actions', locals: { comment: comment } %>
+          <h4><%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %></h4>
+        <% end %> 
+        <p><%= comment.body %></p>
+        </div>
+      </div>
   <% end %>
 </div>
