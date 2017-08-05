@@ -1,5 +1,6 @@
 <div id="post-comments">
   <% post.comments.reverse.each do |comment| %>
+    <% if @comment.parent.nil? %>
     <div class="post-comment comment" data-id="<%= comment.id %>">
       <div class="content">
         <% if comment.deleted? %>
