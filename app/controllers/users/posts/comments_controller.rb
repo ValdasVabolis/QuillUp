@@ -30,27 +30,29 @@ class Users::Posts::CommentsController < ApplicationController
     @comment.user = current_user
     @comment.parent = params[:parent_id]
     @comment.save
+    
 
-    form = render_to_string('users/posts/comments/_form',
-      layout: false,
-      locals: {
-        url: users_posts_comments_path,
-        post: post,
-        comment: Comment.new
-      }
-    )
 
-    comments = render_to_string('shared/_post_comments',
-      layout: false,
-      locals: {
-        post: post
-      }
-    )
-
-    render json: {
-      form: form,
-      comments: comments
-    }
+    #form = render_to_string('users/posts/comments/_form',
+    #  layout: false,
+    #  locals: {
+    #    url: users_posts_comments_path,
+    #    post: post,
+    #    comment: Comment.new
+    #  }
+    #)
+#
+#    #comments = render_to_string('shared/_post_comments',
+#    #  layout: false,
+#    #  locals: {
+#    #    post: post
+#    #  }
+#    #)
+#
+#    #render json: {
+#    #  form: form,
+#    #  comments: comments
+    #}
 
   end
 
