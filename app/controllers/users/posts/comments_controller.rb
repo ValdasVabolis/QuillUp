@@ -28,7 +28,7 @@ class Users::Posts::CommentsController < ApplicationController
     post = Post.find(post_id)
     @comment = post.comments.new(users_posts_comment_params)
     @comment.user = current_user
-    @comment.parent = params[:parent]
+    @comment.parent = Comment.find(params[:parent_id])
     @comment.save
 
 
