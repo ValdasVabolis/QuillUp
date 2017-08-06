@@ -1,0 +1,12 @@
+<div class="post-comment comment" data-id="<%= comment.id %>">
+  <div class="content">
+    <% if comment.deleted? %>
+      <h4>[deleted]</h4>
+    <% else %>
+      <%= render partial: 'shared/comment_actions', locals: { comment: comment } %>
+      <h4><%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %></h4>
+    <% end %> 
+    <p><%= comment.body %></p>
+  </div>
+  <%= render partial: "shared/post_comments", locals: { comments: comment.children } %>
+</div>

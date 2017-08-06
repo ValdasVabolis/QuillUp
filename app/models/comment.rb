@@ -21,6 +21,8 @@ class Comment < ApplicationRecord
   validates :body, presence: true
   validate :user_account_confirmed, if: :user
 
+  scope :top_level, -> { where(comment_id: nil) }
+
   def score
     self.votes_for.up.size - self.votes_for.down.size
   end
