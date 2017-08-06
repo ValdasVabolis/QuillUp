@@ -11,20 +11,39 @@ nav {
     height: 50px;
   }
 
-  & > ul {
-    
-    list-stype-type: none;
+  ul {
+    display: inline-block;
+    list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    float: right;
+  }
 
-    & > li {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
+  li {
+    border-left: 1px solid $palette-red;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  li a {
+    transition: all .25s ease;
+    background: $palette-gray-dark;
+    color: $palette-red;
+    text-decoration: none;
+    display: block;
+    height: $header-height;
+    text-align: center;
+    padding-top: 14px; 
+    width: 100px;
+
+    &:hover, &:active, &:focus {
+      background: $palette-red;
+      color: #fff;
     }
   }
 }
