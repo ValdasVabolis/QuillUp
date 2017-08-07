@@ -1,5 +1,0 @@
-<% if user_signed_in? %>
-  <%= render partial: 'users/posts/comments/form', locals: { post: post, comment: @comment, url: users_posts_comments_path } %>
-<% else %>
-  <h2>You're not logged in. Sign up or log in to participate in the comments section.</h2>
-<% end %>

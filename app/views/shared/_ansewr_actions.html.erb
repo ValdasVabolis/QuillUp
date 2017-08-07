@@ -1,0 +1,32 @@
+<!-- actions for a answer -->
+<div class="answer-votes" data-id="<%= answer.id %>">
+  <div class="score">Score: <%= answer.score %></div>
+  <!-- upvote/downvote -->
+  <% if user_signed_in? && answer.user != current_user %>
+
+    <%= link_to 'Up', "/users/posts/answers/#{answer.id}/vote/up", 
+      method: :post,
+      remote: true,
+      id: "answer-vote-up", 
+      class: "btn btn-default answer-vote-up" %>
+
+    <%= link_to 'Down', "/users/posts/answers/#{answer.id}/vote/down", 
+      method: :post,
+      remote: true,
+      id: "answer-vote-down", 
+      class: "btn btn-default answer-vote-down" %>
+
+  <% end %>
+  <% if answer.user == current_user %>
+    <%= link_to('Edit', edit_users_posts_answer_path(answer), class: "btn btn-primary") %>
+    <%= link_to('Delete', users_posts_answer_path(answer), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) %>
+  <% end %>
+  <% if user_signed_in? %>
+      <%= link_to 'Reply', "/users/posts/answers/#{answer.id}/reply", 
+      method: :get,
+      remote: true,
+      id: "answer-reply", 
+      class: "btn btn-default" %>
+  <% end %>
+
+</div>

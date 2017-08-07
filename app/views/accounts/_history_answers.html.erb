@@ -1,0 +1,10 @@
+<% current_user.answers.each do |answer| %>
+  <div class='answer' data-id='<%= answer.id %>'>
+    <%= render partial: 'shared/answer_actions', locals: { answer: answer } %>
+    <h4><%= link_to("#{answer.question.title}", users_question_path(answer.question)) %></h4>
+    <p><%= answer.body %></p>
+  </div>
+<% end %>
+<% if current_user.answers.empty? %>
+  <h2>You haven't submitted any answers yet!</h2>
+<% end %>

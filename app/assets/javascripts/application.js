@@ -12,3 +12,13 @@ var show_hide_alert = function() {
 };
 
 $(show_hide_alert);
+
+$(function() {
+  $(document).on('click', '.fa-bars', function(e) {
+    $('nav ul').toggle();
+  });
+
+  $(document).on('mouseleave', 'nav ul', function(e) {
+    $('nav ul').toggle();
+  });
+});

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :inquiries, only: [:new, :create]
 
-  # get 'users/post/:id', to: 'users/posts#show'db
+  # get 'users/question/:id', to: 'users/questions#show'db
   # public profiles
   get 'users/:username', to: 'users#show', as: 'user_profile'
   # private profiles
@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   # /users
   namespace :users do
     authenticate :user do
-      get 'posts/exit', to: 'posts#exit', as: 'posts_exit'
-      resources :posts
-      match 'posts/:id/vote/:type', to: 'posts#vote', via: :post
-      namespace :posts do
+      get 'questions/exit', to: 'questions#exit', as: 'questions_exit'
+      resources :questions
+      match 'questions/:id/vote/:type', to: 'questions#vote', via: :post
+      namespace :questions do
         resources :comments, except: [:new, :show]
         match 'comments/:id/reply', to: 'comments#reply', via: :get
         match 'comments/:id/vote/:type', to: 'comments#vote', via: :post

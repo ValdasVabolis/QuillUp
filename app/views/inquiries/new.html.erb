@@ -1,6 +1,9 @@
-<h1>Contact us</h1>
-
 <%= form_for @inquiry do |f| %>
+  <div class='form-heading'>
+    <div class='form-heading-title'>
+      Contact Us
+    </div>
+  </div>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -13,5 +16,7 @@
     <%= f.label :message %>
     <%= f.text_area :message %>
   </div>
-  <%= f.submit "Submit" %>
+  <div class="form-submit-wrapper">
+    <%= f.submit "Submit" %>
+  </div>
 <% end %>

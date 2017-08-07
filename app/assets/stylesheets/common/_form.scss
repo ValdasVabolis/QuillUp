@@ -1,5 +1,98 @@
 form {
+  @include fontawesome-checkboxes;
+  @include center;
+  background: $palette-white;
+  border-radius: $margin;
+  padding: $margin * 2;
+  font-size: $font-size-large;
+  top: $margin * 4;
+  width: 520px;
+
+  div {
+    margin-top: $margin * 2;
+  }
+
   textarea {
     resize: none;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  select,
+  textarea {
+    margin-top: $margin;
+    font-size: $font-size-big;
+    padding: $margin / 2;
+    width: 100%;
+
+    &, &:focus {
+      outline: none;
+      border: none;
+      border: 1px solid $palette-black;
+    }
+  }
+
+  textarea {
+    height: 120px
+  }
+
+  input[type=submit] {
+    @include center;
+    @extend .btn;
+    border: none;
+    width: 100%;
+  }
+
+  .form-heading {
+    text-align: center;
+    margin-bottom: $margin * 2;
+  }
+
+  .form-heading-title {
+    font-size: $font-size-ginormous;
+  }
+
+  .form-heading-links {
+    margin-top: $margin * 2;
+    margin-bottom: $margin * 2;
+    font-size: $font-size-base;
+    font-style: italic;
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  .form-submit-wrapper {
+    input[type=submit] {
+      border: none;
+      color: $palette-white;
+      background: $palette-green;
+      font-size: $font-size-large;
+
+      &:hover, &:active, &:focus {
+        background: lighten($palette-green, 5%);
+      }
+    }
+  }
+
+  .form-rememberable {
+    padding-left: 2px;
+    display: inline-block;
+  }
+
+  .form-footer-links {
+    margin-top: $margin * 2.5;
+    margin-bottom: $margin / 2;
+    text-align: center;
+    clear: both;
+    font-size: $font-size-base;
+    font-style: italic;
+  }
+
+  @include breakpoint(570px) {
+    border-radius: 0;
+    width: 100%;
   }
 }

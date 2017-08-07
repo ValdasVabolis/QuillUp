@@ -1,0 +1,17 @@
+<div class="question-votes" data-id="<%= question.id %>">
+  <div class="score">Score: <%= question.score %></div>
+  <% unless !user_signed_in? || question.user == current_user %>
+
+    <%= link_to('Up', "/users/questions/#{question.id}/vote/up",
+      method: :post,
+      remote: true,
+      id: "question-vote-up",
+      class: "btn btn-default question-vote-up") %>
+
+    <%= link_to('Down', "/users/questions/#{question.id}/vote/down",
+      id: "question-vote-down",
+      method: :post,
+      remote: true,
+      class: "btn btn-default question-vote-down") %>
+  <% end %>
+</div>

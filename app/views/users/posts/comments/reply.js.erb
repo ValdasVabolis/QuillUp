@@ -1,8 +1,0 @@
-var parent = $('.comment[data-id=<%= @parent.id %>]');
-var form = parent.find('#comment-form');
-if(form.length === 0) {
-	var form = $('<%= j render(partial: "form", locals: { parent: @parent, post: @parent.post, comment: @comment, url: users_posts_comments_path }) %>');
-	parent.append(form);
-} else {
-	form.toggle();
-}

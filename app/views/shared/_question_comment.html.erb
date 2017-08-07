@@ -1,0 +1,12 @@
+<div class="question-answer answer" data-id="<%= answer.id %>">
+  <div class="content">
+    <% if answer.deleted? %>
+      <h4>[deleted]</h4>
+    <% else %>
+      <%= render partial: 'shared/answer_actions', locals: { answer: answer } %>
+      <h4><%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %></h4>
+    <% end %> 
+    <p><%= answer.body %></p>
+  </div>
+  <%= render partial: "shared/question_answers", locals: { answers: answer.children } %>
+</div>

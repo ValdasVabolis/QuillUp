@@ -1,0 +1,11 @@
+<div class="question" data-id="<%= @question.id %>">
+  <h2><%= @question.title %></h2>
+  <p><%= @question.body %></p>
+  <% if @question.deleted? %>
+    <p>questioned on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
+  <% else %>
+    <p>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
+  <% end %>
+  <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, comment: @comment } %>
+  <%= render partial: 'shared/question_comments',  locals: { comments: @question.comments.top_level } %>
+</div>
