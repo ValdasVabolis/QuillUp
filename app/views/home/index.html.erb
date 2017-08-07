@@ -14,7 +14,7 @@
     <%= question.body %>
   </div>
   <div class="show-question-wrapper">
-    <%= link_to("Comments (#{question.comments.count})",
+    <%= link_to("Answers (#{question.answers.count})",
                 users_question_path(question),
                 remote: true,
                 method: :get,
