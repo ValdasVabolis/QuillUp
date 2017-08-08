@@ -9,12 +9,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  comment_id :integer
-<<<<<<< HEAD
-#  deleted    :boolean          default(FALSE)
-#
-=======
-
->>>>>>> comment_nesting
 
 require 'rails_helper'
 

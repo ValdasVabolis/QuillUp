@@ -10,15 +10,9 @@
     <ul>
       <li><%= render partial: "users/profile", locals: { user: @user } %>
       </li>
-<<<<<<< HEAD
-      <li><%= render partial: "users/history_posts", locals: { user: @user } %>
-      </li>
-      <li><%= render partial: "users/history_comments", locals: { user: @user } %>
-=======
       <li><%= render partial: "users/history_questions", locals: { user: @user_show } %>
       </li>
       <li><%= render partial: "users/history_answers", locals: { user: @user_show } %>
->>>>>>> comment_nesting
       </li>
     </ul>
   </div>
