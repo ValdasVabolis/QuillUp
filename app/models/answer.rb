@@ -21,6 +21,10 @@ class Answer < ApplicationRecord
   validates :body, presence: true
   validate :user_account_confirmed, if: :user
 
+  def vote_path(type)
+    "/users/questions/answers/#{self.id}/vote/#{type}"
+  end
+
   def score
     self.votes_for.up.size - self.votes_for.down.size
   end

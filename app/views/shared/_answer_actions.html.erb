@@ -1,19 +1,8 @@
 <div class="answer-votes" data-id="<%= answer.id %>">
-  <div class="score">Score: <%= answer.score %></div>
-  <% if user_signed_in? && answer.user != current_user %>
-
-    <% if current_user.voted_up_on? answer %>
-      <%= answer_vote_button(answer, :up, 'btn-green') %>
-    <% else %>
-      <%= answer_vote_button(answer, :up, 'btn-default') %>
-    <% end %>
-
-    <% if current_user.voted_down_on? answer  %>
-      <%= answer_vote_button(answer, :down, 'btn-red') %>
-    <% else %>
-      <%= answer_vote_button(answer, :down, 'btn-default') %>
-    <% end %>
-  <% end %>
+  <%= answer_vote_button(answer, :up) %>
+  <%= answer_vote_score(answer) %>
+  <%= answer_vote_button(answer, :down) %>
+  <!-- actions -->
   <% if answer.user == current_user %>
     <%= link_to('Edit', edit_users_questions_answer_path(answer), class: "btn btn-primary") %>
     <%= link_to('Delete', users_questions_answer_path(answer), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) %>

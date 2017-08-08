@@ -1,15 +1,5 @@
 <div class="question-votes" data-id="<%= question.id %>">
-  <% unless !user_signed_in? || question.user == current_user %>
-    <% if current_user.voted_up_on? question %>
-      <%= question_vote_button(question, :up, 'btn-green') %>
-    <% else %>
-      <%= question_vote_button(question, :up, 'btn-default') %>
-    <% end %>
-    <div class="score"><%= question.score %></div>
-    <% if current_user.voted_down_on? question %>
-      <%= question_vote_button(question, :down, 'btn-red') %>
-    <% else %>
-      <%= question_vote_button(question, :down, 'btn-default') %>
-    <% end %>
-  <% end %>
+  <%= question_vote_button(question, :up) %>
+  <%= question_vote_score(question) %>
+  <%= question_vote_button(question, :down) %>
 </div>

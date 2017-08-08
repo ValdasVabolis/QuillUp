@@ -19,6 +19,10 @@ class Question < ApplicationRecord
 
   validates_presence_of :user
 
+  def vote_path(type)
+    "/users/questions/#{self.id}/vote/#{type}"
+  end
+
   def score
     self.votes_for.up.size - self.votes_for.down.size
   end
