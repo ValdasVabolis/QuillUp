@@ -1,9 +1,7 @@
 <nav>
-  <div>
-    <%= link_to root_path do %>
-      <%= image_tag("quill_logo.svg", class: "nav-logo-image") %>
-    <% end %>
-  </div>
+  <%= link_to root_path do %>
+    <%= image_tag("quill_logo.svg", class: "nav-logo-image") %>
+  <% end %>
   <ul>
     <li><%= link_to("Contact us", new_inquiry_path) %></li>
     <% if user_signed_in? %>
@@ -14,4 +12,5 @@
       <li><%= link_to("Log in", new_user_session_path) %></li>
     <% end %>
   </ul>
+  <%= fa_icon('bars 2x') %>
 </nav>

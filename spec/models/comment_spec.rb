@@ -9,8 +9,12 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  comment_id :integer
+<<<<<<< HEAD
 #  deleted    :boolean          default(FALSE)
 #
+=======
+
+>>>>>>> comment_nesting
 
 require 'rails_helper'
 
@@ -18,6 +22,32 @@ describe Comment do
   it "saves when valid" do
     c = build(:comment)
     expect(c.save).to be true
+  end
+
+  describe '#parent' do
+    it 'can exist' do
+      c = build(:comment)
+      p = build(:comment)
+      c.parent = p
+      expect(c.save).to be true
+    end
+  end
+
+  describe '#children' do
+    it 'can be populated' do
+      c = build(:comment)
+      3.times do
+        c.children << create(:comment)
+      end
+      expect(c.save).to be true
+    end
+
+    it 'can be empty' do
+      c = build(:comment)
+      c.children = []
+      expect(c.save).to be true
+    end
+
   end
 
   describe '#user' do
@@ -42,7 +72,7 @@ describe Comment do
 
   # shouldn't this be in the post section
   describe '#body' do
-    it 'is rqeuired' do
+    it 'is required' do
       c = build(:comment, body: nil)
       expect(c.save).to be false
     end

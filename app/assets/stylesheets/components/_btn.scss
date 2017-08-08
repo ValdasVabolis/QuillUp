@@ -1,0 +1,18 @@
+.btn {
+  background: $palette-white;
+  border: 1px solid $palette-black;
+  color: $palette-black;
+  padding: $margin / 2;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  font-weight: normal;
+  border-radius: $margin / 2;
+
+  &:hover, &:active, &:focus {
+    background: $palette-black;
+    color: $palette-white;
+    cursor: pointer;
+  }
+}

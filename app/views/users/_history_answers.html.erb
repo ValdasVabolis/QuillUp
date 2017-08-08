@@ -1,0 +1,8 @@
+ <% user.answers.each do |answer| %>
+  <% unless answer.deleted? %>
+    <div>
+      <h4><%= link_to("#{answer.question.title}", users_question_path(answer.question)) %></h4>
+      <p><%= answer.body %></p>
+    </div>
+  <% end %>
+<% end %>

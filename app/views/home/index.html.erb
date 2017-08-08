@@ -1,27 +1,29 @@
-<div>
-  <h1>Cover page</h1>
-  <% if user_signed_in? %>
-    <%= link_to('Create post', new_users_post_path, class: 'btn btn-default') %>
-  <% end %>
+<div class='new-question-wrapper'>
+  <%= link_to 'New Question', new_users_question_path %>
 </div>
+<<<<<<< HEAD
 <% @posts.reverse.each do |post| %>
   <div class='home-post post'>
     <%= render partial: 'shared/post_votes', locals: { post: post } %>
     <% if post.deleted? %>
      <h4>'<%= post.title %>' by [deleted]</h4>
+=======
+
+<% @questions.each do |question| %>
+  <div class='home-question question'>
+    <%= render partial: 'shared/question_votes', locals: { question: question } %>
+    <% if question.deleted? %>
+     <h4>'<%= question.title %>' by [deleted]</h4>
+>>>>>>> comment_nesting
     <% else %>
-      <h4>'<%= post.title %>' by <%= link_to("#{post.user.username}", user_profile_path(post.user.username))%></h4>
+      <h4>'<%= question.title %>' by <%= link_to("#{question.user.username}", user_profile_path(question.user.username))%></h4>
     <% end %>
-    <div>
-      <%= post.body %>
-    </div>
-    <div class="show-post-wrapper">
-      <%= link_to("Comments (#{post.comments.count})",
-                  users_post_path(post),
+    <div class="show-question-wrapper">
+      <%= link_to("Answers (#{question.answers.count})",
+                  users_question_path(question),
                   remote: true,
                   method: :get,
                   class: 'btn btn-default') %>
     </div>
-  </div>
-</div>
+  </div> <!-- still doesn't work tho -->
 <% end %>

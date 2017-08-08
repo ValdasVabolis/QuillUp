@@ -1,3 +1,3 @@
 # Quill
 
-Software-as-a-Service Ruby on Rails app.
+A Ruby on Rails app

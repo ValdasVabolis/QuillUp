@@ -1,8 +1,0 @@
-<% user.comments.each do |comment| %>
-  <% unless comment.deleted? %>
-    <div>
-      <h4><%= link_to("#{comment.post.title}", users_post_path(comment.post)) %></h4>
-      <p><%= comment.body %></p>
-    </div>
-  <% end %>
-<% end %>

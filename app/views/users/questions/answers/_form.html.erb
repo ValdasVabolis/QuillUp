@@ -1,0 +1,24 @@
+<%= form_with(model: answer, url: url, id: 'answer-form') do |form| %>
+  <% if defined?(parent) %>
+    <%= hidden_field_tag :parent_id, parent.id %>
+  <% end %>
+  <%= hidden_field_tag :question_id, defined?(question) ? question.id : answer.question.id %>
+  <% if answer.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(answer.errors.count, 'error') %> prohibited this answer from being saved:</h2>
+      <ul>
+      <% answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit answer.persisted? ? "Save" : "Create" %> 
+  </div>
+<% end %>

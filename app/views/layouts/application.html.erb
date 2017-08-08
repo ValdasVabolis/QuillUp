@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
   <%= render partial: 'shared/head' %>
-  <body id='popover-parent'>
-    <%= render partial: "shared/navbar" %>
-    <%= render partial: "shared/alert" %>
-    <%= render partial: "shared/notice" %>
+  <%= body_tag do %>
+    <%= render partial: 'shared/navbar' %>
+    <%= render partial: 'shared/alert' %>
+    <%= render partial: 'shared/notice' %>
     <div class='main-content'>
       <%= yield %>
     </div>
-    <%= render partial: 'shared/popover' %>
-  </body>
+    <div id='popover-backdrop'></div>
+    <div id='popover-view-wrapper'>
+      <div id='popover-view'>
+        <div id='popover-view-controls'>
+          <a href='#' id='popover-exit'>
+            <i class="fa fa-times fa-4x"></i>
+          </a>
+        </div>
+        <div id='popover-view-contents'>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </html>
