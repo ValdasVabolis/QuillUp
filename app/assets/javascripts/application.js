@@ -19,6 +19,6 @@ $(function() {
   });
 
   $(document).on('mouseleave', 'nav ul', function(e) {
-    $('nav ul').toggle();
+    $('nav ul').removeClass('shown');
   });
 });

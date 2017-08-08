@@ -19,11 +19,11 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def create
-    question = question.find(params[:question_id])
-    @parent = Answer.find(params[:parent_id])
-    @answer = question.answers.new(users_questions_answer_params)
+    @question = Question.find(params[:question_id])
+    #@parent = Answer.find(params[:parent_id])
+    @answer = @question.answers.new(users_questions_answer_params)
     @answer.user = current_user
-    @answer.parent = @parent
+    #@answer.parent = @parent
     @answer.save
   end
 

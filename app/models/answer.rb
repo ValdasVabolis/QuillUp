@@ -15,13 +15,11 @@ class Answer < ApplicationRecord
   acts_as_votable
 
   belongs_to :user
-  belongs_to :post
+  belongs_to :question
   belongs_to :parent, optional: true, class_name: 'Answer', foreign_key: :answer_id
   has_many :children, class_name: 'Answer'
   validates :body, presence: true
   validate :user_account_confirmed, if: :user
-
-  scope :top_level, -> { where(answer_id: nil) }
 
   def score
     self.votes_for.up.size - self.votes_for.down.size

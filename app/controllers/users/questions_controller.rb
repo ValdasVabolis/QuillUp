@@ -20,15 +20,8 @@ class Users::QuestionsController < ApplicationController
   def create
     @question = Question.new(users_question_params)
     @question.user = current_user
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to users_question_path(@question), notice: 'Question was successfully created.' }
-        format.json { render :show, status: :created, location: @question }
-      else
-        format.html { render :new }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
-    end
+    @question.save
+    redirect_to root_url
   end
 
   def update

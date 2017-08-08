@@ -6,6 +6,6 @@
   <% else %>
     <p>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
   <% end %>
-  <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, comment: @comment } %>
-  <%= render partial: 'shared/question_comments',  locals: { comments: @question.comments.top_level } %>
+  <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
+  <%= render partial: 'shared/question_answers',  locals: { answers: @question.answers.reverse } %>
 </div>

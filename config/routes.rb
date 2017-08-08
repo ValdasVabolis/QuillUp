@@ -21,9 +21,9 @@ Rails.application.routes.draw do
       resources :questions
       match 'questions/:id/vote/:type', to: 'questions#vote', via: :post
       namespace :questions do
-        resources :comments, except: [:new, :show]
-        match 'comments/:id/reply', to: 'comments#reply', via: :get
-        match 'comments/:id/vote/:type', to: 'comments#vote', via: :post
+        resources :answers, except: [:new, :show]
+        match 'answers/:id/reply', to: 'answers#reply', via: :get
+        match 'answers/:id/vote/:type', to: 'answers#vote', via: :post
       end
     end
   end

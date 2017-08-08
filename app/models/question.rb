@@ -14,7 +14,7 @@ class Question < ApplicationRecord
   acts_as_votable
   belongs_to :user
 
-  has_many :comments, dependent: :destroy
+  has_many :answers, dependent: :destroy
 
   validates_presence_of :user
 

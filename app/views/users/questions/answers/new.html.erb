@@ -1,0 +1,5 @@
+ <% if user_signed_in? %>
+  <%= render partial: 'users/questions/answers/form', locals: { question: question, answer: @answer, url: users_questions_answers_path } %>
+<% else %>
+  <h2>You're not logged in. Sign up or log in to participate in the discussion.</h2>
+<% end %>

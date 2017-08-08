@@ -4,21 +4,18 @@
 
 <% @questions.each do |question| %>
   <div class='home-question question'>
-  <%= render partial: 'shared/question_votes', locals: { question: question } %>
-  <% if question.deleted? %>
-   <h4>'<%= question.title %>' by [deleted]</h4>
-  <% else %>
-    <h4>'<%= question.title %>' by <%= link_to("#{question.user.username}", user_profile_path(question.user.username))%></h4>
-  <% end %>
-  <div>
-    <%= question.body %>
-  </div>
-  <div class="show-question-wrapper">
-    <%= link_to("Answers (#{question.answers.count})",
-                users_question_path(question),
-                remote: true,
-                method: :get,
-                class: 'btn btn-default') %>
-  </div>
-
+    <%= render partial: 'shared/question_votes', locals: { question: question } %>
+    <% if question.deleted? %>
+     <h4>'<%= question.title %>' by [deleted]</h4>
+    <% else %>
+      <h4>'<%= question.title %>' by <%= link_to("#{question.user.username}", user_profile_path(question.user.username))%></h4>
+    <% end %>
+    <div class="show-question-wrapper">
+      <%= link_to("Answers (#{question.answers.count})",
+                  users_question_path(question),
+                  remote: true,
+                  method: :get,
+                  class: 'btn btn-default') %>
+    </div>
+  </div> <!-- still doesn't work tho -->
 <% end %>
