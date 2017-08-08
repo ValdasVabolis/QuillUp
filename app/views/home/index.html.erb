@@ -1,20 +1,11 @@
 <div class='new-question-wrapper'>
   <%= link_to 'New Question', new_users_question_path %>
 </div>
-<<<<<<< HEAD
-<% @posts.reverse.each do |post| %>
-  <div class='home-post post'>
-    <%= render partial: 'shared/post_votes', locals: { post: post } %>
-    <% if post.deleted? %>
-     <h4>'<%= post.title %>' by [deleted]</h4>
-=======
-
 <% @questions.each do |question| %>
   <div class='home-question question'>
     <%= render partial: 'shared/question_votes', locals: { question: question } %>
     <% if question.deleted? %>
      <h4>'<%= question.title %>' by [deleted]</h4>
->>>>>>> comment_nesting
     <% else %>
       <h4>'<%= question.title %>' by <%= link_to("#{question.user.username}", user_profile_path(question.user.username))%></h4>
     <% end %>
@@ -25,5 +16,5 @@
                   method: :get,
                   class: 'btn btn-default') %>
     </div>
-  </div> <!-- still doesn't work tho -->
+  </div> 
 <% end %>

@@ -8,13 +8,8 @@
 #  post_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-<<<<<<< HEAD:app/models/comment.rb
-#  comment_id :integer
-#  deleted    :boolean          default(FALSE)
-=======
 #  answer_id :integer
->>>>>>> comment_nesting:app/models/answer.rb
-#
+
 
 class Answer < ApplicationRecord
   acts_as_votable
