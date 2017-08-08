@@ -18,9 +18,13 @@
 }
 
 .btn-red {
-  background: $palette-red;
+  color: $palette-red;
 }
 
 .btn-green {
-  background: $palette-green;
+  color: $palette-green;
+}
+
+.btn-default {
+  color: $palette-grey;
 }

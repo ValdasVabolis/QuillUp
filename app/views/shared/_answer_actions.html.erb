@@ -3,31 +3,15 @@
   <% if user_signed_in? && answer.user != current_user %>
 
     <% if current_user.voted_up_on? answer %>
-      <%= link_to 'Up', "/users/questions/answers/#{answer.id}/vote/up", 
-        method: :post,
-        remote: true,
-        id: "answer-vote-up",
-        class: "btn btn-green answer-vote-up" %>
+      <%= answer_vote_button(answer, :up, 'btn-green') %>
     <% else %>
-      <%= link_to 'Up', "/users/questions/answers/#{answer.id}/vote/up", 
-        method: :post,
-        remote: true,
-        id: "answer-vote-up",
-        class: "btn btn-default answer-vote-up" %>
+      <%= answer_vote_button(answer, :up, 'btn-default') %>
     <% end %>
 
     <% if current_user.voted_down_on? answer  %>
-      <%= link_to 'Down', "/users/questions/answers/#{answer.id}/vote/down", 
-        method: :post,
-        remote: true,
-        id: "answer-vote-down", 
-        class: "btn btn-red answer-vote-down" %>
+      <%= answer_vote_button(answer, :down, 'btn-red') %>
     <% else %>
-      <%= link_to 'Down', "/users/questions/answers/#{answer.id}/vote/down", 
-        method: :post,
-        remote: true,
-        id: "answer-vote-down", 
-        class: "btn btn-default answer-vote-down" %>
+      <%= answer_vote_button(answer, :down, 'btn-default') %>
     <% end %>
   <% end %>
   <% if answer.user == current_user %>
