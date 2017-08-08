@@ -1,1 +1,5 @@
 $('.question-answers').replaceWith($('<%= j render(partial: "shared/question_answers", locals: { answers: @question.answers.reverse }) %>'));
+var newform = $('<%= j render(partial: "users/questions/answers/form", locals: { question: @question, answer: @question.answers.new, url: users_questions_answers_path }) %>');
+console.log(newform);
+console.log($('#answer-form').length);
+$('#answer-form').replaceWith(newform);

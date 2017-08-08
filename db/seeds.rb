@@ -16,7 +16,7 @@ def seed_development
     password_confirmation: "testtest",
     confirmed_at: DateTime.now
   })
-=begin
+
   def questions
     [ { title: "How do I tie my shoes?", body: "Hello, Quill! I got brand new Nike shoes for my birthday, however, I realized that I do not know how to use shoelaces. It is really embarrassing and I do not want my mother to find out. Do you have any tips on how to learn this skill quickly. What are some good techniques? Thank you. " },
       { title: "How often do I need to brush my teeth?", body: "Also whats some good toothpaste" },
@@ -101,7 +101,6 @@ def seed_development
       post.save
     end
   end
-=end
 end
 
 seed_development if Rails.env.development?
