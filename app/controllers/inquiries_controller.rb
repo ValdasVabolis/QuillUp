@@ -7,8 +7,8 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
 
     if @inquiry.save
-      name = params[:inquiry][:name]
-      email = params[:inquiry][:email]
+      name = current_user.username
+      email = current_user.email
       message = params[:inquiry][:message]
 
       InquiryMailer.send_inquiry(name, email, message).deliver
