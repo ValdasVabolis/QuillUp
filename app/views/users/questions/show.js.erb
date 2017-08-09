@@ -1,5 +1,5 @@
 Popover.show("<%= j render(file: 'users/questions/show.html.erb', locals: { question: @question }) %>");
-$('#popover-view-contents').on('click', function(e) {
+$('#popover-view-contents').on('mousedown', function(e) {
   e.stopPropagation();
 });
-$(document).on('click', Popover.exit);
+$(document).on('mousedown', Popover.exit);

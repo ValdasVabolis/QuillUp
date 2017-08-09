@@ -13,7 +13,7 @@ module VotingHelper
 		id = "#{o.class.to_s.downcase}-vote-#{type}"
 		suffix = vote_button_suffix(o, type)
 		icon = fa_icon "arrow-#{type}", class: "btn-#{suffix}"
-		link_to icon, o.vote_path(type), id: id, method: :post, remote: true
+		link_to icon, o.vote_path(type), id: id, method: :put, remote: true
 	end
 
 	def question_vote_score(q)
