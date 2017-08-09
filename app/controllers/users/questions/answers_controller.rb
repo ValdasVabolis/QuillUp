@@ -1,10 +1,6 @@
 class Users::Questions::AnswersController < ApplicationController
   before_action :set_users_questions_answer, only: [:show, :edit, :update, :destroy, :vote]
 
-  def index
-    @answers = Answer.all
-  end
-
   def show
   end
 
@@ -20,6 +16,7 @@ class Users::Questions::AnswersController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
+    @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
     #@parent = Answer.find(params[:parent_id])
     @answer = @question.answers.new(users_questions_answer_params)
     @answer.user = current_user

@@ -2,4 +2,5 @@
   <% answers.each do |a| %>
     <%= render partial: 'shared/question_answer', locals: { answer: a } %>
   <% end %>
+  <%= will_paginate answers %>
 </div>

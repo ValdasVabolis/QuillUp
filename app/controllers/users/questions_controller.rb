@@ -6,6 +6,7 @@ class Users::QuestionsController < ApplicationController
   end
 
   def show
+    @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
     @answer = Answer.new if user_signed_in?
   end
 

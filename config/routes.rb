@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       namespace :questions do
         resources :answers, except: [:new, :show]
         match 'answers/:id/reply', to: 'answers#reply', via: :get
-        match 'answers/:id/vote/:type', to: 'answers#vote', via: :post
+        match 'answer/:id/vote/:type', to: 'answers#vote', via: :post
       end
     end
   end
