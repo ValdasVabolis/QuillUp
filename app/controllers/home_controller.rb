@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @questions = Question.all.reverse
+    @questions = Question.paginate(page: params[:page]).order('created_at DESC')
   end
 end

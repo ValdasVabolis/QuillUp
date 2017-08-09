@@ -26,7 +26,8 @@ var Popover = (function($) {
 
   return {
     init: init,
-    show: show
+    show: show,
+    exit: exit
   }
 }(jQuery));
 

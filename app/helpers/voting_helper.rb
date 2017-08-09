@@ -16,7 +16,6 @@ module VotingHelper
 		link_to icon, o.vote_path(type), id: id, method: :post, remote: true
 	end
 
-
 	def question_vote_score(q)
 		content_tag :div, q.score, class: 'score'
 	end
