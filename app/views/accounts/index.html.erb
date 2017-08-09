@@ -1,16 +1,18 @@
-<div class="tabs tabs-private" id='account-tabs'>
-  <div class="tabs-nav">
+<div class='tabs tabs-private' id='account-tabs'>
+  <div class='tabs-nav'>
     <ul>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Settings</a></li>
-      <li><a href="#">Questions</a></li>
-      <li><a href="#">Answers</a></li>
+      <li><a href='#'>Profile</a></li>
+      <li><a href='#'>Settings</a></li>
+      <li><a href='#'>Questions</a></li>
+      <li><a href='#'>Answers</a></li>
     </ul>
   </div>
-  <div class="tabs-content">
+  <div class='tabs-content'>
     <ul>
-      <li><%= render partial: "accounts/info" %></li>
-      <li><%= render template: "devise/registrations/edit" %></li>
+      <li><%= render partial: 'accounts/info' %></li>
+      <li><%= render template: 'devise/registrations/edit' %></li>
+      <li><%= render partial: 'accounts/history_questions' %></li>
+      <li><%= render partial: 'accounts/history_answers' %></li>
     </ul>
   </div>
 </div>
