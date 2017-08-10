@@ -32,7 +32,9 @@ var Popover = (function($) {
 }(jQuery));
 
 Popover.init();
-$('#popover-view-contents').on('mousedown', function(e) {
+
+$(document).on('mousedown', '#popover-view-contents', function(e) {
   e.stopPropagation();
 });
+
 $(document).on('mousedown', Popover.exit);
