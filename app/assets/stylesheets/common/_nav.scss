@@ -45,7 +45,7 @@ nav {
     width: 100px;
 
     &:hover, &:active, &:focus {
-      background: $palette-red;
+      border-bottom: 5px inset $palette-red;
       color: #fff;
     }
   }
