@@ -5,8 +5,8 @@ var Popover = (function($) {
   var parent_selector = '#popover-parent';
 
   var show = function(view) {
-    var $view = $(view);
-    $(contents_selector).html($view);
+    console.log(view);
+    $(contents_selector).html(view);
     $(parent_selector).addClass(active_cass);
   };
 
@@ -37,4 +37,9 @@ $(document).on('mousedown', '#popover-view', function(e) {
   e.stopPropagation();
 });
 
-$(document).on('mousedown', Popover.exit);
+$(document).on('mousedown', function() {
+  if ($('#popover-view-contents').html() === '') {
+    return;
+  }
+  Popover.exit
+});
