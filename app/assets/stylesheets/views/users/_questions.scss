@@ -10,22 +10,20 @@
   }
 
   .question-votes {
-    &.question-belonging-to-user {
-      a {
-        pointer-events: none;
-
-        i:hover {
-          cursor: not-allowed;
-        }
-      }
-    }
-  }
-
-  .question-votes {
     float: left;
     position: relative;
     height: 62px;
-    width: 32px;
+    width: 20px;
+    margin-right: 12px;
+
+    &.question-belonging-to-user {
+      &:hover {
+        cursor: not-allowed;
+      }
+      a {
+        pointer-events: none;
+      }
+    }
   }
 
   .question-score {
