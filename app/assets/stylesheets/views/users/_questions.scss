@@ -2,6 +2,12 @@
   margin: $margin;
   padding: $margin;
   clear: both;
+  background: lighten(#eee, 3%);
+  border-radius: $margin / 2;
+
+  &:nth-child(odd) {
+    background: #eee;
+  }
 
   .question-votes {
     &.question-belonging-to-user {
