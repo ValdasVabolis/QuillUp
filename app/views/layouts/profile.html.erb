@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <%= render partial: 'shared/head' %>
+  <%= body_tag do %>
+    <%= render partial: 'shared/navbar' %>
+    <%= render partial: 'shared/alert' %>
+    <%= render partial: 'shared/notice' %>
+    <div class='main-content'>
+      <div class='tabs tabs-private' id='users-tabs'>
+        <%= render partial: 'users/tabs_nav' %>
+        <div class="tabs-content">
+          <%= yield %>
+        </div>
+    </div>
+    </div>
+    <div id='popover-backdrop'></div>
+    <div id='popover-view-wrapper'>
+      <div id='popover-view'>
+        <div id='popover-view-controls'>
+          <a href='#' id='popover-exit'>
+            <i class="fa fa-times fa-4x"></i>
+          </a>
+        </div>
+        <div id='popover-view-contents'>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</html>
