@@ -1,5 +1,6 @@
 module VotingHelper
 	def vote_button_suffix(o, type)
+    return 'default' unless user_signed_in?
 		case type
 		when :up then
 			current_user.voted_up_on?(o) ? 'green' : 'default'

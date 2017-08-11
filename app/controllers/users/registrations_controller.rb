@@ -1,5 +1,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  layout 'account'
+  layout -> {
+    if user_signed_in?
+      'account'
+    else
+      'application'
+    end
+  }
 
   def edit
     super
