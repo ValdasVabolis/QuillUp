@@ -1,24 +1,14 @@
 <div class='new-question-wrapper'>
   <%= link_to 'New Question', new_users_question_path %>
 </div>
+
 <% @questions.each do |question| %>
-  <div class='home-question question'>
+  <div class='question'>
     <%= render partial: 'shared/question_votes', locals: { question: question } %>
-
-    <div class='question-title'>
-      <%= link_to question.title, users_question_path(question), remote: true, method: :get %>
-    </div>
-
-    <div class="question-author">
-      by 
-      <% if question.deleted? %>
-        [deleted]
-      <% else %>
-        <%= link_to("#{question.user.username}", user_profile_path(question.user.username)) %>
-      <% end %>
-    </div>
-
+    <%= render partial: 'shared/question_title', locals: { question: question } %>
+    <%= render partial: 'shared/question_author', locals: { question: question } %>
     <%= render partial: 'shared/question_links', locals: { question: question } %>
   </div> 
 <% end %>
+
 <%= will_paginate @questions %>
