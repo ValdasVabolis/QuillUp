@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   # public profiles
   get 'users/:username', to: 'users#show', as: 'user_profile'
   # private profiles
-  get 'account', to: 'accounts#index', as: 'my_account'
+  get 'account', to: redirect('/account/profile'), as: :my_account
+  get 'account/profile', to: 'accounts#profile'
+  # settings
+  get 'account/questions', to: 'accounts#questions'
+  get 'account/answers', to: 'accounts#answers'
 
   # /users
   namespace :users do 
