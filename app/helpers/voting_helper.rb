@@ -9,7 +9,6 @@ module VotingHelper
 	end
 
 	def vote_button(o, type)
-		return unless user_signed_in? && o.user != current_user
 		id = "#{o.class.to_s.downcase}-vote-#{type}"
 		suffix = vote_button_suffix(o, type)
 		icon = fa_icon "arrow-#{type}", class: "btn-#{suffix}"
@@ -17,7 +16,7 @@ module VotingHelper
 	end
 
 	def question_vote_score(q)
-		content_tag :div, q.score, class: 'score'
+		content_tag :div, q.score, class: 'question-score'
 	end
 
 	def question_vote_button(q, type)

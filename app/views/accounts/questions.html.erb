@@ -1,6 +1,6 @@
 <% @questions.each do |question| %>
   <div class='question' data-id='<%= question.id %>'>
-    <div class='actions'>
+    <div class='question-actions'>
       <%= render partial: 'shared/question_actions', locals: { question: question} unless question.deleted? %>
     </div>
     <% if question.deleted? %>

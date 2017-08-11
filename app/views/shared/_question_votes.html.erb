@@ -1,4 +1,4 @@
-<div class="question-votes" data-id="<%= question.id %>">
+<div class="question-votes <%= 'question-belonging-to-user' if question.user == current_user %>" data-id="<%= question.id %>">
   <%= question_vote_button(question, :up) %>
   <%= question_vote_score(question) %>
   <%= question_vote_button(question, :down) %>
