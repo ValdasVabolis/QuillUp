@@ -60,46 +60,29 @@ def seed_development
     ]
   end
 
-  #def reply_to_comment(post, comment, level=1)
-  #  return if level >= 4
-  #  children = []
-  #  Random.rand(2..5).times do |n|
-  #    puts "creating reply #{n} for comment at level #{level}..."
-  #    child = Comment.new({
-  #      parent: comment,
-  #      post: post,
-  #      user: User.all.sample,
-  #      body: comments.sample[:body]
-  #    })
-  #    reply_to_comment(post, child, level + 1)
-  #    children << child
-  #  end
-  #  comment.children = children
-  #end
-  #
-  #def reply_to_post(post)
-  #  post_comments = []
-  #  Random.rand(2..5).times do |n|
-  #    puts "creating reply #{n} for post..."
-  #    comment = Comment.new({
-  #      post: post,
-  # #     user: User.all.sample,
-  #    })
-      #reply_to_comment(post, comment)
-  #    post_comments << comment
-  #  end
-   # post.comments = post_comments
-  #end
+  def reply_to_question(question)
+   question_answers = []
+   Random.rand(1..20).times do |n|
+     puts "creating reply #{n} for question..."
+     answer = Answer.new({
+       question: question,
+       user: User.all.sample,
+       body: answers.sample[:body]
+     })
+     question_answers << answer
+   end
+   question.answers = question_answers
+  end
 
-  #users.each do |u|
-   # posts.each.with_index do |h, i|
-  #    puts "creating post #{i}..."
-   #   post = Post.new(h)
-   #   post.user = u
-   #   reply_to_post(post)
-  #    post.save
-  #  end
- # end
+  users.each do |u|
+   questions.each.with_index do |h, i|
+     puts "creating question #{i}..."
+     question = Question.new(h)
+     question.user = u
+     reply_to_question(question)
+     question.save
+   end
+ end
 end
 
 seed_development if Rails.env.development?
