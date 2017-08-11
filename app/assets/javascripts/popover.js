@@ -38,8 +38,9 @@ $(document).on('mousedown', '#popover-view', function(e) {
 });
 
 $(document).on('mousedown', function() {
+  console.log('attempting exit');
   if ($('#popover-view-contents').html() === '') {
     return;
   }
-  Popover.exit
+  Popover.exit();
 });
