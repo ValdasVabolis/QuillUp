@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
   # get 'users/question/:id', to: 'users/questions#show'db
   # public profiles
-  get 'users/:username', to: 'users#show', as: 'user_profile'
+  get 'users/:username', to: 'users#index', as: 'user_profile'
+  get 'users/:username/profile', to: 'users#profile'
+  get 'users/:username/questions', to: 'users#questions'
+  get 'users/:username/answers', to: 'users#answers'
   # private profiles
   devise_scope :user do
     get 'account', to: redirect('/account/profile'), as: :my_account
