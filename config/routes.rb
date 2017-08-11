@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   # public profiles
   get 'users/:username', to: 'users#show', as: 'user_profile'
   # private profiles
-  get 'account', to: redirect('/account/profile'), as: :my_account
-  get 'account/profile', to: 'accounts#profile'
-  # settings
-  get 'account/questions', to: 'accounts#questions'
-  get 'account/answers', to: 'accounts#answers'
+  devise_scope :user do
+    get 'account', to: redirect('/account/profile'), as: :my_account
+    get 'account/profile', to: 'accounts#profile'
+    get 'account/settings', to: 'users/registrations#edit'
+    get 'account/questions', to: 'accounts#questions'
+    get 'account/answers', to: 'accounts#answers'
+  end
 
   # /users
   namespace :users do 

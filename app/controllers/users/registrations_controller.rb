@@ -1,4 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  layout 'account'
+
+  def edit
+    super
+  end
 
   private
 
