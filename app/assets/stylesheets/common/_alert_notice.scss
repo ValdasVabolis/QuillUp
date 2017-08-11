@@ -2,14 +2,25 @@
   @include center;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
+  color: $palette-white;
   font-size: 18px;
   left: 0;
+  padding: $margin;
   position: fixed;
   right: 0;
   text-align: center;
   top: -10px;
   transition: top 1s ease;
   width: 420px;
+  z-index: 2;
+
+  &.alert {
+    background: $palette-red-dark;  
+  }
+
+  &.notice {
+    background: $palette-yellow;
+  }
 
   &.shown {
     top: 50px;
