@@ -1,4 +1,14 @@
 body.home {
+
+  .new-question-wrapper {
+    padding: $margin 0;
+
+    a {
+      @extend .btn;
+      font-size: $font-size-large;
+    }
+  }
+
   form {
     top: 0;
   }
