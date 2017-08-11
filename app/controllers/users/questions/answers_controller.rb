@@ -1,5 +1,5 @@
 class Users::Questions::AnswersController < ApplicationController
-  before_action :set_users_questions_answer, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_users_questions_answer, only: [:show, :edit, :update :destroy, :vote]
 
   def show
   end

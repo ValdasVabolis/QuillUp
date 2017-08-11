@@ -1,4 +1,9 @@
 <%= form_with(model: answer, url: url, id: 'answer-form') do |form| %>
+  <div class='form-heading'>
+    <div class='form-heading-title'>
+      <%= form_header %>
+    </div>
+  </div>
   <% if defined?(parent) %>
     <%= hidden_field_tag :parent_id, parent.id %>
   <% end %>
