@@ -4,10 +4,8 @@
       <%= form_header %>
     </div>
   </div>
-  <% if defined?(parent) %>
-    <%= hidden_field_tag :parent_id, parent.id %>
-  <% end %>
   <%= hidden_field_tag :question_id, defined?(question) ? question.id : answer.question.id %>
+  <%= hidden_field_tag :id, answer.id %>
   <% if answer.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(answer.errors.count, 'error') %> prohibited this answer from being saved:</h2>
