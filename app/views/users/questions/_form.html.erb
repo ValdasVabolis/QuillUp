@@ -1,7 +1,7 @@
 <%= form_with(model: question, url: url, local: true) do |form| %>
   <div class='form-heading'>
     <div class='form-heading-title'>
-      What's your question?
+      <%= form_header %>
     </div>
   </div>
   <% if question.errors.any? %>
