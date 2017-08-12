@@ -5,7 +5,6 @@ var Popover = (function($) {
   var parent_selector = '#popover-parent';
 
   var show = function(view) {
-    console.log(view);
     $(contents_selector).html(view);
     $(parent_selector).addClass(active_cass);
   };
@@ -19,9 +18,6 @@ var Popover = (function($) {
 
   var exit = function() {
     $(parent_selector).removeClass(active_cass);
-    setTimeout(function() {
-      $(contents_selector).html('');
-    }, 250);
   };
 
   return {
@@ -38,7 +34,6 @@ $(document).on('mousedown', '#popover-view', function(e) {
 });
 
 $(document).on('mousedown', function() {
-  console.log('attempting exit');
   if ($('#popover-view-contents').html() === '') {
     return;
   }
