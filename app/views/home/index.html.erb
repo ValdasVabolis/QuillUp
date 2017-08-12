@@ -3,13 +3,6 @@
 </div>
 
 <% @questions.each do |question| %>
-  <div class='question'>
-    <%= render partial: 'shared/question_votes', locals: { question: question } %>
-    <%= render partial: 'shared/question_title', locals: { question: question } %>
-    <%= render partial: 'shared/question_author', locals: { question: question } %>
-    <%= render partial: 'shared/question_links', locals: { question: question } %>
-   	<%= render partial: 'shared/question_actions',
-   		locals: { question: question } %>
-  </div> 
+  <%= render partial: 'shared/question', locals: { question: question } %>
 <% end %>
 <%= will_paginate @questions %>

@@ -1,1 +1,1 @@
-// todo
+$('.question-votes[data-id="<%= @question.id %>"]').parent().replaceWith('<%= j render(partial: "shared/question", locals: { question: @question}) %>');
