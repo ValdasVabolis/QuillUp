@@ -17,7 +17,7 @@ class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :question
   belongs_to :parent, optional: true, class_name: 'Answer', foreign_key: :answer_id
-  has_many :children, class_name: 'Answer'
+  has_many :comments
   validates :body, presence: true
   validate :user_account_confirmed, if: :user
 
