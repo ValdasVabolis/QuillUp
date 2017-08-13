@@ -1,15 +1,21 @@
 <% @questions.each do |question| %>
-  <div class='question' data-id='<%= question.id %>'>
+  <div class='question-small' data-id='<%= question.id %>'>
     <div class='question-actions'>
-      <%= render partial: 'shared/question_actions', locals: { question: question} unless question.deleted? %>
+      <% unless question.deleted? %>
+        <%= render partial: 'shared/question_actions', locals: { question: question } %>
+      <% end %>
     </div>
+
     <% if question.deleted? %>
       <h4>[This question is deleted]</h4>
     <% end %>
+    
     <h4><%= link_to("#{question.title}", users_question_path(question)) %></h4>
   </div>
 <% end %>
+
 <%= will_paginate @questions %>
+
 <% if current_user.questions.empty? %>
   <h2>You haven't submitted any questions yet!</h2>
 <% end %>
