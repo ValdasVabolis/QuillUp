@@ -1,19 +1,49 @@
 var Popover = (function($) {
   var active_cass = 'showing-popover';
   var exit_selector = '#popover-exit';
-  var contents_selector = '#popover-view-contents';
+  var view_selector = '#popover-view';
+  var view_contents_selector = '#popover-view-contents';
   var parent_selector = '#popover-parent';
 
-  var show = function(view) {
-    $(contents_selector).html(view);
-    $(parent_selector).addClass(active_cass);
+  var init = function() {
+    clear();
+    subscribe();
   };
 
-  var init = function() {
+  var subscribe = function() {
     $(document).on('click', exit_selector, function(e) {
       e.preventDefault();
       exit();
     });
+    // prevent clicking inside popover from closing it
+    $(document).on('mousedown', view_selector, function(e) {
+      e.stopPropagation();
+    });
+
+    // clicking outside the popover should close it
+    $(document).on('mousedown', function() {
+      if ($(view_contents_selector).html() === '') {
+        return;
+      }
+      Popover.exit();
+    });
+
+    // escape key closes popover
+    $(document).on('keyup', function(e) {
+      if (e.key !== 'Escape') {
+        return;
+      }
+      Popover.exit()
+    });
+  };
+
+  var show = function(view) {
+    $(view_contents_selector).html(view);
+    $(parent_selector).addClass(active_cass);
+  };
+
+  var clear = function() {
+    $(view_contents_selector).html('');
   };
 
   var exit = function() {
@@ -28,14 +58,3 @@ var Popover = (function($) {
 }(jQuery));
 
 Popover.init();
-
-$(document).on('mousedown', '#popover-view', function(e) {
-  e.stopPropagation();
-});
-
-$(document).on('mousedown', function() {
-  if ($('#popover-view-contents').html() === '') {
-    return;
-  }
-  Popover.exit();
-});
