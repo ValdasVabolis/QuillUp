@@ -1,0 +1,15 @@
+var text = $('#body').hide().text();
+var textarea = $("<textarea id='area' rows='4'>" + text + "</textarea>");
+var question = $('.question-large[data-id="<%= @question.id %>"]')
+
+question.find('h2').after(textarea);
+
+$(textarea).val(text).focus();
+
+if(question.hasClass('editing')) {
+	question.removeClass('editing');
+} else {
+	question.addClass('editing');
+}
+
+autosize($(textarea));

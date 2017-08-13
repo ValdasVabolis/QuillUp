@@ -47,6 +47,7 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (7.1.2.1)
       execjs
+    autosize (2.4.0.0)
     bcrypt (3.1.11)
     better_errors (2.2.0)
       coderay (>= 1.0.0)
@@ -273,6 +274,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   annotate
   autoprefixer-rails
+  autosize
   better_errors
   binding_of_caller
   byebug

@@ -1,10 +1,13 @@
-<div class="question-large" data-id="<%= @question.id %>">
+<div class='question-large' data-id="<%= @question.id %>">
   <h2><%= @question.title %></h2>
-  <p><%= @question.body %></p>
+  <p id='body'><%= @question.body %></p>
   <% if @question.deleted? %>
     <p>questioned on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
   <% else %>
     <p>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
+    <%= link_to('Edit', edit_users_question_path(question), remote: true, id: 'edit') %>
+    <%= link_to('Save', '#', id: 'save') %>
+    <%= link_to('Cancel', '#', id: 'cancel') %>
   <% end %>
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
   <%= render partial: 'shared/question_answers',  locals: { answers: @answers } %>

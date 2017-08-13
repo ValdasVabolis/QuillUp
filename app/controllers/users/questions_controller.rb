@@ -15,8 +15,8 @@ class Users::QuestionsController < ApplicationController
   end
 
   def edit
-    set_previous_path
-  end
+    
+  end  
 
   def create
     @question = Question.new(create_users_question_params)

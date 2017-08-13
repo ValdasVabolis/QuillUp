@@ -7,4 +7,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': false %>
 
   <%= render partial: 'shared/meta' %>
+
+  <% if Rails.env.development? %>
+    <%= livereload_tag %>
+  <% end %>
 </head>

@@ -2,6 +2,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require autosize
 
 var show_hide_alert = function() {
   var el = $('.alert');
@@ -20,5 +21,12 @@ $(function() {
 
   $(document).on('mouseleave', 'nav ul', function(e) {
     $('nav ul').removeClass('shown');
+  });
+
+  $(document).on('click', '#cancel', function(e) {
+    e.preventDefault();
+    $('#popover-view-contents .question-large').removeClass('editing');
+    $('#area').hide();
+    $('#body').show();
   });
 });

@@ -1,0 +1,16 @@
+.question-large {
+
+  #save, #cancel {
+    display: none;
+  }
+
+  &.editing {
+    #save, #cancel {
+      display: block;
+    }
+    #edit {
+      display: none;
+    }
+  }
+  
+}
