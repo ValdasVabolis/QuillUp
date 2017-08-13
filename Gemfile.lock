@@ -96,6 +96,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gravatar_image_tag (1.2.0)
     guard (2.14.1)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -281,6 +282,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-rails
+  gravatar_image_tag
   guard-livereload (~> 2.5)
   guard-rspec (~> 4.7)
   hirb (= 0.7.3)

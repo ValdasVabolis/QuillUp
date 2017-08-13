@@ -3,8 +3,4 @@
   <%= render partial: 'shared/question_title', locals: { question: question } %>
   <%= render partial: 'shared/question_author', locals: { question: question } %>
   <%= render partial: 'shared/question_links', locals: { question: question } %>
-  <% if !question.deleted? %>
-   	<%= render partial: 'shared/question_actions',
-   		locals: { question: question } %>
- 	<% end %>
 </div> 
