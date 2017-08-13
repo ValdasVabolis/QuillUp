@@ -1,11 +1,11 @@
 .question-large {
 
-  #save, #cancel {
+  #save, #cancel, #area {
     display: none;
   }
 
   &.editing {
-    #save, #cancel {
+    #save, #cancel, #area {
       display: block;
     }
     #edit {
