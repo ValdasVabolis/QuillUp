@@ -42,7 +42,11 @@ class Users::QuestionsController < ApplicationController
     id = params[:id]
     type = params[:type]
     @question = Question.find(id)
-    @question.vote_by voter: current_user, vote: type
+    if current_user.send("voted_#{type}_on?", @question)
+      @question.unvote_by current_user
+    else
+      @question.vote_by voter: current_user, vote: type
+    end
   end
 
   private

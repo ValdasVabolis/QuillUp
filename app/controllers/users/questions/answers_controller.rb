@@ -26,7 +26,11 @@ class Users::Questions::AnswersController < ApplicationController
 
   def vote
     type = params[:type]
-    @answer.vote_by voter: current_user, vote: type
+    if current_user.send("voted_#{type}_on?", @answer)
+      @answer.unvote_by current_user
+    else
+      @answer.vote_by voter: current_user, vote: type
+    end
   end
 
   def update
