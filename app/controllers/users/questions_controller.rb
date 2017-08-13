@@ -19,14 +19,14 @@ class Users::QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(users_question_params)
+    @question = Question.new(create_users_question_params)
     @question.user = current_user
     @question.save
     redirect_to root_url
   end
 
   def update
-    if @question.update(users_question_params)
+    if @question.update(update_users_question_params)
       flash[:notice] = "Question updated succesfully!"
       redirect_to_previous_path
     else
@@ -55,8 +55,11 @@ class Users::QuestionsController < ApplicationController
       @question = Question.find(params[:id])
     end
 
-
-    def users_question_params
+    def create_users_question_params
       params.require(:question).permit(:title, :body, :user_id)
+    end
+
+    def update_users_question_params
+      params.require(:question).permit(:body, :user_id)
     end
 end
