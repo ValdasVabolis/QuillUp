@@ -5,9 +5,9 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def reply
-    @parent = Answer.find(params[:id])
-    @answer = @parent.children.new
-    @answer.question = @parent.question
+    @answer = Answer.find(params[:id])
+    @comment = @answer.comments.new
+    #@answer.question = @parent.question
   end
 
   def edit

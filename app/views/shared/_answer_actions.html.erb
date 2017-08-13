@@ -2,8 +2,9 @@
   <%= answer_vote_button(answer, :up) %>
   <%= answer_vote_score(answer) %>
   <%= answer_vote_button(answer, :down) %>
-  <% if answer.user == current_user %>
-    <%= link_to('Edit', edit_users_questions_answer_path(answer), class: "btn btn-primary") %>
-    <%= link_to('Delete', users_questions_answer_path(answer), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) %>
-  <% end %>
 </div>
+<% if answer.user == current_user %>
+    <%= link_to('Edit', edit_users_questions_answer_path(answer)) %>
+    <%= link_to('Delete', users_questions_answer_path(answer), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) %>
+ <% end %>
+ <%= link_to('Reply', users_questions_answer_reply_path(answer), remote: true) %>

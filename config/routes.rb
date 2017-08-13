@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       match 'question/:id/vote/:type', to: 'questions#vote', via: :put
       namespace :questions do
         resources :answers, except: [:new, :show]
-        match 'answers/:id/reply', to: 'answers#reply', via: :get
+        match 'answers/:id/reply', to: 'answers#reply', via: :get, as: 'answer_reply'
         match 'answer/:id/vote/:type', to: 'answers#vote', via: :put
       end
     end
