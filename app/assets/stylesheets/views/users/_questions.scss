@@ -1,7 +1,8 @@
-.question-small {
+.question-small, .answer {
   margin: 0 0 $margin;
   padding: $margin;
   clear: both;
+  min-height: 86px;
   background: lighten(#eee, 3%);
   border-radius: $margin / 2;
 
@@ -9,7 +10,7 @@
     background: #eee;
   }
 
-  .question-votes {
+  .question-votes, .answer-votes {
     float: left;
     position: relative;
     height: 62px;
@@ -26,7 +27,7 @@
     }
   }
 
-  .question-score {
+  .question-score, .answer-score {
     font-size: $font-size-base;
     text-align: center;
     position: absolute;
@@ -34,24 +35,44 @@
     left: 5.6px;
   }
 
-  #question-vote-up, #question-vote-down {
+  #question-vote-up,
+  #question-vote-down,
+  #answer-vote-up,
+  #answer-vote-down {
     position: absolute;
     left: 0px;
   }
 
-  #question-vote-up {
+  #question-vote-up,
+  #answer-vote-up {
     top: 0px;
   }
 
-  #question-vote-down {
+  #question-vote-down,
+  #answer-vote-down {
     bottom: 0px
   }
 
-  .question-title, .question-author, .question-links {
-    padding-left: $margin * 2;
+  .answer-author {
+    margin-bottom: 5px;
+    a {
+      font-size: $font-size-base;
+    }
   }
 
-  .question-title, .question-title a {
+  // .answer-body {
+  //   padding-left: 
+  // }
+
+  .question-title, 
+  .question-author, 
+  .question-links, 
+  .answer-body {
+    padding-left: 32px;
+  }
+
+  .question-title,
+  .question-title a {
     font-size: $font-size-large;
   }
 
@@ -63,7 +84,8 @@
     margin-bottom: $margin / 4;
   }
 
-  .question-author, .question-author a {
+  .question-author,
+  .question-author a {
     font-size: $font-size-small;
   }
 

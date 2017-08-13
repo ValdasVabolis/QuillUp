@@ -25,7 +25,7 @@ module VotingHelper
 	end
 
 	def answer_vote_score(a)
-		content_tag :div, a.score, class: 'score'
+		content_tag :div, a.score, class: 'answer-score'
 	end
 
 	def answer_vote_button(a, type)
