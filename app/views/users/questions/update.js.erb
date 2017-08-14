@@ -1,0 +1,7 @@
+var question = $('.question-large[data-id="<%= @question.id %>"]');
+
+if(question.hasClass('editing')) {
+	question.removeClass('editing');
+	$('#body').show();
+	$('#body').html('<%= @question.body %>');
+}

@@ -28,7 +28,6 @@ class Users::QuestionsController < ApplicationController
   def update
     if @question.update(update_users_question_params)
       flash[:notice] = "Question updated succesfully!"
-      redirect_to_previous_path
     else
       flash[:danger] = "Something went wrong. Please try again."
     end
@@ -51,15 +50,15 @@ class Users::QuestionsController < ApplicationController
 
   private
 
-    def set_users_question
-      @question = Question.find(params[:id])
-    end
+  def set_users_question
+    @question = Question.find(params[:id])
+  end
 
-    def create_users_question_params
-      params.require(:question).permit(:title, :body, :user_id)
-    end
+  def create_users_question_params
+    params.require(:question).permit(:title, :body, :user_id)
+  end
 
-    def update_users_question_params
-      params.require(:question).permit(:body, :user_id)
-    end
+  def update_users_question_params
+    params.require(:question).permit(:body, :user_id)
+  end
 end

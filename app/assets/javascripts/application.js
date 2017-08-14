@@ -26,7 +26,7 @@ $(function() {
   $(document).on('click', '#cancel', function(e) {
     e.preventDefault();
     $('#popover-view-contents .question-large').removeClass('editing');
-    $('#area').hide();
+    $('#edit_form').hide();
     $('#body').show();
   });
 });

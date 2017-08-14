@@ -1,13 +1,12 @@
 <div class='question-large' data-id="<%= @question.id %>">
   <h2><%= @question.title %></h2>
   <p id='body'><%= @question.body %></p>
-  <textarea id='area'><%= @question.body %></textarea>
+  <%= render partial: 'form', locals: { url: users_question_path, question: question } %>
   <% if @question.deleted? %>
     <p>questioned on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
   <% else %>
     <p>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
     <%= link_to('Edit', edit_users_question_path(question), remote: true, id: 'edit') %>
-    <%= link_to('Save', users_question_path(question), id: 'save', remote: true) %>
     <%= link_to('Cancel', '#', id: 'cancel') %>
   <% end %>
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
