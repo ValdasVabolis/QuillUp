@@ -11,7 +11,10 @@
   <% end %>
 
   <div>
-    <%= form.text_area :body, id: :area, rows: '5' %>
+    <%= form.text_area :body, id: :area %>
+  </div>
+  <div>
+    <%= link_to('Cancel', '#', id: 'cancel', class: 'btn-red') %>
   </div>
 
   <div class='form-submit-wrapper'>
