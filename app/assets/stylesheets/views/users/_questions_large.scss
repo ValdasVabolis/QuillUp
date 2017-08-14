@@ -1,5 +1,9 @@
 .question-large {
 
+  #body, textarea {
+    font-size: $font-size-big;
+  }
+
   #save, #cancel, #edit_form {
     display: none;
   }
@@ -13,4 +17,12 @@
     }
   }
   
+  form {
+    padding: 0;
+    width: 100%;
+
+    & > div {
+      margin: 0;
+    }
+  }
 }
