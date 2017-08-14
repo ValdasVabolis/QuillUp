@@ -1,23 +1,23 @@
-<%= form_with(model: question, url: url, remote: true, id: 'edit_form_question') do |form| %>
+<%= form_with(model: question, url: url, remote: true, id: 'edit_form_question') do |f| %>
   <% if question.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(question.errors.count, 'error') %> prohibited this question from being saved:</h2>
       <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.text_area :body, id: :area_question %>
+    <%= f.text_area :body, id: :area_question %>
   </div>
   <div>
     <%= link_to('Cancel', '#', id: 'cancel', class: 'btn-red') %>
   </div>
 
   <div class='form-submit-wrapper'>
-    <%= form.submit question.persisted? ? "Save" : "Create" %> 
+    <%= f.submit question.persisted? ? "Save" : "Create" %> 
   </div>
 <% end %>

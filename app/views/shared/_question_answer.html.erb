@@ -1,7 +1,7 @@
 <div>
   <div class="question-answer answer" data-id="<%= answer.id %>">
       <% if answer.deleted? %>
-        <p>[deleted]</p>
+        <p>Anonymous</p>
       <% else %>
         <div class="answer-author">
           <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
@@ -10,12 +10,13 @@
     <div class="answer-body">
       <%= answer.body %>
     </div>
+    <%= render partial: 'users/questions/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path } %>
     <%= render partial: 'shared/answer_votes', locals: { answer: answer } %> 
     <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
-    <%= render partial: 'shared/answer_reply', locals: {
+    <!-- <%= render partial: 'shared/answer_reply', locals: {
       answer: answer,
       url: users_questions_answer_replies_path(answer.question)
-    } %>
+    } %> -->
   </div>
   <% answer.comments.each do |c| %>
     <div><%= c.body %> 

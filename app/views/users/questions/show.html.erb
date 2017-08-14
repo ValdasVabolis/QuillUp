@@ -1,7 +1,7 @@
 <div class='question-large' data-id="<%= @question.id %>">
   <h2><%= @question.title %></h2>
   <p id='body_question'><%= @question.body %></p>
-  <%= render partial: 'form', locals: { url: users_question_path, question: question } %>
+  <%= render partial: 'users/questions/form', locals: { question: @question, url: users_question_path } %>
   <% if @question.deleted? %>
     <p>questioned on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
   <% else %>
