@@ -1,3 +1,5 @@
+require 'with_friendly_date_time'
+
 # == Schema Information
 #
 # Table name: answers
@@ -12,6 +14,8 @@
 #
 
 class Answer < ApplicationRecord
+  include WithFriendlyDateTime
+
   acts_as_votable
 
   belongs_to :user

@@ -2,7 +2,12 @@
   <div class='question-small' data-id='<%= question.id %>'>
     <div class='question-actions'>
       <% unless question.deleted? %>
-        <%= render partial: 'shared/question_actions', locals: { question: question } %>
+        <%= link_to('Edit', edit_users_question_path(question)) %>
+        <%= link_to('Delete',
+          users_question_path(question),
+          remote: true,
+          method: :delete,
+          data: { confirm: 'Are you sure?' }) %>
       <% end %>
     </div>
 

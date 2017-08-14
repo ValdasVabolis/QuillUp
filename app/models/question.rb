@@ -1,3 +1,5 @@
+require 'with_friendly_date_time'
+
 # == Schema Information
 #
 # Table name: questions
@@ -12,6 +14,8 @@
 #
 
 class Question < ApplicationRecord
+  include WithFriendlyDateTime
+
   acts_as_votable
   belongs_to :user
 
@@ -34,13 +38,5 @@ class Question < ApplicationRecord
   def soft_delete!
     self.deleted = true
     self.save
-  end
-
-  def friendly_date
-    self.created_at.to_date.strftime('%b %-m, %Y')
-  end
-
-  def friendly_time
-    self.created_at.to_datetime.strftime('%-I:%M %p')
   end
 end

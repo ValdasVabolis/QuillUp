@@ -1,0 +1,11 @@
+<%= form_with(model: Comment.new, url: url, remote: true, id: 'answer-reply') do |f| %>
+  <%= f.hidden_field :answer_id, value: answer.id %>
+
+  <div>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class='form-submit-wrapper'>
+    <%= f.submit "Create" %> 
+  </div>
+<% end %>
