@@ -1,0 +1,17 @@
+var form = $('#edit_form_answer');
+var answer = $('.question-answer[data-id="<%= @answer.id %>"]');
+var body = answer.find($('.answer-body'));
+var text = body.text();
+var area = $('#area_answer');
+
+if(answer.hasClass('editing')) {
+	answer.removeClass('editing');
+	body.show();
+	form.hide();
+} else {
+	answer.addClass('editing');
+	body.hide();
+	form.show();
+	area.val(text).focus();
+}
+autosize(area);

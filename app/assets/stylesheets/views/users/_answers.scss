@@ -17,3 +17,33 @@
     font-size: 18px;
   }
 }
+
+.question-answer {
+
+  .answer-body, textarea {
+    font-size: $font-size-big;
+  }
+
+  #save, #cancel, #edit_form_answer {
+    display: none;
+  }
+
+  &.editing {
+    #save, #cancel, #edit_form_answer {
+      display: block;
+    }
+    #edit {
+      display: none;
+    }
+  }
+  
+  form {
+    margin-top: 35px;
+    padding: 0;
+    width: 100%;
+
+    & > div {
+      margin: 0;
+    }
+  }
+}

@@ -1,7 +1,8 @@
-var form = $('#edit_form');
-var body = $('#body');
+var form = $('#edit_form_question');
+var body = $('#body_question');
 var question = $('.question-large[data-id="<%= @question.id %>"]');
 var text = body.text();
+var area = $('#area_question');
 
 if(question.hasClass('editing')) {
 	question.removeClass('editing');
@@ -11,6 +12,6 @@ if(question.hasClass('editing')) {
 	question.addClass('editing');
 	body.hide();
 	form.show();
-	$('#area').val(text).focus();
+	area.val(text).focus();
 }
-autosize($('#area'));
+autosize(area);

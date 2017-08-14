@@ -1,6 +1,7 @@
  <% @user.answers.each do |answer| %>
   <% unless answer.deleted? %>
     <div>
+    	<%= render partial: 'form', locals: { url: users_questions_answer_path, answer: answer } %>
       <h4><%= link_to("#{answer.question.title}", users_question_path(answer.question)) %></h4>
       <p><%= answer.body %></p>
     </div>

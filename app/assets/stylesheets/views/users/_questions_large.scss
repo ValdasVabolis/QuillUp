@@ -4,12 +4,12 @@
     font-size: $font-size-big;
   }
 
-  #save, #cancel, #edit_form {
+  #save, #cancel, #edit_form_question {
     display: none;
   }
 
   &.editing {
-    #save, #cancel, #edit_form {
+    #save, #cancel, #edit_form_question {
       display: block;
     }
     #edit {
@@ -18,6 +18,7 @@
   }
   
   form {
+    margin-top: 35px;
     padding: 0;
     width: 100%;
 

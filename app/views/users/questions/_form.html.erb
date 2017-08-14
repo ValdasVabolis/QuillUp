@@ -1,4 +1,4 @@
-<%= form_with(model: question, url: url, remote: true, id: 'edit_form') do |form| %>
+<%= form_with(model: question, url: url, remote: true, id: 'edit_form_question') do |form| %>
   <% if question.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(question.errors.count, 'error') %> prohibited this question from being saved:</h2>
@@ -11,7 +11,7 @@
   <% end %>
 
   <div>
-    <%= form.text_area :body, id: :area %>
+    <%= form.text_area :body, id: :area_question %>
   </div>
   <div>
     <%= link_to('Cancel', '#', id: 'cancel', class: 'btn-red') %>

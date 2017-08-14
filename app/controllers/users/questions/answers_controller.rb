@@ -11,7 +11,7 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def edit
-    set_previous_path
+    
   end
 
   def create
