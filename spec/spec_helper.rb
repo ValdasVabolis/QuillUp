@@ -12,6 +12,12 @@ Warden.test_mode!
 
 require File.expand_path("../../config/environment", __FILE__)
 
+if defined? LetterOpener
+  class LetterOpener::DeliveryMethod
+    def deliver!(mail); true; end
+  end
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

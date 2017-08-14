@@ -29,6 +29,26 @@ describe Question do
 
 
 
+  describe '#answers' do
+    before(:each) do
+      @q = create(:question)
+    end
+
+    it 'can be empty' do
+      @q.answers = []
+      expect(@q.save).to be true
+    end
+
+    it 'can contain answers' do
+      3.times do
+        @q.answers << build(:answer)
+      end
+      expect(@q.save).to be true
+    end
+  end
+
+
+
   describe '#friendly_date' do
     before(:each) do
       time = DateTime.new(2000, 1, 1)

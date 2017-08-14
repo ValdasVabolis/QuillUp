@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: questions
 #
 #  id         :integer          not null, primary key
 #  title      :string

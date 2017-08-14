@@ -36,6 +36,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'sqlite3'
   gem 'timecop'
+  gem 'pry'
 end
 
 group :development do
@@ -44,7 +45,6 @@ group :development do
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'letter_opener'
   gem 'listen', '3.0.5'
-  gem 'pry'
   gem 'spring'
   gem 'spring-watcher-listen', '2.0.0'
   gem 'web-console', '3.3.0'

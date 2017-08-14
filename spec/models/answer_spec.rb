@@ -2,14 +2,14 @@
 #
 # Table name: answers
 #
-#  id         :integer          not null, primary key
-#  body       :text
-#  user_id    :integer
-#  post_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  answer_id :integer
-
+#  id          :integer          not null, primary key
+#  body        :text
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  deleted     :boolean          default(FALSE)
+#  question_id :integer
+#
 
 require 'rails_helper'
 
@@ -19,31 +19,7 @@ describe Answer do
     expect(c.save).to be true
   end
 
-  describe '#parent' do
-    it 'can exist' do
-      c = build(:answer)
-      p = build(:answer)
-      c.parent = p
-      expect(c.save).to be true
-    end
-  end
 
-  describe '#children' do
-    it 'can be populated' do
-      c = build(:answer)
-      3.times do
-        c.children << create(:answer)
-      end
-      expect(c.save).to be true
-    end
-
-    it 'can be empty' do
-      c = build(:answer)
-      c.children = []
-      expect(c.save).to be true
-    end
-
-  end
 
   describe '#user' do
     it 'is required' do
@@ -58,20 +34,25 @@ describe Answer do
     end
   end
 
-  describe '#post' do
+
+
+  describe '#question' do
     it 'is required' do
-      p = build(:answer, post: nil)
+      p = build(:answer, question: nil)
       expect(p.save).to be false
     end
   end
 
-  # shouldn't this be in the post section
+
+
   describe '#body' do
     it 'is required' do
       c = build(:answer, body: nil)
       expect(c.save).to be false
     end
   end
+
+
 
   describe '#soft_delete!' do
     it 'sets the deleted flag to true' do

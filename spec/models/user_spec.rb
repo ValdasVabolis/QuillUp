@@ -30,19 +30,41 @@ describe User do
     expect(u.save).to be true
   end
 
-  describe '#posts' do
+
+  describe '#questions' do
     before(:each) do
       @user = build(:user)
     end
 
     it "can be empty" do
-      @user.posts = []
+      @user.questions = []
       expect(@user.save).to be true
     end
 
-    it "can contain posts" do
-      10.times do |i|
-        @user.posts << build(:post)
+    it "can contain questions" do
+      3.times do |i|
+        @user.questions << build(:question)
+      end
+      expect(@user.save).to be true
+    end
+  end
+
+
+
+  describe '#answers' do
+    before(:each) do
+      @user = create(:user)
+      @question = build(:question, user: @user)
+    end
+
+    it "can be empty" do
+      @user.answers = []
+      expect(@user.save).to be true
+    end
+
+    it "can contain answers" do
+      3.times do |i|
+        @user.answers << build(:answer, question: @question)
       end
       expect(@user.save).to be true
     end

@@ -13,14 +13,35 @@
 require 'rails_helper'
 
 describe Comment do
-
   it 'saves when valid' do
-    question = build(:question)
-    answer = build(:answer)
-    answer.question = question
     c = build(:comment)
-    answer.comments << c
     expect(c.save).to be true
   end
 
+
+
+  describe '#user' do
+    it 'is required' do
+      c = build(:comment, user: nil)
+      expect(c.save).to be false
+    end
+  end
+
+
+
+  describe '#answer' do
+    it 'is required' do
+      c = build(:comment, answer: nil)
+      expect(c.save).to be false
+    end
+  end
+
+
+
+  describe '#body' do
+    it 'is required' do
+      c = build(:comment, body: '')
+      expect(c.save).to be false
+    end
+  end
 end
