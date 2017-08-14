@@ -6,7 +6,7 @@
     <p>questioned on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
   <% else %>
     <p>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
-    <%= link_to('Edit', edit_users_question_path(question), remote: true, id: 'edit') %>
+    <%= link_to('Edit', edit_users_question_path(question), remote: true, id: 'edit') if current_user == @question.user.username %>
   <% end %>
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
   <%= render partial: 'shared/question_answers',  locals: { answers: @answers } %>
