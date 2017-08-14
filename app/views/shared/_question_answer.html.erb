@@ -2,7 +2,6 @@
     <% if answer.deleted? %>
       <p>[deleted]</p>
     <% else %>
-    <%= render partial: 'shared/answer_actions', locals: { answer: answer } %>
       <div class="answer-author">
         <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
       </div>
@@ -10,4 +9,6 @@
   <div class="answer-body">
     <%= answer.body %>
   </div>
+  <%= render partial: 'shared/answer_votes', locals: { answer: answer } %>
+  <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
 </div>

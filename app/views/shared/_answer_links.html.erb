@@ -1,0 +1,7 @@
+<div class="answer-links">
+  <% if answer.user == current_user %>
+      <%= link_to('Edit', edit_users_questions_answer_path(answer)) %>
+      <%= link_to('Delete', users_questions_answer_path(answer), remote: true, method: :delete, data: { confirm: 'Are you sure?' }) %>
+   <% end %>
+   <%= link_to('Reply to this answer', users_questions_answer_reply_path(answer), remote: true) %>
+</div>

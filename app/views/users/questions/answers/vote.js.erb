@@ -1,1 +1,1 @@
-$('.answer-votes[data-id=<%= @answer.id %>]').replaceWith($('<%= j render(partial: "shared/answer_actions", locals: { answer: @answer }) %>')); 
+$('.answer-votes[data-id=<%= @answer.id %>]').replaceWith($('<%= j render(partial: "shared/answer_links", locals: { answer: @answer }) %>')); 

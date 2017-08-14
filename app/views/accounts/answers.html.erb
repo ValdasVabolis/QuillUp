@@ -1,6 +1,6 @@
 <% @answers.each do |answer| %>
   <div class='answer' data-id='<%= answer.id %>'>
-    <%= render partial: 'shared/answer_actions', locals: { answer: answer } %>
+    <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
     <h4><%= link_to("#{answer.question.title}", users_question_path(answer.question)) %></h4>
     <p><%= answer.body %></p>
   </div>
