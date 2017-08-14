@@ -1,15 +1,15 @@
 .question-large {
 
-  #body, textarea {
+  .question-body, textarea {
     font-size: $font-size-big;
   }
 
-  #save, #cancel, #edit_form_question {
+  #save, #cancel, #form_question {
     display: none;
   }
 
   &.editing {
-    #save, #cancel, #edit_form_question {
+    #save, #cancel, #form_question {
       display: block;
     }
     #edit {

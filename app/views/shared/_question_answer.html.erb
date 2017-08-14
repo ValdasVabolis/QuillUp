@@ -10,7 +10,7 @@
     <div class="answer-body">
       <%= answer.body %>
     </div>
-    <%= render partial: 'users/questions/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path } %>
+    <%= render partial: 'users/questions/answers/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path } %>
     <%= render partial: 'shared/answer_votes', locals: { answer: answer } %> 
     <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
     <!-- <%= render partial: 'shared/answer_reply', locals: {

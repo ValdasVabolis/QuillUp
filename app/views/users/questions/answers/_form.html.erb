@@ -1,4 +1,4 @@
-<%= form_with(model: answer, url: url, id: 'edit_form_answer') do |form| %>
+<%= form_with(model: answer, url: url, id: 'form_answer') do |form| %>
   <%= hidden_field_tag :question_id, defined?(question) ? question.id : answer.question.id %>
   <% if answer.errors.any? %>
     <div id='error_explanation'>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.text_area :body, id: :area_answer %>
+    <%= form.text_area :body, id: :area %>
   </div>
   <div>
     <%= link_to('Cancel', '#', id: 'cancel', class: 'btn-red') %>

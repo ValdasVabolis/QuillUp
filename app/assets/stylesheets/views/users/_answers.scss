@@ -24,12 +24,12 @@
     font-size: $font-size-big;
   }
 
-  #save, #cancel, #edit_form_answer {
+  #save, #cancel, #form_answer {
     display: none;
   }
 
   &.editing {
-    #save, #cancel, #edit_form_answer {
+    #save, #cancel, #form_answer {
       display: block;
     }
     #edit {
