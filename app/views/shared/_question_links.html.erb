@@ -3,10 +3,11 @@
     users_question_path(question),
     remote: true,
     method: :get %>
-  <% if !question.deleted? %>
+  <% unless question.deleted? %>
     <%= link_to('Delete', users_question_path(question), 
       remote: true, 
-      method: :delete, 
+      method: :delete,
+      id: 'delete', 
       data: { confirm: 'Are you sure?' }) %>
   <% end %>
 </div>
