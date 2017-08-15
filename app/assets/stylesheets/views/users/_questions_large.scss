@@ -4,6 +4,10 @@
     font-size: $font-size-big;
   }
 
+  .question-body {
+    display: block;
+  }
+
   #save, #cancel, #form_question {
     display: none;
   }
@@ -12,7 +16,7 @@
     #save, #cancel, #form_question {
       display: block;
     }
-    #edit {
+    #edit, .question-body {
       display: none;
     }
   }

@@ -1,15 +1,13 @@
 var question = $('.question-large[data-id="<%= @question.id %>"]');
-var form = $(question.find('#form_question'));
-var body = $(question.find('.question-body'));
-var area = $(form.find('#area'));
+var form = question.find('#form_question');
+var body = question.find('.question-body');
+var area = form.find('#area');
 var text = body.text();
 
 if(question.hasClass('editing')) {
 	question.removeClass('editing');
-	body.show();
 } else {
 	question.addClass('editing');
-	body.hide();
 	area.val(text).focus();
 }
 autosize(area);

@@ -24,6 +24,10 @@
     font-size: $font-size-big;
   }
 
+  .answer-body {
+    display: block;
+  }
+
   #save, #cancel, #form_answer {
     display: none;
   }
@@ -32,7 +36,7 @@
     #save, #cancel, #form_answer {
       display: block;
     }
-    #edit {
+    #edit, .answer-body {
       display: none;
     }
   }

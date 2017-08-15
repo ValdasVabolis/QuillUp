@@ -6,10 +6,8 @@ var text = body.text();
 
 if(answer.hasClass('editing')) {
 	answer.removeClass('editing');
-	body.show();
 } else {
 	answer.addClass('editing');
-	body.hide();
 	area.val(text).focus();
 }
 autosize(area);
