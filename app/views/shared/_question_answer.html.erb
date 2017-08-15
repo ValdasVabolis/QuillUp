@@ -1,26 +1,25 @@
 <div>
   <div class="question-answer answer" data-id="<%= answer.id %>">
-      <% if answer.deleted? %>
-      <div class='answer-author'>
-        <p>Anonymous</p>
+    <% if answer.deleted? %>
+    <div class='answer-author'>
+      <p>Anonymous</p>
+    </div>
+    <% else %>
+      <div class="answer-author">
+        <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
       </div>
-      <% else %>
-        <div class="answer-author">
-          <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
-        </div>
-      <% end %>
+    <% end %>
     <div class="answer-body">
       <%= answer.body %>
     </div>
     <%= render partial: 'users/questions/answers/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path(answer) } %>
     <%= render partial: 'shared/answer_votes', locals: { answer: answer } %> 
     <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
-    <%= render partial: 'shared/answer_reply', locals: { answer: answer, url: 'users_questions_answer_replies_path(answer)'} %>
+    <%= render partial: 'shared/answer_reply', locals: { answer: answer, url: users_questions_answers_comment_path } %>
   </div>
-  <% answer.comments.each do |c| %>
-    <div><%= c.body %> 
-      - <%= c.user.username %> 
-      on <%= c.friendly_date %> 
-      at <%= c.friendly_time %></div>
+  <% answer.comments.reverse.each do |c| %>
+    <div>
+      <%= render partial: 'shared/comment', locals: { comment: c } %>
+    </div>
   <% end %>
 </div>

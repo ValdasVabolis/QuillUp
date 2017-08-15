@@ -1,0 +1,7 @@
+var answer = $('.question-answer[data-id="<%= @comment.answer.id %>"]');
+var comment = $('<%= j render partial: "shared/comment", locals: { comment: @comment} %>');
+if(answer.hasClass('replying')) {
+	comment.insertAfter(answer);
+	answer.removeClass('replying');
+	answer.find('#area').val('');
+}

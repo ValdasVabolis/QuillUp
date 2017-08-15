@@ -23,7 +23,7 @@ $(function() {
     $('nav ul').removeClass('shown');
   });
 
-  $(document).on('click', '#cancel_question', function(e) {
+  $(document).on('click', '#cancel-question', function(e) {
     e.preventDefault();
     $('#popover-view-contents .question-large').removeClass('editing');
   });

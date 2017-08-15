@@ -34,6 +34,7 @@ Rails.application.routes.draw do
         resources :answers, except: [:new, :show]
         match 'answers/:id/reply', to: 'answers#reply', via: :post, as: 'answer_replies'
         match 'answer/:id/vote/:type', to: 'answers#vote', via: :put
+        match 'answers/comment', to: 'comments#create', via: :post
       end
     end
   end
