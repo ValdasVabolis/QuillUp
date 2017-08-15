@@ -1,0 +1,9 @@
+alert('DO STUFF');
+var answer = $('.question-answer[data-id="<%= @answer.id %>"]');
+var body = answer.find('.answer-body');
+
+if(answer.hasClass('editing')) {
+	answer.removeClass('editing');
+	body.show();
+	body.html('<%= j @answer.body %>');
+}

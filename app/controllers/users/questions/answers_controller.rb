@@ -36,7 +36,6 @@ class Users::Questions::AnswersController < ApplicationController
   def update
     if @answer.update(users_questions_answer_params)
       flash[:notice] = "Answer updated succesfully!"
-      redirect_to_previous_path
     else
       flash[:danger] = "Something went wrong. Please try again."
     end

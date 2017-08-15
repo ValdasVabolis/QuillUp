@@ -23,10 +23,18 @@ $(function() {
     $('nav ul').removeClass('shown');
   });
 
-  $(document).on('click', '#cancel', function(e) {
+  $(document).on('click', '#cancel_question', function(e) {
     e.preventDefault();
     $('#popover-view-contents .question-large').removeClass('editing');
-    $('#edit_form').hide();
-    $('#body').show();
+    $('#form_question').hide();
+    $('.question-body').show();
+  });
+
+  $(document).on('click', '#cancel_answer', function(e) {
+    e.preventDefault();
+    var id = $(this).closest('.question-answer').attr('data-id');
+    $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('editing');
+    $('#form_question').hide();
+    $('.question-body').show();
   });
 });
