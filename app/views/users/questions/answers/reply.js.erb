@@ -1,0 +1,11 @@
+var answer = $('.question-answer[data-id="<%= @answer.id %>"]');
+var form = answer.find('#form-reply-answer');
+var area = form.find('#area');
+
+if(answer.hasClass('replying')) {
+	answer.removeClass('replying');
+} else {
+	answer.addClass('replying');
+	area.focus();
+}
+autosize(area);

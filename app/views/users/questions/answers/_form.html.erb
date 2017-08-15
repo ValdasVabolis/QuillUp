@@ -14,7 +14,7 @@
     <%= f.text_area :body, id: :area %>
   </div>
   <div>
-    <%= link_to('Cancel', '#', id: 'cancel_answer', class: 'btn-red') if answer.persisted? %>
+    <%= link_to('Cancel', '#', id: 'cancel-answer', class: 'btn-red') if answer.persisted? %>
   </div>
   <div>
     <%= f.submit answer.persisted? ? "Save" : "Create" %> 

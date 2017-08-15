@@ -15,10 +15,7 @@
     <%= render partial: 'users/questions/answers/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path(answer) } %>
     <%= render partial: 'shared/answer_votes', locals: { answer: answer } %> 
     <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
-    <!-- <%= render partial: 'shared/answer_reply', locals: {
-      answer: answer,
-      url: users_questions_answer_replies_path(answer.question)
-    } %> -->
+    <%= render partial: 'shared/answer_reply', locals: { answer: answer, url: 'users_questions_answer_replies_path(answer)'} %>
   </div>
   <% answer.comments.each do |c| %>
     <div><%= c.body %> 

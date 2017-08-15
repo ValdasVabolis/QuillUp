@@ -28,8 +28,16 @@
     display: block;
   }
 
+  #form-reply-answer, #cancel-reply {
+    display: none;
+  }
+
   #save, #cancel, #form_answer {
     display: none;
+  }
+
+  #reply-btn {
+    display: block;
   }
 
   &.editing {
@@ -38,6 +46,15 @@
     }
     #edit, .answer-body
      {
+      display: none;
+    }
+  }
+
+  &.replying {
+    #form-reply-answer, #cancel-reply {
+      display: block;
+    }
+    #reply-btn {
       display: none;
     }
   }
