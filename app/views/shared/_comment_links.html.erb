@@ -1,0 +1,8 @@
+<div class='comment-links'>
+	<% if comment.user == current_user %>
+		<% unless comment.deleted? %>
+			<%= link_to('Edit', '#') %>
+			<%= link_to('Delete', '#') %>
+		<% end %>
+	<% end %>
+</div>

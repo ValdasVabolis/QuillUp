@@ -35,6 +35,7 @@ Rails.application.routes.draw do
         match 'answers/:id/reply', to: 'answers#reply', via: :post, as: 'answer_replies'
         match 'answer/:id/vote/:type', to: 'answers#vote', via: :put
         match 'answers/comment', to: 'comments#create', via: :post
+        match 'answer/comment/:id/vote/:type', to: 'comments#vote', via: :put
       end
     end
   end

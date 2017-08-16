@@ -1,10 +1,13 @@
-<div class='answer-comment comment'>
-
+<div class='answer-comment comment' data-id='<%= comment.id %>'>
 	<div class='comment-author'>
-		<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
+	<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
 	</div>
 	<div class='comment-body'>
 		<%= comment.body %> 
+	</div>
+	<div>
+		<%= render partial: 'shared/comment_links', locals: { comment: comment } %>
+		<%= render partial: 'shared/comment_votes', locals: { comment: comment} %>
 	</div>
 	on <%= comment.friendly_date %> at <%= comment.friendly_time %>
 </div>

@@ -19,7 +19,6 @@ module VotingHelper
 	def question_vote_score(q)
 		content_tag :div, q.score, class: 'question-score'
 	end
-
 	def question_vote_button(q, type)
 		vote_button(q, type)
 	end
@@ -27,8 +26,15 @@ module VotingHelper
 	def answer_vote_score(a)
 		content_tag :div, a.score, class: 'answer-score'
 	end
-
 	def answer_vote_button(a, type)
 		vote_button(a, type)
 	end
+
+	def comment_vote_score(c)
+		content_tag :div, c.score, class: 'comment-score'
+	end
+	def comment_vote_button(c, type)
+		vote_button(c, type)
+	end
+
 end

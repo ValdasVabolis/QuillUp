@@ -9,6 +9,15 @@ class Users::Questions::CommentsController < ApplicationController
     end
   end
 
+  def vote
+    type = params[:type]
+    @comment = Comment.find(params[:id])
+    if current_user.send("voted_#{type}_on?", @comment)
+      @comment.unvote_by current_user
+    else
+      @comment.vote_by voter: current_user, vote: type
+    end
+  end
 
   private
     def users_questions_answers_comment_params
