@@ -18,7 +18,7 @@
     <%= render partial: 'shared/answer_reply', locals: { answer: answer, url: users_questions_answers_comment_path } %>
   </div>
   <% answer.comments.reverse.each do |c| %>
-    <div>
+    <div class='answer-comments'>
       <%= render partial: 'shared/comment', locals: { comment: c } %>
     </div>
   <% end %>

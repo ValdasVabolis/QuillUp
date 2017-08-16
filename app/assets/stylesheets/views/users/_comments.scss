@@ -1,0 +1,12 @@
+.answer-comments {
+	margin-left: 20px;
+	background: lighten(#eee, 3%);
+
+	.answer-comment {
+		.comment-body {
+			font-size: $font-size-big;
+		}
+	}
+	
+
+}

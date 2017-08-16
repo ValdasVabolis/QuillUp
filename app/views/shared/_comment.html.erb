@@ -1,6 +1,10 @@
-<div>
-  <%= comment.body %> 
-  - <%= comment.user.username %> 
-  on <%= comment.friendly_date %> 
-  at <%= comment.friendly_time %>
+<div class='answer-comment comment'>
+
+	<div class='comment-author'>
+		<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
+	</div>
+	<div class='comment-body'>
+		<%= comment.body %> 
+	</div>
+	on <%= comment.friendly_date %> at <%= comment.friendly_time %>
 </div>
