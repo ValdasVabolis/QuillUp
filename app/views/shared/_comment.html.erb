@@ -7,7 +7,7 @@
 	</div>
 	<div>
 		<%= render partial: 'shared/comment_links', locals: { comment: comment } %>
-		<%= render partial: 'shared/comment_votes', locals: { comment: comment} %>
+		<%= render partial: 'shared/comment_votes', locals: { comment: comment} if current_user == comment.user.username %>
 	</div>
 	on <%= comment.friendly_date %> at <%= comment.friendly_time %>
 </div>
