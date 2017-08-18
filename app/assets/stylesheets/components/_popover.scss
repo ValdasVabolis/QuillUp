@@ -25,7 +25,7 @@
 
 #popover-view {
   @include center;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   margin: $header-height * 2 auto;
   opacity: 0;
