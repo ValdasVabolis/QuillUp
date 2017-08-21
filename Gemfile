@@ -7,12 +7,11 @@ end
 
 ruby '2.4.0'
 
-gem 'will_paginate', '~> 3.1.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'annotate'
 gem 'autoprefixer-rails'
-gem 'colorize'
 gem 'autosize'
+gem 'colorize'
 gem 'devise', '4.3.0'
 gem 'faker'
 gem 'font-awesome-rails'
@@ -23,20 +22,23 @@ gem 'jquery-rails', '4.3.1'
 gem 'puma', '3.7'
 gem 'rails', '5.1.2'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'redis'
 gem 'sass-rails', '5.0.6'
 gem 'turbolinks', '5.0.1'
 gem 'uglifier', '3.2.0'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '2.13'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec', '~> 4.7', require: false
+  gem 'pry'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'sqlite3'
   gem 'timecop'
-  gem 'pry'
 end
 
 group :development do

@@ -1,5 +1,11 @@
 <div class="profile-container">
   <p>Username: <b><%= @user.username %></b></p>
   <p>Member since: <b><%= @user.created_at.to_s[0...10] %></b></p>
+  <div class="public-score">
+  	<h2>Submission score</h2>
+  	<p>Question: <b><%= user_score_sum(@user, :question) %></b></p>
+  	<p>Answer: <b><%= user_score_sum(@user, :answer) %></b></p>
+  	<p>Comment: <b><%= user_score_sum(@user, :comment) %></b></p>
+  </div>
 </div>
 
