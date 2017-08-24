@@ -8,3 +8,13 @@
   <p>Answer: <b><%= user_score_sum(current_user, :answer) %></b></p>
   <p>Comment: <b><%= user_score_sum(current_user, :comment) %></b></p>
 </div>
+<% if current_user.about.nil? %>
+  <p>You don't have an about me yet.</p>
+  <p>Create one now</p>
+  <%= link_to('Create About Me', account_settings_path , class: 'btn') %>
+<% else %>
+  <div class='about-me'>
+    <b>About me</b>
+    <p><%= current_user.about %></p>
+  </div>
+<% end %>  
