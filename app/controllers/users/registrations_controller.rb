@@ -11,7 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
-
+  def update
+    super
+  end
 
   private
 
@@ -20,7 +22,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :username, 
       :email, 
       :password, 
-      :password_confirmation
+      :password_confirmation,
+      :about
+    )
+  end
+
+  def account_update_params
+    params.require(:user).permit(
+      :username, 
+      :email, 
+      :password, 
+      :password_confirmation,
+      :current_password,
+      :about
     )
   end
 end

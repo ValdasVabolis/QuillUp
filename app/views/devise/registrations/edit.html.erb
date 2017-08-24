@@ -34,6 +34,11 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class='about-me'>
+    <%= f.label :about, 'About Me' %><br>
+    <%= f.text_area :about %>
+  </div>
+
   <div class='form-submit-wrapper'>
     <%= f.submit "Update" %>
   </div>
