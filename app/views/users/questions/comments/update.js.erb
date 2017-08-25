@@ -1,0 +1,8 @@
+var comment = $('.answer-comment[data-id="<%= @comment.id %>"]');
+var body = comment.find('.comment-body');
+
+if(comment.hasClass('editing')) {
+  comment.removeClass('editing');
+  body.show();
+  body.html('<%= j @comment.body %>');
+}

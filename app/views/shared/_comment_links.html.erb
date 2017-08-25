@@ -1,7 +1,7 @@
 <div class='comment-links'>
 	<% if comment.user == current_user %>
 		<% unless comment.deleted? %>
-			<%= link_to('Edit', edit_users_questions_comment_path(comment)) %>
+			<%= link_to('Edit', edit_users_questions_comment_path(comment), id: 'edit', remote: true) %>
 			<%= link_to('Delete', users_questions_comment_path(comment),
         remote: true,
         method: :delete,

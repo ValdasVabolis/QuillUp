@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       resources :questions, except: [:show]
       match 'question/:id/vote/:type', to: 'questions#vote', via: :put
       namespace :questions do
-        resources :comments, only: [:edit, :destroy]
+        resources :comments, only: [:edit, :destroy, :update]
         resources :answers, except: [:new, :show]
         match 'answers/:id/reply', to: 'answers#reply', via: :post, as: 'answer_replies'
         match 'answer/:id/vote/:type', to: 'answers#vote', via: :put

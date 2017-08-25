@@ -10,3 +10,43 @@
 		}
 	}
 }
+
+.answer-comment {
+
+  .comment-body, textarea {
+    font-size: $font-size-big;
+  }
+
+  .comment-body {
+    display: block;
+  }
+
+  #save, #cancel, #form-comment {
+    display: none;
+  }
+
+  #reply-btn {
+    display: block;
+  }
+
+  &.editing {
+    #save, #cancel, #form-comment {
+      display: block;
+    }
+    #edit, .comment-body
+     {
+      display: none;
+    }
+  }
+  
+  form {
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+
+    & > div {
+      margin: 0;
+    }
+  }
+
+}

@@ -39,4 +39,10 @@ $(function() {
     var id = $(this).closest('.question-answer').attr('data-id');
     $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('replying');
   });
+
+  $(document).on('click', '#cancel-comment', function(e) {
+    e.preventDefault();
+    var id = $(this).closest('.answer-comment').attr('data-id');
+    $('#popover-view-contents .answer-comment[data-id="' + id + '"]').removeClass('editing');
+  });
 });

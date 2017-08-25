@@ -11,16 +11,13 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def edit
-    
   end
 
   def create
     @question = Question.find(params[:question_id])
     @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
-    #@parent = Answer.find(params[:parent_id])
     @answer = @question.answers.new(users_questions_answer_params)
     @answer.user = current_user
-    #@answer.parent = @parent
     @answer.save
   end
 
@@ -46,7 +43,6 @@ class Users::Questions::AnswersController < ApplicationController
   end
  
   private
-  
   def set_users_questions_answer
     @answer = Answer.find(params[:id])
   end

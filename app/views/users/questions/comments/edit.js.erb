@@ -1,0 +1,13 @@
+var comment = $('.answer-comment[data-id="<%= @comment.id %>"]');
+var form = comment.find('#form-comment');
+var body = comment.find('.comment-body');
+var area = form.find('#area');
+var text = body.text();
+
+if(comment.hasClass('editing')) {
+  comment.removeClass('editing');
+} else {
+  comment.addClass('editing');
+  //area.val(text).focus();
+}
+autosize(area);

@@ -12,6 +12,7 @@
 		<%= comment.body %> 
 	</div>
 	<div>
+		<%= render partial: 'users/questions/comments/form', locals: { comment: comment, answer: comment.answer, url: users_questions_comment_path(comment) } %>
 		<%= render partial: 'shared/comment_links', locals: { comment: comment } %>
 		<%= render partial: 'shared/comment_votes', locals: { comment: comment} if current_user == comment.user.username %>
 	</div>
