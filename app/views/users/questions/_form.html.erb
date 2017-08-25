@@ -9,12 +9,18 @@
       </ul>
     </div>
   <% end %>
-
+  <% unless question.persisted? %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  <% end %>
   <div>
+    <%= f.label :body %>
     <%= f.text_area :body, id: :area %>
   </div>
   <div>
-    <%= link_to('Cancel', '#', id: 'cancel-question', class: 'btn-red') %>
+    <%= link_to('Cancel', '#', id: 'cancel-question', class: 'btn-red') if question.persisted? %>
   </div>
 
   <div class='form-submit-wrapper'>
