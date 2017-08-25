@@ -2,19 +2,12 @@
 <p>Username: <b><%= current_user.username %></b></p>
 <p>Email: <b><%= current_user.email %></b></p>
 <p>Member since: <b><%= current_user.created_at.to_s[0...10] %></b></p>
-<div class="private-score">
+<div class='private-score'>
   <h2>Submission score</h2>
   <p>Question: <b><%= user_score_sum(current_user, :question) %></b></p>
   <p>Answer: <b><%= user_score_sum(current_user, :answer) %></b></p>
   <p>Comment: <b><%= user_score_sum(current_user, :comment) %></b></p>
 </div>
-<% if current_user.about.nil? %>
-  <p>You don't have an about me yet.</p>
-  <p>Create one now</p>
-  <%= link_to('Create About Me', account_settings_path , class: 'btn') %>
-<% else %>
-  <div class='about-me'>
-    <b>About me</b>
-    <p><%= current_user.about %></p>
-  </div>
-<% end %>  
+<div class='about-me'>
+  <%= user_about_me(current_user) %>
+</div>
