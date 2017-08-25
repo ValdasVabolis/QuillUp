@@ -1,5 +1,5 @@
 <div class='question-small'>
-  <%= question_vote_score(question) %>
+  <%= gravatar_image_tag question.user.email, class: 'avatar avatar-sm' unless question.deleted? %>
   <%= render partial: 'shared/question_title', locals: { question: question } %>
   <%= render partial: 'shared/question_author', locals: { question: question } %>
   <%= render partial: 'shared/question_links', locals: { question: question } %>
