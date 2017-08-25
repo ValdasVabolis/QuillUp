@@ -1,5 +1,5 @@
 <div class='question-small'>
-  <%= render partial: 'shared/question_votes', locals: { question: question } %>
+  <%= question_vote_score(question) %>
   <%= render partial: 'shared/question_title', locals: { question: question } %>
   <%= render partial: 'shared/question_author', locals: { question: question } %>
   <%= render partial: 'shared/question_links', locals: { question: question } %>
