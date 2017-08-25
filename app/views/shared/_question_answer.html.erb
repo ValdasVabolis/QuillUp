@@ -1,9 +1,9 @@
 <div>
   <div class="question-answer answer" data-id="<%= answer.id %>">
     <% if answer.deleted? %>
-    <div class='answer-author'>
-      <p>Anonymous</p>
-    </div>
+      <div class='answer-author'>
+        <p>Anonymous</p>
+      </div>
     <% else %>
       <div class="answer-author">
         <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>

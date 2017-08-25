@@ -46,11 +46,12 @@ class Users::Questions::AnswersController < ApplicationController
   end
  
   private
-    def set_users_questions_answer
-      @answer = Answer.find(params[:id])
-    end
+  
+  def set_users_questions_answer
+    @answer = Answer.find(params[:id])
+  end
 
-    def users_questions_answer_params
-      params.require(:answer).permit(:body, :user_id)
-    end
+  def users_questions_answer_params
+    params.require(:answer).permit(:body, :user_id)
+  end
 end

@@ -1,7 +1,13 @@
 <div class='answer-comment comment' data-id='<%= comment.id %>'>
-	<div class='comment-author'>
-	<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
-	</div>
+	<% if comment.deleted? %>
+		<div class='comment-author'>
+			<p>Anonymous</p>
+		</div>
+	<% else %>
+		<div class='comment-author'>
+		<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
+		</div>
+	<% end %>
 	<div class='comment-body'>
 		<%= comment.body %> 
 	</div>
