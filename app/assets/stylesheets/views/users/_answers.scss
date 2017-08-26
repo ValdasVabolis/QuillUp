@@ -24,6 +24,10 @@
     font-size: $font-size-big;
   }
 
+  #area {
+    margin-top: 50px;
+  }
+
   .answer-body {
     display: block;
   }
@@ -37,24 +41,24 @@
   }
 
   #reply-btn {
-    display: block;
+    display: inline;
   }
 
   &.editing {
     #save, #cancel, #form_answer {
-      display: block;
+      display: inline;
     }
-    #edit, .answer-body
-     {
+    #edit, .answer-body, #reply-btn, #delete
+    {
       display: none;
     }
   }
 
   &.replying {
     #form-reply-answer, #cancel-reply {
-      display: block;
+      display: inline;
     }
-    #reply-btn {
+    #reply-btn, #edit, #delete {
       display: none;
     }
   }
