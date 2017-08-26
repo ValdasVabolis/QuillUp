@@ -1,4 +1,7 @@
 <%= form_with(model: question, url: url, remote: true, id: 'form_question') do |f| %>
+  <div class='form-header'>
+    <h2><%= form_header %></h2>
+  </div>
   <% if question.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(question.errors.count, 'error') %> prohibited this question from being saved:</h2>
