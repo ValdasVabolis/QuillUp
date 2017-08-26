@@ -12,7 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    super
+    if params[:user][:about].length <= 200
+      super
+    end
   end
 
   private
