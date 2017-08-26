@@ -25,7 +25,7 @@ class Answer < ApplicationRecord
   validate :user_account_confirmed, if: :user
 
   def vote_path(type)
-    "/users/questions/answer/comment/#{self.id}/vote/#{type}"
+    "/users/questions/answer/#{self.id}/vote/#{type}"
   end
 
   def score
