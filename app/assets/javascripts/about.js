@@ -1,6 +1,8 @@
-if($('#about-me').length > 0) {
-  $(document).on('turbolinks:load', function() {
-    var delete_key = 8;
+$(document).on('turbolinks:load', function() {
+  function loadedOnAccountPage() {
+    return $('#account-content').length > 0;
+  }
+  function showCharacterLimit() {
     var limit = 200;
     var text_area = $('#about-me');
     var char_counter = $('.char-counter p');
@@ -8,15 +10,26 @@ if($('#about-me').length > 0) {
     var counter = length + '/' + limit; 
     char_counter.html(counter);
 
-    text_area.keydown(function(e) {
+    function updateCounter() {
       length = text_area.val().length;
-      counter = length + '/' + limit; 
+      counter = length + '/' + limit;
       char_counter.html(counter);
+    }
+
+    text_area.keyup(function(e) {
+      updateCounter();
       if(length >= limit) {
-        if(e.which !== delete_key) {
+        if(e.key !== 'Backspace') {
           return false;
         }
       }
     });
-  }); 
-}
+    text_area.keydown(function(e) {
+      updateCounter();
+    });
+
+  }
+  if(loadedOnAccountPage()) {
+    showCharacterLimit();
+  }
+});
