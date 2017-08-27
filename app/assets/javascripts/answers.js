@@ -16,7 +16,6 @@ $(document).on('turbolinks:load', function() {
       char_counter.html(counter);
     }
 
-   
     text_area.bind('keyup keydown', function(e) {
       updateCounter();
       if(length >= limit) {

@@ -14,11 +14,13 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def create
-    @question = Question.find(params[:question_id])
-    @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
-    @answer = @question.answers.new(users_questions_answer_params)
-    @answer.user = current_user
-    @answer.save
+    if params[:answer][:body].length <= 5000
+      @question = Question.find(params[:question_id])
+      @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
+      @answer = @question.answers.new(users_questions_answer_params)
+      @answer.user = current_user
+      @answer.save
+    end
   end
 
   def vote
