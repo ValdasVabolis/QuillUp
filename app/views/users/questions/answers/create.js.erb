@@ -1,3 +1,2 @@
 $('.question-answers').replaceWith($('<%= j render(partial: "shared/question_answers", locals: { answers: @answers }) %>'));
-var newform = $('<%= j render(partial: "users/questions/answers/form", locals: { question: @question, answer: @question.answers.new, url: users_questions_answers_path }) %>');
-$('#form_answer').replaceWith(newform);
+$('#form_answer').find('#area').val('');
