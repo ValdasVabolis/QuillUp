@@ -17,9 +17,9 @@ class Users::Questions::CommentsController < ApplicationController
 
   def update
     if @comment.update(users_questions_comment_params)
-      flash[:notice] = "Comment updated succesfully!"
+      flash[:notice] = 'Comment updated succesfully!'
     else
-      flash[:danger] = "Something went wrong. Please try again."
+      flash[:danger] = 'Something went wrong. Please try again.'
     end
   end
 

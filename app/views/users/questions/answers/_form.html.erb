@@ -10,8 +10,11 @@
       </ul>
     </div>
   <% end %>
-  <div>
+  <div class='answer-body'>
     <%= f.text_area :body, id: :area %>
+    <div class='char-counter'>
+      <p></p>
+    </div>
   </div>
   <div>
     <%= link_to('Cancel', '#', id: 'cancel-answer', class: 'btn-red') if answer.persisted? %>

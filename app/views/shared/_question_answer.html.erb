@@ -1,15 +1,15 @@
 <div>
-  <div class="question-answer answer" data-id="<%= answer.id %>">
+  <div class='question-answer answer' data-id='<%= answer.id %>'>
     <% if answer.deleted? %>
       <div class='answer-author'>
         <p>Anonymous</p>
       </div>
     <% else %>
-      <div class="answer-author">
+      <div class='answer-author'>
         <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
       </div>
     <% end %>
-    <div class="answer-body">
+    <div class='answer-body'>
       <%= answer.body %>
     </div>
     <%= render partial: 'users/questions/answers/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path(answer) } %>
