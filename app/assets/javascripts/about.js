@@ -1,9 +1,8 @@
 $(document).on('turbolinks:load', function() {
-  function loadedOnAccountPage() {
-    return $('#account-content').length > 0;
+  function loadedOnPage(name) {
+    return $('#' + name + '-content').length > 0;
   }
-  function showCharacterLimit() {
-    var limit = 200;
+  function showCharacterLimit(limit) {
     var text_area = $('#about-me');
     var char_counter = $('.char-counter p');
     var length = text_area.val().length;
@@ -29,7 +28,7 @@ $(document).on('turbolinks:load', function() {
     });
 
   }
-  if(loadedOnAccountPage()) {
-    showCharacterLimit();
+  if(loadedOnPage('account')) {
+    showCharacterLimit(200);
   }
 });
