@@ -15,16 +15,14 @@ $(document).on('turbolinks:load', function() {
       char_counter.html(counter);
     }
 
-    text_area.keyup(function(e) {
+    text_area.bind('keyup keydown', function(e) {
       updateCounter();
       if(length >= limit) {
         if(e.key !== 'Backspace') {
+          this.value = this.value.substr(0, limit);
           return false;
         }
       }
-    });
-    text_area.keydown(function(e) {
-      updateCounter();
     });
 
   }

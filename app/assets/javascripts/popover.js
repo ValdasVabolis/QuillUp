@@ -4,6 +4,7 @@ var Popover = (function($) {
   var view_selector = '#popover-view';
   var view_contents_selector = '#popover-view-contents';
   var parent_selector = '#popover-parent';
+  var popover_showing = false;
 
   var init = function() {
     clear();
@@ -39,8 +40,9 @@ var Popover = (function($) {
 
   var show = function(view) {
     $(view_contents_selector).html(view);
-    $(parent_selector).addClass(active_cass);
+    $(parent_selector).addClass(active_cass).trigger('popoverShown');
     autosize($('#answer-reply textarea'));
+    popover_showing = true; 
   };
 
   var clear = function() {
@@ -49,12 +51,18 @@ var Popover = (function($) {
 
   var exit = function() {
     $(parent_selector).removeClass(active_cass);
+    popover_showing = false;
   };
+
+  var showing = function() {
+    return popover_showing;
+  }
 
   return {
     init: init,
     show: show,
-    exit: exit
+    exit: exit,
+    showing: showing
   }
 }(jQuery));
 
