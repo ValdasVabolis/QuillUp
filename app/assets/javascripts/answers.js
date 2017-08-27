@@ -1,8 +1,9 @@
-if($('#about-me').length > 0) {
+if($('#home-content').length > 0) {
   $(document).on('turbolinks:load', function() {
     var delete_key = 8;
-    var limit = 200;
-    var text_area = $('#about-me');
+    var limit = 5000;
+   /* var answer = $('.answer-group[]');
+    var text_area = $('.answer-group').find('#area');
     var char_counter = $('.char-counter p');
     var length = text_area.val().length;
     var counter = length + '/' + limit; 
@@ -17,6 +18,6 @@ if($('#about-me').length > 0) {
           return false;
         }
       }
-    });
-  }); 
+    }); */
+  });
 }

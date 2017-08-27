@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <div class='answer-body'>
+  <div class='answer-group' data-id='<%= answer.id %>'>
     <%= f.text_area :body, id: :area %>
     <div class='char-counter'>
       <p></p>
@@ -20,7 +20,7 @@
     <%= link_to('Cancel', '#', id: 'cancel-answer', class: 'btn-red') if answer.persisted? %>
   </div>
   <div>
-    <%= f.submit answer.persisted? ? "Save" : "Create" %> 
+    <%= f.submit answer.persisted? ? "Save" : "Create" %>
   </div>
 <% end %>
 
