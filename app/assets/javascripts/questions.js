@@ -50,7 +50,8 @@ $(document).on('turbolinks:load', function() {
   }
 
   if($('.question-new').length > 0) {
+    alert('no boye');
     showCharacterLimitTitle(200);
     showCharacterLimitBody(2500);
-  }
+  } 
 });
