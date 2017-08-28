@@ -1,4 +1,4 @@
-<%= form_with(model: question, url: url, remote: true, id: 'form_question') do |f| %>
+<%= form_with(model: question, url: url, remote: true, id: 'form-question', class: (question.persisted? ? 'question-edit' : 'question-new')) do |f| %>
   <div class='form-header'>
     <h2><%= form_header %></h2>
   </div>
@@ -13,20 +13,25 @@
     </div>
   <% end %>
   <% unless question.persisted? %>
-    <div>
+    <div class='question-title'>
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, id: :title %>
+      <div class='char-counter'>
+        <p></p>
+      </div>
     </div>
   <% end %>
-  <div>
+  <div class='question-body'>
     <%= f.label :body %>
     <%= f.text_area :body, id: :area %>
+    <div class='char-counter'>
+      <p></p>
+    </div>
   </div>
   <div>
     <%= link_to('Cancel', '#', id: 'cancel-question', class: 'btn-red') if question.persisted? %>
   </div>
-
   <div class='form-submit-wrapper'>
-    <%= f.submit question.persisted? ? "Save" : "Create" %> 
+    <%= f.submit question.persisted? ? 'Save' : 'Create' %> 
   </div>
 <% end %>

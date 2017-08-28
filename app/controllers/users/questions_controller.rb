@@ -19,10 +19,12 @@ class Users::QuestionsController < ApplicationController
   end  
 
   def create
-    @question = Question.new(create_users_question_params)
-    @question.user = current_user
-    @question.save
-    redirect_to root_url
+    if params[:question][:title].length <= 200 && params[:question][:body].length <= 2500
+      @question = Question.new(create_users_question_params)
+      @question.user = current_user
+      @question.save
+      redirect_to root_url
+    end
   end
 
   def update

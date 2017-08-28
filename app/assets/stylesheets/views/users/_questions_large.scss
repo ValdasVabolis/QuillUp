@@ -8,12 +8,12 @@
     display: block;
   }
 
-  #save, #cancel, #form_question {
+  #save, #cancel, #form-question {
     display: none;
   }
 
   &.editing {
-    #save, #cancel, #form_question {
+    #save, #cancel, #form-question {
       display: block;
     }
     #edit, .question-body {
