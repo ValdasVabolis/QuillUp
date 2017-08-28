@@ -13,7 +13,7 @@
     </div>
   <% end %>
   <% unless question.persisted? %>
-    <div class='question-title'>
+    <div class='question-title-group'>
       <%= f.label :title %>
       <%= f.text_field :title, id: :title %>
       <div class='char-counter'>
@@ -21,7 +21,7 @@
       </div>
     </div>
   <% end %>
-  <div class='question-body'>
+  <div class='question-body-group'>
     <%= f.label :body %>
     <%= f.text_area :body, id: :area %>
     <div class='char-counter'>

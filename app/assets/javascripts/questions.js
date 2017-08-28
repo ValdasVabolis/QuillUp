@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
   function showCharacterLimitTitle(limit) {
     var form = $('#form-question');
     var text_area = form.find('#title');
-    var char_counter = form.find('.question-title > .char-counter p');
+    var char_counter = form.find('.question-title-group > .char-counter p');
     var length = text_area.val().length;
     var counter = length + '/' + limit;
     char_counter.html(counter);
@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', function() {
   function showCharacterLimitBody(limit) {
     var form = $('#form-question');
     var text_area = form.find('#area');
-    var char_counter = form.find('.question-body > .char-counter p');
+    var char_counter = form.find('.question-body-group > .char-counter p');
     var length = text_area.val().length;
     var counter = length + '/' + limit;
     char_counter.html(counter);
