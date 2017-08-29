@@ -11,10 +11,8 @@
     </div>
   <% end %>
   <div class='answer-group'>
-    <%= f.text_area :body, id: :area %>
-    <div class='char-counter'>
-      <p></p>
-    </div>
+    <%= f.text_area :body, id: 'area-answer'.to_sym %>
+    <p id='answer-area-counter'></p>
   </div>
   <div>
     <%= link_to('Cancel', '#', id: 'cancel-answer', class: 'btn-red') if answer.persisted? %>

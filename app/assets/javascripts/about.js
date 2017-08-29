@@ -27,6 +27,7 @@ $(document).on('turbolinks:load', function() {
 
   }
   if(loadedOnPage('account')) {
+    alert('This should be loaded only in ACCOUNT YOU DUMB JS')
     showCharacterLimit(200);
   }
 });
