@@ -28,10 +28,12 @@ class Users::QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(update_users_question_params)
-      flash[:notice] = "Question updated succesfully!"
-    else
-      flash[:danger] = "Something went wrong. Please try again."
+    if params[:question][:body].length <= 2500
+      if @question.update(update_users_question_params)
+        flash[:notice] = "Question updated succesfully!"
+      else
+        flash[:danger] = "Something went wrong. Please try again."
+      end
     end
   end
 
