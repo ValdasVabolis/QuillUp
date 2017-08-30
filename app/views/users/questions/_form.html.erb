@@ -15,7 +15,7 @@
   <% unless question.persisted? %>
     <div class='question-title-group'>
       <%= f.label :title %>
-      <%= f.text_field :title, id: :title %>
+      <%= f.text_field :title, id: 'question-title'.to_sym %>
       <p id='question-title-counter'></p>
     </div>
   <% end %>

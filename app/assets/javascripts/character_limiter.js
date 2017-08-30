@@ -46,25 +46,3 @@ var Text = (function($, m) {
     }
   };
 }(jQuery, Text || {}));
-
-
-
-/*$(function() {
-  Text.limit({
-    text_selector: '#text-box',
-    count_selector: '#text-box-counter',
-    limit: 5,
-    default_css: {
-      color: 'black'
-    },
-    exceeded_css: {
-      color: 'red'
-    }
-  });
-  
-  Text.limit({
-    text_selector: '#text-area',
-    count_selector: '#text-area-counter',
-    limit: 5
-  });
-}); */

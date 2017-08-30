@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   if($('.question-new').length > 0) {
     Text.limit({
-      text_selector: '#title',
+      text_selector: '#question-title',
       count_selector: '#question-title-counter',
       limit: 150
     });
@@ -10,5 +10,5 @@ $(document).on('turbolinks:load', function() {
       count_selector: '#question-area-counter',
       limit: 2500
     });
-  } 
+  }
 });
