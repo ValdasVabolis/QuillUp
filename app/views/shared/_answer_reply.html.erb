@@ -2,7 +2,8 @@
   <%= f.hidden_field :answer_id, value: answer.id %>
 
   <div>
-    <%= f.text_area :body, id: :area %>
+    <%= f.text_area :body, id: 'reply-area'.to_sym %>
+    <p id='reply-area-counter'></p>
   </div>
 
   <div class='form-submit-wrapper'>

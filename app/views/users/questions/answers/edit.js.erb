@@ -1,7 +1,7 @@
 var answer = $('.question-answer[data-id="<%= @answer.id %>"]');
 var form = answer.find('#form_answer');
-var body = answer.find('.answer-body');
-var area = form.find('#area');
+var body = answer.find('.answer-group');
+var area = form.find('#area-answer-edit');
 var text = body.text();
 
 if(answer.hasClass('editing')) {
@@ -9,6 +9,11 @@ if(answer.hasClass('editing')) {
 } else {
 	answer.addClass('editing');
 	//area.val(text).focus();
+  Text.limit({
+    text_selector: area,
+    count_selector: '#area-answer-counter-edit',
+    limit: 1000
+  });
 }
 autosize(area);
 

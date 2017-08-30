@@ -7,7 +7,6 @@ class Users::Questions::AnswersController < ApplicationController
   def reply
     @answer = Answer.find(params[:id])
     @comment = @answer.comments.new
-    #@answer.question = @parent.question
   end
 
   def edit
@@ -33,10 +32,12 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def update
-    if @answer.update(users_questions_answer_params)
-      flash[:notice] = "Answer updated succesfully!"
-    else
-      flash[:danger] = "Something went wrong. Please try again."
+    if params[:answer][:body].length <= 5000
+      if @answer.update(users_questions_answer_params)
+        flash[:notice] = "Answer updated succesfully!"
+      else
+        flash[:danger] = "Something went wrong. Please try again."
+      end
     end
   end
 

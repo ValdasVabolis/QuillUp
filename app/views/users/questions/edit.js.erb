@@ -7,13 +7,13 @@ var text = body.text();
 if(question.hasClass('editing')) {
 	question.removeClass('editing');
 } else {
+  Text.limit({
+    text_selector: '#question-area',
+    count_selector: '#question-area-counter',
+    limit: 5000
+  });
 	question.addClass('editing');
 	area.val(text).focus();
 }
 autosize(area);
 
-Text.limit({
-  text_selector: '#question-area',
-  count_selector: '#question-area-counter',
-  limit: 5000
-});

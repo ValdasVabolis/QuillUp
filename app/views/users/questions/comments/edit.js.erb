@@ -11,3 +11,9 @@ if(comment.hasClass('editing')) {
   //area.val(text).focus();
 }
 autosize(area);
+
+Text.limit({
+  text_selector: area,
+  count_selector: '#comment-area-counter',
+  limit: 1000
+});

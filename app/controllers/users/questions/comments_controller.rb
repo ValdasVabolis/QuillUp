@@ -1,11 +1,13 @@
 class Users::Questions::CommentsController < ApplicationController
   before_action :set_users_questions_comment, only: [:show, :edit, :update, :destroy, :vote]
   def create
-    @comment = Comment.new({ user: current_user }.merge(users_questions_comment_params))
-    if @comment.save
-    	flash[:notice] = 'Comment saved succesfully'
-    else
-    	flash[:danger] = 'Something went wrong. Please try again.'
+    if params[:comment][:body].length <= 1000
+      @comment = Comment.new({ user: current_user }.merge(users_questions_comment_params))
+      if @comment.save
+      	flash[:notice] = 'Comment saved succesfully'
+      else
+      	flash[:danger] = 'Something went wrong. Please try again.'
+      end
     end
   end
 
@@ -16,10 +18,12 @@ class Users::Questions::CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update(users_questions_comment_params)
-      flash[:notice] = 'Comment updated succesfully!'
-    else
-      flash[:danger] = 'Something went wrong. Please try again.'
+    if params[:comment][:body].length <= 1000
+      if @comment.update(users_questions_comment_params)
+        flash[:notice] = 'Comment updated succesfully!'
+      else
+        flash[:danger] = 'Something went wrong. Please try again.'
+      end
     end
   end
 
