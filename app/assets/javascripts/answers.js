@@ -1,21 +1,14 @@
 $(document).on('turbolinks:load', function() {
   function popoverShowing() {
-    return Popover.showing();
+    return Popover.showing;
   }
   
-  $('.home').on('popoverShown', function(){
-    if(popoverShowing()) {
-      // WORKS
+  $('.home').on('popovershown', function(){
+    if(popoverShowing()) {      
       Text.limit({
-        text_selector: '#answer-area',
-        count_selector: '#answer-area-counter',
+        text_selector: '#area-answer',
+        count_selector: '#area-answer-counter',
         limit: 2500
-      });
-      // NOT WORKS
-      Text.limit({
-        text_selector: '#question-area',
-        count_selector: '#question-area-counter',
-        limit: 5000
       });
     } 
   });

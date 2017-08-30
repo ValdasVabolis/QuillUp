@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  function loadedOnPage(name) {
+ /* function loadedOnPage(name) {
     return $('#' + name + '-content').length > 0;
   }
   function showCharacterLimit(limit) {
@@ -27,7 +27,6 @@ $(document).on('turbolinks:load', function() {
 
   }
   if(loadedOnPage('account')) {
-    alert('This should be loaded only in ACCOUNT YOU DUMB JS')
     showCharacterLimit(200);
-  }
+  }*/
 });

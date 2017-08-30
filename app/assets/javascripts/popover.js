@@ -40,7 +40,7 @@ var Popover = (function($) {
 
   var show = function(view) {
     $(view_contents_selector).html(view);
-    $(parent_selector).addClass(active_cass).trigger('popoverShown');
+    $(parent_selector).addClass(active_cass).trigger('popovershown');
     autosize($('#answer-reply textarea'));
     popover_showing = true; 
   };
