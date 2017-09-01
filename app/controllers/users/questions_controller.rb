@@ -19,21 +19,17 @@ class Users::QuestionsController < ApplicationController
   end  
 
   def create
-    if params[:question][:title].length <= 200 && params[:question][:body].length <= 2500
-      @question = Question.new(create_users_question_params)
-      @question.user = current_user
-      @question.save
-      redirect_to root_url
-    end
+    @question = Question.new(create_users_question_params)
+    @question.user = current_user
+    @question.save
+    redirect_to root_url
   end
 
   def update
-    if params[:question][:body].length <= 2500
-      if @question.update(update_users_question_params)
-        flash[:notice] = "Question updated succesfully!"
-      else
-        flash[:danger] = "Something went wrong. Please try again."
-      end
+    if @question.update(update_users_question_params)
+      flash[:notice] = "Question updated succesfully!"
+    else
+      flash[:danger] = "Something went wrong. Please try again."
     end
   end
 

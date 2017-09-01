@@ -22,6 +22,8 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates_presence_of :user
+  validates :title, length: { minimum: 5, maximum: 200 }
+  validates :body, length: { minimum: 5, maximum: 2500 }
 
   def vote_path(type)
     "/users/question/#{self.id}/vote/#{type}"

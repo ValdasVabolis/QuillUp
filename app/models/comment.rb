@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
 	belongs_to :answer
   belongs_to :user
 
-  validates :body, presence: true
+  validates :body, presence: true, length: { minimum: 1, maximum: 1000 }
 
   def vote_path(type)
     "users/questions/answer/comment/#{self.id}/vote/#{type}"

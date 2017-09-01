@@ -13,13 +13,11 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def create
-    if params[:answer][:body].length <= 5000
-      @question = Question.find(params[:question_id])
-      @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
-      @answer = @question.answers.new(users_questions_answer_params)
-      @answer.user = current_user
-      @answer.save
-    end
+    @question = Question.find(params[:question_id])
+    @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
+    @answer = @question.answers.new(users_questions_answer_params)
+    @answer.user = current_user
+    @answer.save
   end
 
   def vote
@@ -32,12 +30,10 @@ class Users::Questions::AnswersController < ApplicationController
   end
 
   def update
-    if params[:answer][:body].length <= 5000
-      if @answer.update(users_questions_answer_params)
-        flash[:notice] = "Answer updated succesfully!"
-      else
-        flash[:danger] = "Something went wrong. Please try again."
-      end
+    if @answer.update(users_questions_answer_params)
+      flash[:notice] = "Answer updated succesfully!"
+    else
+      flash[:danger] = "Something went wrong. Please try again."
     end
   end
 

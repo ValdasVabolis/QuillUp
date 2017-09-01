@@ -20,7 +20,7 @@ class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :question
   has_many :comments
-  validates :body, presence: true
+  validates :body, presence: true, length: { minimum: 1, maximum: 5000 }
   validate :user_account_confirmed, if: :user
 
   def vote_path(type)
