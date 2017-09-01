@@ -12,7 +12,6 @@ require 'with_friendly_date_time'
 #  deleted     :boolean          default(FALSE)
 #  question_id :integer
 #
-
 class Answer < ApplicationRecord
   include WithFriendlyDateTime
 

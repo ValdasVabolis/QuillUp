@@ -14,12 +14,11 @@
 require 'rails_helper'
 
 describe Answer do
+
   it "saves when valid" do
     c = build(:answer)
     expect(c.save).to be true
   end
-
-
 
   describe '#user' do
     it 'is required' do
@@ -34,8 +33,6 @@ describe Answer do
     end
   end
 
-
-
   describe '#question' do
     it 'is required' do
       p = build(:answer, question: nil)
@@ -43,16 +40,12 @@ describe Answer do
     end
   end
 
-
-
   describe '#body' do
     it 'is required' do
       c = build(:answer, body: nil)
       expect(c.save).to be false
     end
   end
-
-
 
   describe '#soft_delete!' do
     it 'sets the deleted flag to true' do
