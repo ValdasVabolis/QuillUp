@@ -31,6 +31,18 @@ describe User do
   end
 
 
+  describe '#message_chains' do
+    before(:each) do
+      @user = build(:user)
+    end
+
+    it "can be empty" do
+      @user.message_chains = []
+      expect(@user.save).to be true
+    end
+  end
+
+
   describe '#questions' do
     before(:each) do
       @user = build(:user)

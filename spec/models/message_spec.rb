@@ -6,6 +6,13 @@ RSpec.describe Message, type: :model do
     expect(m.save).to be true
   end
 
+  describe '#message_chain' do
+    it 'is required' do
+      mc = build(:message, message_chain: nil)
+      expect(mc.save).to be false
+    end
+  end
+
   describe '#read' do
     it 'defaults to false' do
       m = build(:message)
