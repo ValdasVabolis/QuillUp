@@ -13,7 +13,7 @@
 FactoryGirl.define do
   factory :inquiry do
     name "MyString"
-    email "MyString"
+    email "myemail@email.com"
     message "MyText"
   end
 end

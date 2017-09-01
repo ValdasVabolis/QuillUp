@@ -18,8 +18,6 @@ RSpec.describe Inquiry, type: :model do
     expect(i.save).to be true
   end
 
-
-
   describe '#name' do
     it 'is required' do
       i = build(:inquiry, name: '')
@@ -27,16 +25,17 @@ RSpec.describe Inquiry, type: :model do
     end
   end
 
-
-
   describe '#email' do
     it 'is required' do
       i = build(:inquiry, email: '')
       expect(i.save).to be false 
     end
+
+    it 'has a valid format' do
+      i = build(:inquiry, email: 'a')
+      expect(i.save).to be false
+    end
   end
-
-
 
   describe '#message' do
     it 'is required' do
