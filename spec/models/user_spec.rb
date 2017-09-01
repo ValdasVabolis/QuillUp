@@ -25,67 +25,55 @@
 require 'rails_helper'
 
 describe User do
+  subject { create(:user) }
+
   it "saves when valid" do
-    u = build(:user)
-    expect(u.save).to be true
+    expect(build(:user).save).to be true
   end
 
 
   describe '#message_chains' do
-    before(:each) do
-      @user = build(:user)
-    end
-
     it "can be empty" do
-      @user.message_chains = []
-      expect(@user.save).to be true
+      subject.message_chains = []
+      expect(subject.save).to be true
     end
 
     it 'can be populated' do
       3.times do
-        @user.message_chains << build(:message_chain)
+        subject.message_chains << build(:message_chain)
       end
-      expect(@user.save).to be true
+      expect(subject.save).to be true
     end
   end
 
 
   describe '#questions' do
-    before(:each) do
-      @user = build(:user)
-    end
-
     it "can be empty" do
-      @user.questions = []
-      expect(@user.save).to be true
+      subject.questions = []
+      expect(subject.save).to be true
     end
 
     it "can contain questions" do
       3.times do |i|
-        @user.questions << build(:question)
+        subject.questions << build(:question)
       end
-      expect(@user.save).to be true
+      expect(subject.save).to be true
     end
   end
 
 
 
   describe '#answers' do
-    before(:each) do
-      @user = create(:user)
-      @question = build(:question, user: @user)
-    end
-
     it "can be empty" do
-      @user.answers = []
-      expect(@user.save).to be true
+      subject.answers = []
+      expect(subject.save).to be true
     end
 
     it "can contain answers" do
       3.times do |i|
-        @user.answers << build(:answer, question: @question)
+        subject.answers << build(:answer)
       end
-      expect(@user.save).to be true
+      expect(subject.save).to be true
     end
   end
 end
