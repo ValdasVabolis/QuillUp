@@ -40,6 +40,13 @@ describe User do
       @user.message_chains = []
       expect(@user.save).to be true
     end
+
+    it 'can be populated' do
+      3.times do
+        @user.message_chains << build(:message_chain)
+      end
+      expect(@user.save).to be true
+    end
   end
 
 
