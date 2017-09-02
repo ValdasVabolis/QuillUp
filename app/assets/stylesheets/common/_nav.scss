@@ -14,7 +14,7 @@ nav {
 
   .nav-logo-image {
     padding-left: 10px;   
-    height: 48px;
+    height: 58px;
   }
 
   ul {
@@ -45,7 +45,8 @@ nav {
     //height: $header-height - 2px;
     padding: 18px 14px;
     text-align: center;
-    width: 100px;
+    width: 150px;
+    height: 60px;
 
     &:hover, &:active, &:focus {
       border-bottom: 5px inset $palette-red;
