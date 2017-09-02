@@ -52,7 +52,7 @@ nav {
     }
   }
 
-  i {
+  .fa-bars {
     display: none !important;
   }
 
@@ -72,7 +72,7 @@ nav {
       float: none;
     }
 
-    i {
+    .fa-bars {
       color: $palette-red;
       display: block !important;
       position: fixed;
