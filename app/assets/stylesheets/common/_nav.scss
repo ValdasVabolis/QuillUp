@@ -14,7 +14,7 @@ nav {
 
   .nav-logo-image {
     padding-left: 10px;   
-    height: 58px;
+    height: 48px;
   }
 
   ul {
@@ -31,6 +31,16 @@ nav {
     color: white;
     text-align: center;
     padding: 0;
+
+    & .fa {
+      font-size: $font-size-base;
+    }
+
+    span {
+      padding-left: 10px;
+      font-size: $font-size-base;
+      font-family: 'Roboto', sans-serif;
+    }
   }
 
   li a {
@@ -43,11 +53,11 @@ nav {
     //height: $header-height - 2px;
     padding: 18px 14px;
     text-align: center;
-    width: 175px;
-    height: 60px;
+    width: 160px;
+    height: 50px;
 
     &:hover, &:active, &:focus {
-      border-bottom: 5px inset $palette-red;
+      border-bottom: 4px inset $palette-red;
       color: #fff;
     }
   }

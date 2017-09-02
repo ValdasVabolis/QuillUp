@@ -8,16 +8,36 @@
     <li><%= link_to 'Contact us', new_inquiry_path %></li>-->
     <% if user_signed_in? %>
       <li>
-      <%= link_to '#' do %>
-        <%= fa_icon('envelope') %>
-      <% end %>
+        <%= link_to '#' do %>
+          <%= fa_icon 'envelope' %>
+          <span>Messages</span>
+        <% end %>
       </li>
-      <li><%= link_to ' Messages', '#', class: 'fa fa-envelope' %></li>
-      <li><%= link_to ' My account', my_account_path, class: 'fa fa-user-circle-o' %></li>
-      <li><%= link_to ' Log out', destroy_user_session_path, method: :delete, class: 'fa fa-sign-out' %></li>
+      <li>
+        <%= link_to my_account_path do %>
+          <%= fa_icon 'user-circle-o' %>
+          <span>My account</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <%= fa_icon 'sign-out' %>
+          <span>Log out</span>
+        <% end %>
+      </li>
     <% else %>
-      <li><%= link_to ' Sign up', new_user_registration_path, class: 'fa fa-user-plus' %></li>
-      <li><%= link_to ' Log in', new_user_session_path, class: 'fa fa-sign-in' %></li>
+      <li>
+        <%= link_to new_user_registration_path do %>
+          <%= fa_icon 'user-plus' %>
+          <span>Sign up</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_user_session_path do %>
+          <%= fa_icon 'sign-in' %>
+          <span>Sign in</span>
+        <% end %>
+      </li>
     <% end %>
   </ul>
   <%= fa_icon 'bars 2x' %>
