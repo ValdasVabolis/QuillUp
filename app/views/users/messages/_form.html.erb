@@ -1,0 +1,27 @@
+<%= form_with(model: message_chain, url: url, id: 'form-message') do |f| %>
+  <div class='form-header'>
+    <h2><%= form_header %></h2>
+  </div>
+  <% if message_chain.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(message_chain.errors.count, 'error') %> prohibited this message from being saved:</h2>
+      <ul>
+        <% message_chain.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class='mc-subject-group'>
+    <%= f.label :subject %>
+    <%= f.text_field :subject, id: 'mc-subject'.to_sym %>
+  </div>
+  <div class='mc-body-group'>
+    <%= f.label :body %>
+    <%= f.text_area :body, id: 'mc-body'.to_sym %>
+  </div>
+  <div class='form-submit-wrapper'>
+    <%= f.submit 'Send' %>
+  </div>
+
+<% end %>

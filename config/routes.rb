@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   namespace :users do 
     get 'questions/:id', to: 'questions#show', constraints: { id: /\d*/ }
     authenticate :user do
+      resources :messages, only: [:new, :create]
       get 'questions/exit', to: 'questions#exit', as: 'questions_exit'
       resources :questions, except: [:show]
       match 'question/:id/vote/:type', to: 'questions#vote', via: :put
