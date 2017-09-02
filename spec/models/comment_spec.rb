@@ -13,17 +13,18 @@
 require 'rails_helper'
 
 describe Comment do
+  subject { create(:comment) }
+
   it 'saves when valid' do
-    c = build(:comment)
-    expect(c.save).to be true
+    expect(build(:comment).save).to be true
   end
 
 
 
   describe '#user' do
     it 'is required' do
-      c = build(:comment, user: nil)
-      expect(c.save).to be false
+      subject.user = nil
+      expect(subject.save).to be false
     end
   end
 
@@ -31,8 +32,8 @@ describe Comment do
 
   describe '#answer' do
     it 'is required' do
-      c = build(:comment, answer: nil)
-      expect(c.save).to be false
+      subject.answer = nil
+      expect(subject.save).to be false
     end
   end
 
@@ -40,8 +41,8 @@ describe Comment do
 
   describe '#body' do
     it 'is required' do
-      c = build(:comment, body: '')
-      expect(c.save).to be false
+      subject.body = ''
+      expect(subject.save).to be false
     end
   end
 
@@ -58,8 +59,7 @@ describe Comment do
     end
 
     it 'is formatted correctly' do
-      a = create(:comment)
-      expect(a.friendly_date).to eq 'Jan 1, 2000'
+      expect(subject.friendly_date).to eq 'Jan 1, 2000'
     end
   end
 
@@ -76,8 +76,7 @@ describe Comment do
     end
 
     it 'is formatted correctly' do
-      a = create(:comment)
-      expect(a.friendly_time).to eq '12:00 AM'
+      expect(subject.friendly_time).to eq '12:00 AM'
     end
   end
 end

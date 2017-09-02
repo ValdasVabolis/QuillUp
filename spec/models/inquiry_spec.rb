@@ -13,34 +13,35 @@
 require 'rails_helper'
 
 RSpec.describe Inquiry, type: :model do
+  subject { create(:inquiry) }
+
   it 'saves when valid' do
-    i = build(:inquiry)
-    expect(i.save).to be true
+    expect(build(:inquiry).save).to be true
   end
 
   describe '#name' do
     it 'is required' do
-      i = build(:inquiry, name: '')
-      expect(i.save).to be false 
+      subject.name = ''
+      expect(subject.save).to be false 
     end
   end
 
   describe '#email' do
     it 'is required' do
-      i = build(:inquiry, email: '')
-      expect(i.save).to be false 
+      subject.email = ''
+      expect(subject.save).to be false 
     end
 
     it 'has a valid format' do
-      i = build(:inquiry, email: 'a')
-      expect(i.save).to be false
+      subject.email = 'a'
+      expect(subject.save).to be false
     end
   end
 
   describe '#message' do
     it 'is required' do
-      i = build(:inquiry, message: '')
-      expect(i.save).to be false 
+      subject.message = ''
+      expect(subject.save).to be false 
     end
   end
 end
