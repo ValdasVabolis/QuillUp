@@ -45,7 +45,6 @@ nav {
 
   li a {
     transition: all .25s ease;
-    background: $palette-gray-dark;
     color: #fff;
     font-size: 14px;
     text-decoration: none;
@@ -54,10 +53,10 @@ nav {
     padding: 18px 14px;
     text-align: center;
     width: 160px;
-    height: 50px;
+    height: 55px;
 
     &:hover, &:active, &:focus {
-      border-bottom: 4px inset $palette-red;
+      border-bottom: 5px inset $palette-red;
       color: #fff;
     }
   }
