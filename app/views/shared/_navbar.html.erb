@@ -7,6 +7,11 @@
       TODO: find a better place for this
     <li><%= link_to 'Contact us', new_inquiry_path %></li>-->
     <% if user_signed_in? %>
+      <li>
+      <%= link_to '#' do %>
+        <%= fa_icon('envelope') %>
+      <% end %>
+      </li>
       <li><%= link_to ' Messages', '#', class: 'fa fa-envelope' %></li>
       <li><%= link_to ' My account', my_account_path, class: 'fa fa-user-circle-o' %></li>
       <li><%= link_to ' Log out', destroy_user_session_path, method: :delete, class: 'fa fa-sign-out' %></li>

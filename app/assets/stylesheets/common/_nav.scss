@@ -19,7 +19,6 @@ nav {
 
   ul {
     display: inline-block;
-    list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -32,7 +31,6 @@ nav {
     color: white;
     text-align: center;
     padding: 0;
-    text-decoration: none;
   }
 
   li a {
@@ -45,7 +43,7 @@ nav {
     //height: $header-height - 2px;
     padding: 18px 14px;
     text-align: center;
-    width: 150px;
+    width: 175px;
     height: 60px;
 
     &:hover, &:active, &:focus {
