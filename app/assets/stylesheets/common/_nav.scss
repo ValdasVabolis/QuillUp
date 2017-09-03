@@ -65,7 +65,7 @@ nav {
     display: none !important;
   }
 
-  @include breakpoint(415px) {
+  @include breakpoint(700px) {
     ul {
       top: 50px;
       position: fixed;
@@ -79,6 +79,10 @@ nav {
 
     li {
       float: none;
+      background: $palette-gray-dark;
+      span {
+        padding-left: 0px;
+      }
     }
 
     .fa-bars {
