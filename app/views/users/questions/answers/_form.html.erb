@@ -1,5 +1,5 @@
 <%= form_with(model: answer, url: url, remote: true, id: 'form_answer') do |f| %>
-  <%= hidden_field_tag :question_id, defined?(question) ? question.id : answer.question.id %>
+  <%= hidden_field_tag :question_id, question.id %>
   <% if answer.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(answer.errors.count, 'error') %> prohibited this answer from being saved:</h2>
@@ -11,19 +11,14 @@
     </div>
   <% end %>
   <div class='answer-group'>
-  <% if answer.persisted? %>
-    <%= f.text_area :body, id: 'area-answer-edit'.to_sym %>
-    <p id='area-answer-counter-edit'></p>
-  <% else %>
     <%= f.text_area :body, id: 'area-answer-new'.to_sym %>
     <p id='area-answer-counter-new'></p>
-  <% end %>
   </div>
   <div>
-    <%= link_to('Cancel', '#', id: 'cancel-answer', class: 'btn-red') if answer.persisted? %>
+    <%= link_to('Cancel', '#', id: 'cancel-answer', class: 'btn-red') %>
   </div>
   <div>
-    <%= f.submit answer.persisted? ? 'Save' : 'Create' %>
+    <%= f.submit 'Create' %>
   </div>
 <% end %>
 

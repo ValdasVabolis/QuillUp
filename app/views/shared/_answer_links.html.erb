@@ -1,7 +1,7 @@
 <div class="answer-links">
   <% if answer.user == current_user %>
   		<% unless answer.deleted? %>
-	      <%= link_to('Edit', edit_users_questions_answer_path(answer), id: 'edit', remote: true) %>
+	      <%= link_to('Edit', edit_users_questions_answer_path(answer), id: 'edit') %>
 	      <%= link_to('Delete', users_questions_answer_path(answer),
 	       	remote: true,
 	        method: :delete,

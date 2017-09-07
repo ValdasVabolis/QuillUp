@@ -13,3 +13,11 @@ $(document).on('turbolinks:load', function() {
     } 
   });
 });
+
+// // remember to e.preventDefault()
+// var question_id = $(this).data('id'); //fix this
+// $('.thingy').html(HandlebarsTemplates['edit_answer']({
+//   question_id: question_id,
+//   csrf_key: $('meta[name="csrf-param"]').attr('content'),
+//   csrf_value: $('meta[name="csrf-token"]').attr('content')
+// }));

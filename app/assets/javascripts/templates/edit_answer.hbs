@@ -1,0 +1,16 @@
+<form id='form_answer' action='/users/questions/answers' accept-charset='UTF-8' data-remote='true' method='post'>
+  <input name='utf8' type='hidden' value='✓'>
+  <input type='hidden' name='{{csrf_key}}' value='{{csrf_value}}'>
+  <input type='hidden' name='question_id' id='question_id' value='{{question_id}}'>
+  <div class='answer-group'>
+    <textarea id='area-answer-new' name='answer[body]'>{{body}}</textarea>
+    <p id='area-answer-counter-new'></p>
+  </div>
+  <div>
+    <a id='cancel-answer' class='btn-red' href='#'>Cancel</a>
+  </div>
+  <div>
+    <input type='submit' name='commit' value='Create' data-disable-with='Create'>
+  </div>
+</form>
+

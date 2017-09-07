@@ -1,6 +1,8 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require_tree .
 //= require autosize
 
@@ -16,10 +18,11 @@ $(show_hide_alert);
 
 $(function() {
   $(document).on('click', '.fa-bars', function(e) {
-    $('nav ul').toggle();
+    $('nav ul').toggleClass('shown');
+    e.stopPropagation();
   });
 
-  $(document).on('mouseleave', 'nav ul', function(e) {
+  $(document).on('click', function(e) {
     $('nav ul').removeClass('shown');
   });
 

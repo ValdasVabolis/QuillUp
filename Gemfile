@@ -7,6 +7,7 @@ end
 
 ruby '2.4.0'
 
+gem 'handlebars_assets'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'annotate'
 gem 'autoprefixer-rails'
