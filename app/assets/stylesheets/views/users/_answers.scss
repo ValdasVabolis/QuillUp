@@ -36,7 +36,11 @@
     display: none;
   }
 
-  #save, #cancel, #form_answer {
+  #save, #form_answer {
+    display: none;
+  }
+
+  .cancel-answer {
     display: none;
   }
 
@@ -45,7 +49,7 @@
   }
 
   &.editing {
-    #save, #cancel, #form_answer {
+    #save, .cancel-answer, #form_answer {
       display: inline;
     }
     #edit, .answer-body, #reply-btn, #delete

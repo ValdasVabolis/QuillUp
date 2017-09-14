@@ -31,7 +31,7 @@ $(function() {
     $('#popover-view-contents .question-large').removeClass('editing');
   });
 
-  $(document).on('click', '#cancel-answer', function(e) {
+  $(document).on('click', '.cancel-answer', function(e) {
     e.preventDefault();
     var id = $(this).closest('.question-answer').attr('data-id');
     $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('editing');
