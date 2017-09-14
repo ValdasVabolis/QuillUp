@@ -5,4 +5,5 @@
 <% @questions.each do |question| %>
   <%= render partial: 'shared/question', locals: { question: question } %>
 <% end %>
+
 <%= will_paginate @questions %>
