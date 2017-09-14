@@ -3,6 +3,12 @@ module UserHelper
     user.send("#{type}s").map(&:score).sum
   end
 
+  def user_score_sum_all(user)
+    %i[question answer comment].map do |t|
+      user_score_sum(user, t)
+    end.sum
+  end
+
   def user_about_me(user)
     if user.about.nil?
       render html: '<h2>About me</h2><p>User does not have an about me yet.</p>'.html_safe

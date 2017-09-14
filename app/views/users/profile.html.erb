@@ -4,6 +4,7 @@
   <p>Member since: <b><%= @user.created_at.to_s[0...10] %></b></p>
   <div class="public-score">
   	<h2>Submission score</h2>
+    <b>Total score: <%= user_score_sum_all(@user) %></b>
   	<p>Question: <b><%= user_score_sum(@user, :question) %></b></p>
   	<p>Answer: <b><%= user_score_sum(@user, :answer) %></b></p>
   	<p>Comment: <b><%= user_score_sum(@user, :comment) %></b></p>
