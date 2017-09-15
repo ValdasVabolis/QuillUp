@@ -14,9 +14,7 @@ ActiveRecord::Schema.define(version: 20170901215932) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "answer_id"
     t.text "body"
-    t.boolean "deleted", default: false
     t.integer "question_id"
     t.integer "cached_votes_total", default: 0
     t.integer "cached_votes_score", default: 0
@@ -27,7 +25,6 @@ ActiveRecord::Schema.define(version: 20170901215932) do
     t.float "cached_weighted_average", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_answers_on_answer_id"
     t.index ["cached_votes_down"], name: "index_answers_on_cached_votes_down"
     t.index ["cached_votes_score"], name: "index_answers_on_cached_votes_score"
     t.index ["cached_votes_total"], name: "index_answers_on_cached_votes_total"
