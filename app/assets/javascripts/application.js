@@ -16,10 +16,10 @@ var show_hide_alert = function() {
 
 $(show_hide_alert);
 
-$(function() {
+$(document).on('turbolinks:load', function() {
   $(document).on('click', '.fa-bars', function(e) {
-    $('nav ul').toggleClass('shown');
     e.stopPropagation();
+    $('nav ul').toggleClass('shown');
   });
 
   $(document).on('click', function(e) {
