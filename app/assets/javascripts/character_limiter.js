@@ -11,20 +11,23 @@ var Text = (function($, m) {
       ? { color: 'red' }
       : o.exceeded_css;
     var current_count = null;
-    
+
     var update_current_count = function(val) {
+      if(typeof val === 'undefined') {
+        return;
+      }
       current_count = val.length;
     };
-    
+
     var render_current_count = function() {
       count_el.html(o.limit - current_count);
       count_el.css(limit_exeeded() ? exceeded_css : default_css);
     };
-    
+
     var limit_exeeded = function() {
       return text_el.val().length > o.limit;
     };
-    
+
     var on_text_keyup = function(e) {
       update_current_count(text_el.val());
       render_current_count();

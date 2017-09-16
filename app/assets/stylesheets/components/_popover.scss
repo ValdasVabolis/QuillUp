@@ -3,7 +3,7 @@
 #popover-view-wrapper {
   pointer-events: none;
   position: fixed;
-  top: 0;
+  top: 50px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -27,7 +27,7 @@
   @include center;
   border-radius: 12px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  margin: $header-height * 2 auto;
+  margin: 0 auto;
   opacity: 0;
   padding: 20px;
   transition: all $delay ease;

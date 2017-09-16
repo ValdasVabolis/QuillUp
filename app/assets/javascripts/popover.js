@@ -16,8 +16,9 @@ var Popover = (function($) {
       e.preventDefault();
       exit();
     });
+
     // prevent clicking inside popover from closing it
-    $(document).on('mousedown', view_selector, function(e) {
+    $(document).on('mousedown', view_selector + ', nav', function(e) {
       e.stopPropagation();
     });
 
@@ -42,7 +43,7 @@ var Popover = (function($) {
     $(view_contents_selector).html(view);
     $(parent_selector).addClass(active_cass).trigger('popovershown');
     autosize($('#answer-reply textarea'));
-    popover_showing = true; 
+    popover_showing = true;
   };
 
   var clear = function() {
