@@ -1,3 +1,3 @@
 <div class='question-title'>
-  <%= link_to question.title, users_question_path(question), remote: true, method: :get %>
+  <%= link_to zero_width_space_interleave(question.title).html_safe, users_question_path(question), remote: true, method: :get %>
 </div>

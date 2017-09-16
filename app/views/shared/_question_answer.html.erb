@@ -10,7 +10,7 @@
       </div>
     <% end %>
     <div class='answer-body'>
-      <%= answer.body %>
+      <%= zero_width_space_interleave(answer.body).html_safe %>
     </div>
     <%= render partial: 'users/questions/answers/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path(answer) } %>
     <%= render partial: 'shared/answer_votes', locals: { answer: answer } %> 
