@@ -13,7 +13,7 @@ nav {
   //border-bottom: 2px solid $palette-red;
 
   .nav-logo-image {
-    padding-left: 10px;   
+    padding-left: 10px;
     height: 48px;
   }
 
@@ -61,7 +61,7 @@ nav {
     }
   }
 
-  .fa-bars {
+  i.fa-bars {
     display: none !important;
   }
 
@@ -78,14 +78,17 @@ nav {
     }
 
     li {
+      display: block;
       float: none;
       background: $palette-gray-dark;
+      width: 190px;
+
       span {
         padding-left: 0px;
       }
     }
 
-    .fa-bars {
+    i.fa-bars {
       color: $palette-red;
       display: block !important;
       position: fixed;
