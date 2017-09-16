@@ -1,5 +1,5 @@
 <div class='new-question-wrapper'>
-  <%= link_to 'New Question', new_users_question_path %>
+  <%= link_to 'New Question', new_users_question_path unless current_user.nil? %>
 </div>
 
 <% @questions.each do |question| %>
