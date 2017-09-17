@@ -35,9 +35,22 @@ feature 'submission delete process', type: :feature, js: true do
       click_link 'Delete'
     end
 
-    within '.question-large' do
-      expect(page).to have_content 'Question deleted succesfully.'
+    expect(page).to have_content 'Question deleted succesfully.'
+
+    within '#form_answer' do
+      fill_in 'area-answer-new', with: 'I recommend starting from the basics. You need to make sure you understand the basic principles and fundamentals first,
+      then all you need to do is just practice a lot and you should be well on your way of success. Good luck!'
     end
+
+    click_button 'Create'
+
+    within '.question-answer answer' do
+      page.accept_confirm do
+        click_link 'Delete'
+      end
+    end
+
+    expect(page).to have_content 'Anonymous'
 
   end
 
