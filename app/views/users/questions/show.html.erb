@@ -7,6 +7,11 @@
   <% else %>
     <p>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
     <%= link_to('Edit', edit_users_question_path(@question), remote: true, id: 'edit') if !current_user.nil? && current_user.username == @question.user.username %>
+    <%= link_to('Delete', users_question_path(question), 
+        remote: true, 
+        method: :delete,
+        id: 'delete', 
+        data: { confirm: 'Are you sure?' }) %>
   <% end %>
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
   <%= render partial: 'shared/question_answers',  locals: { answers: @answers } %>
