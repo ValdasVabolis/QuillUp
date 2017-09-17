@@ -49,7 +49,7 @@
     display: none;
   }
 
-  #reply-btn {
+  .reply-btn {
     display: inline;
   }
 
@@ -57,7 +57,7 @@
     #save, .cancel-answer, #form_answer {
       display: inline;
     }
-    #edit, .answer-body, #reply-btn, #delete
+    #edit, .answer-body, .reply-btn, #delete
     {
       display: none;
     }
@@ -67,11 +67,11 @@
     #form-reply-answer, #cancel-reply {
       display: inline;
     }
-    #reply-btn, #edit, #delete {
+    .reply-btn, #edit, #delete {
       display: none;
     }
   }
-  
+
   form {
     margin-top: 10px;
     padding: 0;
