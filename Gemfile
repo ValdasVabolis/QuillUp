@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
+ruby '2.4.2'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-
-ruby '2.4.0'
+gem 'rails', '~> 5.1.2'
+gem 'puma', '3.7'
 
 gem 'handlebars_assets'
 gem 'acts_as_votable', '~> 0.10.0'
@@ -21,8 +23,6 @@ gem 'gravatar_image_tag'
 gem 'hirb', '0.7.3'
 gem 'jbuilder', '2.7.0'
 gem 'jquery-rails', '4.3.1'
-gem 'puma', '3.7'
-gem 'rails', '5.1.2'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'redis'
 gem 'sass-rails', '5.0.6'

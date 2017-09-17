@@ -308,7 +308,7 @@ DEPENDENCIES
   pg (= 0.21.0)
   pry
   puma (= 3.7)
-  rails (= 5.1.2)
+  rails (~> 5.1.2)
   recaptcha
   redis
   rspec-rails
@@ -325,7 +325,7 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.4.2p198
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
