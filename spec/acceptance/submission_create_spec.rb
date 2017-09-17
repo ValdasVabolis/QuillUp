@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'question create process', type: :feature, js: true do
+feature 'submission create process', type: :feature, js: true do
 
   background do
     @user = create(:user, {
@@ -10,7 +10,7 @@ feature 'question create process', type: :feature, js: true do
     })
   end
 
-  scenario 'sign in and create a question' do
+  scenario 'create submissions q/a/c' do
     visit 'users/sign_in'
 
     within '#new_user' do
@@ -35,6 +35,19 @@ feature 'question create process', type: :feature, js: true do
     click_button 'Create'
 
     expect(page).to have_content 'Question created succesfully!'
+
+    click_link 'Answers'
+
+    within '#form_answer' do
+      fill_in 'area-answer-new', with: 'I recommend starting from the basics. You need to make sure you understand the basic principles and fundamentals first,
+      then all you need to do is just practice a lot and you should be well on your way of success. Good luck!'
+    end
+
+    click_button 'Create'
+
+    within '.question-author' do
+      expect(page).to have_content @user.username
+    end
   end
 
 end

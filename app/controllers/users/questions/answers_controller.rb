@@ -31,9 +31,9 @@ class Users::Questions::AnswersController < ApplicationController
 
   def update
     if @answer.update(users_questions_answer_params)
-      flash[:notice] = "Answer updated succesfully!"
+      flash[:notice] = 'Answer updated succesfully!'
     else
-      flash[:danger] = "Something went wrong. Please try again."
+      flash[:danger] = 'Something went wrong. Please try again.'
     end
   end
 
