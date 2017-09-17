@@ -20,11 +20,13 @@
 }
 
 #popover-view-wrapper {
+
   z-index: 1002;
 }
 
 #popover-view {
   @include center;
+  top: 25px;
   border-radius: 12px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   margin: 0 auto;
@@ -49,8 +51,6 @@
   }
 }
 
-
-
 // popover shown
 #popover-parent.showing-popover {
   overflow: hidden;
@@ -63,6 +63,7 @@
   #popover-view-wrapper {
     pointer-events: all;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   #popover-view {
@@ -71,3 +72,4 @@
     opacity: 1;
   }
 }
+

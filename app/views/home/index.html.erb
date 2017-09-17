@@ -1,5 +1,12 @@
 <div class='new-question-wrapper'>
-  <%= link_to 'New Question', new_users_question_path unless current_user.nil? %>
+  <div class="new-question-title">
+    <h4>New Question</h4>
+  </div>
+  <div class='new-question-icon'>
+    <%= link_to my_account_path do %>
+      <%= fa_icon 'pencil' %>
+    <% end %>
+  </div>
 </div>
 
 <% @questions.each do |question| %>
