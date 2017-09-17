@@ -14,9 +14,9 @@ var show_hide_alert = function() {
   }, 3000);
 };
 
-$(show_hide_alert);
-
 $(document).on('turbolinks:load', function() {
+  $(show_hide_alert);
+
   $(document).on('click', '.fa-bars', function(e) {
     e.stopPropagation();
     $('nav ul').toggleClass('shown');

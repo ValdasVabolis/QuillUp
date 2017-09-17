@@ -1,4 +1,4 @@
-.alert, .notice {
+.alert {
   @include center;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -14,7 +14,7 @@
   width: 420px;
   z-index: 2;
 
-  &.alert {
+  &.danger {
     background: $palette-red-dark;  
   }
 
