@@ -1,1 +1,3 @@
-$('.question-votes[data-id="<%= @question.id %>"]').parent().replaceWith('<%= j render(partial: "shared/question", locals: { question: @question}) %>');
+var question = $('.question-small[data-id="<%= @question.id %>"]')
+question.find('.question-author').html('Question orphaned. Submitted on <%= @question.friendly_date %> at <%= @question.friendly_time %>');
+question.find('.question-links > .question-tools, .question-avatar').remove();

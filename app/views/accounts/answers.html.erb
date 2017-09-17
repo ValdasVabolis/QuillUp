@@ -1,11 +1,11 @@
 <% @answers.each do |answer| %>
   <div class='answer' data-id='<%= answer.id %>'>
   <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
-    <h4><%= link_to("#{answer.question.title}", users_question_path(answer.question)) %></h4>
+    <h4><%= link_to zero_width_space_interleave(answer.question.title).html_safe, users_question_path(answer.question) %></h4>
     <p><%= answer.body %></p>
   </div>
 <% end %>
 <%= will_paginate @answers %>
 <% if current_user.answers.empty? %>
-  <h2>You haven't submitted any answers yet!</h2>
+  <p>You haven't submitted any answers yet!</p>
 <% end %>
