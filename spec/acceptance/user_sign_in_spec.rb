@@ -8,14 +8,16 @@ feature "sign in process", type: :feature, js: true do
     })
   end
 
-  scenario 'sign in to Quill' do
+  scenario 'user authentication' do
     visit 'users/sign_in'
 
     within("#new_user") do
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
     end
-    click_button 'Sign In'
+    click_button 'Sign in'
     expect(page).to have_content 'Signed in successfully.'
+    click_link 'Sign out'
+    expect(page).to have_content 'Signed out successfully.'
   end
 end
