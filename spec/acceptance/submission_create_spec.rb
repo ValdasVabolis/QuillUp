@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'submission create process', type: :feature, js: true do
-
   background do
     @user = create(:user, {
       username: 'SeanKennedy',
