@@ -46,10 +46,26 @@ feature 'submission create process', type: :feature, js: true do
     click_button 'Create'
 
     within '.question-author' do
+      # TODO: check if question exists in user's column and if that question with id exists in DOM
+      #a = page.find(:css, 'question-answer answer[data-id="' + @user.answers.last.id.to_s + '"]')
       expect(page).to have_content @user.username
     end
-  end
 
+    click_link 'Reply to this answer'
+
+    within '#form-reply-answer' do
+      fill_in 'reply-area', with: 'I agree with everything you have said, but there is one small problem: too much practice can cause a burn out. Make sure
+      to take a rest every hour or so and drink a lot of water. It should drastically improve your learning experience.'
+
+      click_button 'Create'
+    end
+
+    within '.comment-author' do
+      # TODO: the same improvement as planned for answers ( check the comment in DB and then in DOM by ID)
+      expect(page).to have_content @user.username
+    end
+
+  end
 end
 
 
