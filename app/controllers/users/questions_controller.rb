@@ -21,15 +21,20 @@ class Users::QuestionsController < ApplicationController
   def create
     @question = Question.new(create_users_question_params)
     @question.user = current_user
-    @question.save
-    redirect_to root_url
+    if @question.save
+      flash[:notice] = 'Question created succesfully!'
+      redirect_to root_url
+    else
+      flash[:danger] = 'Something went wrong. Please try again.'
+      redirect_to root_url
+    end
   end
 
   def update
     if @question.update(update_users_question_params)
-      flash[:notice] = "Question updated succesfully!"
+      flash[:notice] = 'Question updated succesfully!'
     else
-      flash[:danger] = "Something went wrong. Please try again."
+      flash[:danger] = 'Something went wrong. Please try again.'
     end
   end
 
