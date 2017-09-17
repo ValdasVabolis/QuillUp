@@ -1,28 +1,10 @@
 body.home {
 
   .new-question-wrapper {
-
-    justify-content: center;
-    display: flex;    
-    padding-top: 25px;
-    padding-bottom: 25px;
-
-    .new-question-title {
-      
-    }
-
-    .new-question-icon {
-      display: block;
-      a {
-        @extend .btn;
-        width: 40px;
-        height: 40px;
-        border-radius: 50px;
-        background: #90a4ae;
-
-        font-size: $font-size-large;
-        text-align: center;
-      }
+    padding: $margin 0;
+    a {
+      @extend .btn;
+      font-size: $font-size-large;
     }
   }
 
