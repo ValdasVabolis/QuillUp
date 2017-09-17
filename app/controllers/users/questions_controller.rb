@@ -31,11 +31,7 @@ class Users::QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(update_users_question_params)
-      flash[:notice] = 'Question updated succesfully!'
-    else
-      flash[:danger] = 'Something went wrong. Please try again.'
-    end
+    @question.update(update_users_question_params)
   end
 
   def destroy
