@@ -31,8 +31,9 @@ gem 'uglifier', '3.2.0'
 gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
+  gem "database_cleaner"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '2.13'
+  gem "capybara"
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec', '~> 4.7', require: false
