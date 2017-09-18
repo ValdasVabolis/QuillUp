@@ -18,11 +18,13 @@ $(document).on('turbolinks:load', function() {
   $(show_hide_alert);
 
   $(document).on('click', '.fa-bars', function(e) {
+    alert('fa-bars click');
     e.stopPropagation();
     $('nav ul').toggleClass('shown');
   });
 
   $(document).on('click', function(e) {
+    alert('fa-bars close');
     $('nav ul').removeClass('shown');
   });
 
@@ -60,4 +62,6 @@ $(document).on('turbolinks:load', function() {
       }
     }
   });
+
+  Popover.init();
 });
