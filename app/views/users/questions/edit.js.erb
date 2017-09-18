@@ -2,7 +2,7 @@ var question = $('.question-large[data-id="<%= @question.id %>"]');
 var form = question.find('#form-question');
 var body = question.find('.question-body');
 var area = form.find('#question-area');
-var text = body.text();
+var text = body[0].innerText.trim();
 
 if(question.hasClass('editing')) {
 	question.removeClass('editing');
@@ -13,7 +13,7 @@ if(question.hasClass('editing')) {
     limit: 5000
   });
 	question.addClass('editing');
-	area.val(text).focus();
+	area.val(text);
 }
 autosize(area);
 

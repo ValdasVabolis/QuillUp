@@ -1,10 +1,10 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class='form-heading'>
-    <div class='form-heading-title'>
+  <div class='form-header'>
+    <div class='form-header-title'>
       Sign In
     </div>
-    <div class='form-heading-links'>
-      Don't have an accout yet? <%= link_to 'Sign up', new_registration_path(resource_name) %>
+    <div class='form-header-links'>
+      Don't have an accout yet? <%= link_to 'Sign Up', new_registration_path(resource_name) %>
     </div>
   </div>
   <div>
@@ -29,8 +29,8 @@
   <% end -%>
 
   <div class='form-submit-wrapper'>
-    <%= f.submit 'Sign in' %>
+    <%= f.submit 'Sign In' %>
   </div>
-  
+
   <%= render 'devise/shared/links' %>
 <% end %>

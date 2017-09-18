@@ -67,4 +67,4 @@ var Popover = (function($) {
   }
 }(jQuery));
 
-// Popover.init();
+Popover.init();

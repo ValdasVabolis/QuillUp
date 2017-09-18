@@ -2,7 +2,7 @@ var answer = $('.question-answer[data-id="<%= @comment.answer.id %>"]');
 var comment = $('<%= j render partial: "shared/comment", locals: { comment: @comment} %>');
 
 if(answer.hasClass('replying')) {
-	answer.next('.answer-comments').prepend(comment);
+	$('.answer-comments[data-id=<%= @comment.answer.id %>]').append(comment);
 	answer.removeClass('replying');
 	$('#reply-area').val('');
   $('#reply-area-counter').html('');

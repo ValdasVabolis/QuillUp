@@ -18,7 +18,7 @@ feature 'about me section creation', type: :feature, js: true do
       fill_in 'Password', with: @user.password
     end
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     visit '/account/settings'
 
@@ -32,7 +32,7 @@ feature 'about me section creation', type: :feature, js: true do
     expect(page).to have_content 'Your account has been updated successfully.'
 
     visit '/account'
-    
+
     expect(page).to have_content @user.about
   end
 end

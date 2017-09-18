@@ -17,7 +17,7 @@ feature 'submission create process', type: :feature, js: true do
       fill_in 'Password', with: @user.password
     end
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     expect(page).to have_content 'Signed in successfully.'
 
@@ -37,12 +37,12 @@ feature 'submission create process', type: :feature, js: true do
 
     click_link 'Answers'
 
-    within '#form_answer' do
+    within '.form_answer' do
       fill_in 'area-answer-new', with: 'I recommend starting from the basics. You need to make sure you understand the basic principles and fundamentals first,
       then all you need to do is just practice a lot and you should be well on your way of success. Good luck!'
     end
 
-    click_button 'Create'
+    click_button 'Create Answer'
 
     within '.question-author' do
       # TODO: check if question exists in user's column and if that question with id exists in DOM
@@ -52,7 +52,7 @@ feature 'submission create process', type: :feature, js: true do
 
     click_link 'Reply to this answer'
 
-    within '#form-reply-answer' do
+    within ".question-answer" do
       fill_in 'reply-area', with: 'I agree with everything you have said, but there is one small problem: too much practice can cause a burn out. Make sure
       to take a rest every hour or so and drink a lot of water. It should drastically improve your learning experience.'
 

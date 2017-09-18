@@ -1,3 +1,3 @@
 var comment = $('.answer-comment[data-id=<%= @comment.id %>]');
-comment.find('.comment-author a').replaceWith('<p>Anonymous</p>');
+comment.find('.comment-author a').replaceWith('Anonymous');
 comment.find('#edit, #delete').remove();

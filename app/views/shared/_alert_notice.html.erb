@@ -1,0 +1,10 @@
+<% if alert || notice %>
+  <div class="alert-notice">
+    <% unless notice.nil? %>
+      <div class="notice"><%= notice %></div>
+    <% end %>
+    <% unless alert.nil? %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 form {
   @include fontawesome-checkboxes;
   @include center;
-  background: $palette-white;
+  background: $p-white;
   border-radius: $margin;
   padding: $margin * 2;
   font-size: $font-size-large;
@@ -16,6 +16,7 @@ form {
     resize: none;
   }
 
+  input,
   input[type=text],
   input[type=email],
   input[type=password],
@@ -29,7 +30,7 @@ form {
     &, &:focus {
       outline: none;
       border: none;
-      border: 1px solid $palette-black;
+      border: 1px solid $p-black;
     }
   }
 
@@ -53,7 +54,7 @@ form {
     font-size: $font-size-ginormous;
   }
 
-  .form-heading-links {
+  .form-header-links {
     margin-top: $margin * 2;
     margin-bottom: $margin * 2;
     font-size: $font-size-base;
@@ -67,12 +68,12 @@ form {
   .form-submit-wrapper {
     input[type=submit] {
       border: none;
-      color: $palette-white;
-      background: $palette-green;
+      color: $p-white;
+      background: $p-green;
       font-size: $font-size-large;
 
       &:hover, &:active, &:focus {
-        background: lighten($palette-green, 5%);
+        background: lighten($p-green, 5%);
       }
     }
   }

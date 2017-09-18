@@ -17,7 +17,7 @@ feature 'password change process', type: :feature, js: true do
       fill_in 'Password', with: @user.password
     end
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     visit '/account/settings'
 
@@ -34,7 +34,7 @@ feature 'password change process', type: :feature, js: true do
 
     expect(page).to have_content 'Your account has been updated successfully.'
 
-    click_link 'Sign out'
+    click_link 'Sign Out'
 
     visit 'users/sign_in'
 
@@ -42,7 +42,7 @@ feature 'password change process', type: :feature, js: true do
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
     end
-    click_button 'Sign in'
+    click_button 'Sign In'
     expect(page).to have_content 'Signed in successfully.'
   end
 end

@@ -1,4 +1,4 @@
-<%= form_with(model: Comment.new, url: url, remote: true, id: 'form-reply-answer') do |f| %>
+<%= form_with(model: Comment.new, url: url, remote: true, class: 'form-reply-answer') do |f| %>
   <%= f.hidden_field :answer_id, value: answer.id %>
 
   <div>
@@ -7,10 +7,7 @@
   </div>
 
   <div class='form-submit-wrapper'>
-    <%= f.submit "Create" %> 
-  </div>
-
-  <div>
-  	<%= link_to('Cancel', '#', id: 'cancel-reply', class: 'btn-red') %>
+    <%= f.submit "Create" %>
+    <%= link_to('Cancel', '#', class: 'cancel-reply') %>
   </div>
 <% end %>

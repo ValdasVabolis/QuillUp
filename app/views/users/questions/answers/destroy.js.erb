@@ -1,4 +1,4 @@
 var answer = $('.question-answer[data-id=<%= @answer.id %>]');
-answer.find('.answer-author a').replaceWith('<p>Anonymous</p>');
+answer.find('.answer-author a').replaceWith('Anonymous');
 answer.find('#edit, #delete').remove();
 

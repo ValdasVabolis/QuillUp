@@ -1,5 +1,5 @@
 nav {
-  background: $palette-gray-dark;
+  background: $p-gray-dark;
   height: $header-height !important;
   left: 0;
   margin-bottom: 0px;
@@ -10,7 +10,7 @@ nav {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
    0 1px 5px 0 rgba(0,0,0,0.12),
     0 3px 1px -2px rgba(0,0,0,0.2);
-  //border-bottom: 2px solid $palette-red;
+  //border-bottom: 2px solid $p-red;
 
   .nav-logo-image {
     padding-left: 10px;
@@ -56,7 +56,7 @@ nav {
     height: 55px;
 
     &:hover, &:active, &:focus {
-      border-bottom: 5px inset $palette-red;
+      border-bottom: 5px inset $p-red;
       color: #fff;
     }
   }
@@ -80,7 +80,7 @@ nav {
     li {
       display: block;
       float: none;
-      background: $palette-gray-dark;
+      background: $p-gray-dark;
       width: 190px;
 
       span {
@@ -89,7 +89,7 @@ nav {
     }
 
     i.fa-bars {
-      color: $palette-red;
+      color: $p-red;
       display: block !important;
       position: fixed;
       right: 12px;

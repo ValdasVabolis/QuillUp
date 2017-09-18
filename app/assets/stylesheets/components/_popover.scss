@@ -20,13 +20,11 @@
 }
 
 #popover-view-wrapper {
-
   z-index: 1002;
 }
 
 #popover-view {
   @include center;
-  top: 25px;
   border-radius: 12px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   margin: 0 auto;
@@ -39,14 +37,18 @@
 }
 
 #popover-exit {
-  color: $palette-gray-dark;
+  color: $p-gray-dark;
   position: absolute;
   transition: color $delay ease;
   top: 8px;
   right: 15px;
 
+  i {
+    font-size: 48px;
+  }
+
   &:hover {
-    color: $palette-red;
+    color: $p-red;
     cursor: pointer;
   }
 }

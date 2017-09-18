@@ -7,35 +7,35 @@
       TODO: find a better place for this
     <li><%= link_to 'Contact us', new_inquiry_path %></li>-->
     <% if user_signed_in? %>
-      <li>
+      <!--<li>
         <%= link_to '#' do %>
           <%= fa_icon 'envelope' %>
           <span>Messages</span>
         <% end %>
-      </li>
+      </li>-->
       <li>
         <%= link_to my_account_path do %>
           <%= fa_icon 'user-circle-o' %>
-          <span>My account</span>
+          <span>My Account</span>
         <% end %>
       </li>
       <li>
         <%= link_to destroy_user_session_path, method: :delete do %>
           <%= fa_icon 'sign-out' %>
-          <span>Sign out</span>
+          <span>Sign Out</span>
         <% end %>
       </li>
     <% else %>
       <li>
         <%= link_to new_user_registration_path do %>
           <%= fa_icon 'user-plus' %>
-          <span>Sign up</span>
+          <span>Sign Up</span>
         <% end %>
       </li>
       <li>
         <%= link_to new_user_session_path do %>
           <%= fa_icon 'sign-in' %>
-          <span>Sign in</span>
+          <span>Sign In</span>
         <% end %>
       </li>
     <% end %>

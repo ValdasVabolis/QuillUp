@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function() {
     $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('editing');
   });
 
-  $(document).on('click', '#cancel-reply', function(e) {
+  $(document).on('click', '.cancel-reply', function(e) {
     e.preventDefault();
     var id = $(this).closest('.question-answer').attr('data-id');
     $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('replying');
@@ -47,5 +47,17 @@ $(document).on('turbolinks:load', function() {
     e.preventDefault();
     var id = $(this).closest('.answer-comment').attr('data-id');
     $('#popover-view-contents .answer-comment[data-id="' + id + '"]').removeClass('editing');
+  });
+
+  AlertNotice.init({
+    selector: '.alert-notice',
+    css: {
+      show: {
+        bottom: '0px'
+      },
+      hide: {
+        bottom: '-60px'
+      }
+    }
   });
 });

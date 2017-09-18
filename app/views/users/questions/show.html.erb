@@ -1,20 +1,47 @@
 <div class='question-large' data-id="<%= @question.id %>">
   <h2><%= zero_width_space_interleave(@question.title).html_safe %></h2>
-  <p class='question-body'><%= zero_width_space_interleave(@question.body).html_safe %></p>
-  <%= render partial: 'users/questions/form', locals: { question: @question, url: users_question_path, form_header: '' } %>
-  <% if @question.deleted? %>
-    <p>questioned on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
-  <% else %>
-    <p class='question-date'>questioned by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.</p>
+
+  <div class='question-date'>
+    <% if @question.deleted? %>
+      asked on <%= @question.friendly_date %> at <%= @question.friendly_time %>.
+    <% else %>
+      asked by <%= @question.user.username %> on <%= @question.friendly_date %> at <%= @question.friendly_time %>.
+    <% end %>
+  </div>
+
+  <div class='question-body'>
+    <%= @question.body %>
+  </div>
+
+  <%= render partial: 'users/questions/form', locals: {
+    question: @question,
+    url: users_question_path,
+    form_header: ''
+  } %>
+
+  <% if user_signed_in? && current_user == @question.user %>
     <div class='question-tools'>
-      <%= link_to('Edit', edit_users_question_path(@question), remote: true, id: 'edit') if !current_user.nil? && current_user.username == @question.user.username %>
-      <%= link_to('Delete', users_question_path(question), 
-          remote: true, 
+      <% unless @question.deleted? %>
+        <%= link_to('Edit', edit_users_question_path(@question), remote: true, id: 'edit') %>
+        <%= link_to('Delete', users_question_path(question),
+          remote: true,
           method: :delete,
-          id: 'delete', 
-          data: { confirm: 'Are you sure?' }) %>
+          id: 'delete',
+          data: { confirm: 'Are you sure?'
+        }) %>
+      <% end %>
     </div>
   <% end %>
+
+  <hr>
+
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
+
+  <% if @question.answers.blank? %>
+    No one has answered this question yet.
+  <% else %>
+    Showing <%= @question.answers.count %> answers.
+  <% end %>
+
   <%= render partial: 'shared/question_answers',  locals: { answers: @answers } %>
 </div>

@@ -1,11 +1,109 @@
 .question-large {
+  h2 {
+    font-size: 24px;
+  }
+
+  .question-date {
+    color: $p-gray;
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
 
   .question-body, textarea {
     font-size: $font-size-big;
   }
 
   .question-body {
+    color: $p-gray-dark;
     display: block;
+    line-height: 1.2;
+    font-size: 18px;
+    padding-bottom: 12px;
+  }
+
+  .question-tools {
+     text-align: right;
+     margin-bottom: 22px;
+
+    a {
+      font-size: 14px;
+      display: inline-block;
+      color: $p-white;
+      padding: 7px 9px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    #edit {
+      background: $p-yellow;
+
+      &:hover {
+        background: lighten($p-yellow, 5%);
+      }
+    }
+
+    #delete {
+      background: $p-red;
+
+      &:hover {
+        background: lighten($p-red, 5%);
+      }
+    }
+  }
+
+  #form-question .form-submit-wrapper {
+    text-align: right;
+
+    #cancel-question {
+      font-size: 16px;
+      background: $p-yellow;
+      display: inline-block;
+      color: $p-white;
+      padding: 7px 9px;
+      border-radius: 6px;
+      text-decoration: none;
+
+      &:hover, &:active {
+        background: lighten($p-yellow, 5%);
+      }
+    }
+
+    input[type=submit] {
+      position: relative;
+      font-size: 16px;
+      width: 56px;
+    }
+  }
+
+  .not-logged-in-notice {
+    font-size: 18px;
+    margin-bottom: 22px;
+    margin-top: 12px;
+    color: $p-gray;
+
+    a {
+      background: $p-green;
+      border-radius: 3px;
+      color: $p-white;
+      padding: 3px 4px;
+      text-decoration: none;
+      transition: all .25s ease;
+
+      &:visited {
+        color: $p-white;
+      }
+
+      &:hover, &:active {
+        background: lighten($p-green, 10%);
+        color: $p-white;
+      }
+    }
+
+    i.fa-exclamation-triangle {
+      color: $p-yellow;
+    }
   }
 
   #save, #cancel-question, #form-question {
@@ -14,20 +112,37 @@
 
   &.editing {
     #save, #cancel-question, #form-question {
-      display: block;
+      display: inline;
     }
-    #edit, .question-body {
+    #edit, #delete, .question-body {
       display: none;
     }
   }
-  
+
   form {
-    margin-top: 35px;
+    margin-bottom: 44px;
     padding: 0;
     width: 100%;
 
+    textarea {
+      border-radius: 6px;
+    }
+
     & > div {
       margin: 0;
+    }
+
+    input[type=submit] {
+      border: none;
+      width: 128px;
+      background: $p-green;
+      color: $p-white;
+      position: absolute;
+      right: 0;
+
+      &:hover {
+        background: lighten($p-green, 10%);
+      }
     }
   }
 }

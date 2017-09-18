@@ -1,4 +1,4 @@
-<%= form_with(model: answer, url: url, remote: true, id: 'form_answer') do |f| %>
+<%= form_with(model: answer, url: url, remote: true, class: 'form_answer') do |f| %>
   <%= hidden_field_tag :question_id, question.id %>
   <% if answer.errors.any? %>
     <div id='error_explanation'>
@@ -15,10 +15,10 @@
     <p id='area-answer-counter-new'></p>
   </div>
   <div>
-    <%= link_to('Cancel', '#', class: 'btn-red cancel-answer') if answer.persisted? %>
-  </div>
-  <div>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Create Answer' %>
+    <% if answer.persisted? %>
+      <%= link_to('Cancel', '#', class: 'btn-red cancel-answer') %>
+    <% end %>
   </div>
 <% end %>
 

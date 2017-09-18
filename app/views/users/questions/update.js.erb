@@ -2,6 +2,6 @@ var question = $('.question-large[data-id="<%= @question.id %>"]');
 
 if(question.hasClass('editing')) {
 	question.removeClass('editing');
-	$('#body').show();
-	$('.question-body').html('<%= @question.body %>');
+	$('.question-body').html('<%= h @question.body.strip %>');
+  $('.question-body').show();
 }

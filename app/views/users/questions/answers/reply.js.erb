@@ -1,5 +1,5 @@
 var answer = $('.question-answer[data-id="<%= @answer.id %>"]');
-var form = answer.find('#form-reply-answer');
+var form = answer.find('form.form-reply-answer');
 var area = form.find('#reply-area');
 
 if(answer.hasClass('replying')) {

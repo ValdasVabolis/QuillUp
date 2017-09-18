@@ -1,20 +1,34 @@
 <div class='answer-comment comment' data-id='<%= comment.id %>'>
-	<% if comment.deleted? %>
-		<div class='comment-author'>
-			<p>Anonymous</p>
-		</div>
-	<% else %>
-		<div class='comment-author'>
-		<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
-		</div>
-	<% end %>
-	<div class='comment-body'>
-		<%= comment.body %> 
-	</div>
-	<div>
-		<%= render partial: 'users/questions/comments/form', locals: { comment: comment, answer: comment.answer, url: users_questions_comment_path(comment) } %>
-		<%= render partial: 'shared/comment_links', locals: { comment: comment } %>
-		<%= render partial: 'shared/comment_votes', locals: { comment: comment} if current_user == comment.user.username %>
-	</div>
-	on <%= comment.friendly_date %> at <%= comment.friendly_time %>
+  <span class='comment-body'>
+    <%= comment.body %>
+  </span>
+
+  <span class='comment-info'>
+    - by
+  	<% if comment.deleted? %>
+  		<span class='comment-author'>
+  			Anonymous
+  		</span>
+  	<% else %>
+  		<span class='comment-author'>
+  		<%= link_to("#{comment.user.username}", user_profile_path(comment.user.username)) %>
+  		</span>
+  	<% end %>
+
+  	on <%= comment.friendly_date %> at <%= comment.friendly_time %>
+
+    <span class="comment-controls">
+      <% if comment.user == current_user && !comment.deleted? %>
+        <%= link_to('Delete', users_questions_comment_path(comment),
+          remote: true,
+          method: :delete,
+          id: 'delete',
+          data: { confirm: 'Are you sure? '}
+        ) %>
+      <% end %>
+    </span>
+  </span>
+
+  <%= render partial: 'users/questions/comments/form', locals: { comment: comment, answer: comment.answer, url: users_questions_comment_path(comment) } %>
+  <%= render partial: 'shared/comment_votes', locals: { comment: comment} if current_user == comment.user.username %>
 </div>

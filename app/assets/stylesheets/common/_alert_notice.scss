@@ -2,7 +2,7 @@
   @include center;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  color: $palette-white;
+  color: $p-white;
   font-size: 18px;
   left: 0;
   padding: $margin;
@@ -15,11 +15,11 @@
   z-index: 2;
 
   &.danger {
-    background: $palette-red-dark;  
+    background: $p-red-dark;
   }
 
   &.notice {
-    background: $palette-yellow;
+    background: $p-yellow;
   }
 
   &.shown {
