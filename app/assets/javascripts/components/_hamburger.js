@@ -1,18 +1,25 @@
 var Hamburger = (function($, m) {
   var initialized = false;
   var opened = false;
+  var close_after = 3000;
 
   var subscribe = function() {
-    $(document).on('click', '.fa-bars', function(e) {
-      console.log('fa-bars click');
-      e.stopPropagation();
-      $('nav ul').addClass('shown');
-    });
+    $(document).on('click', '.fa-bars', open);
+    $(document).on('click', close);
+    $(document).on('mouseleave', 'nav ul', mouseleave);
+  };
 
-    $(document).on('click', function(e) {
-      console.log('fa-bars close');
-      $('nav ul').removeClass('shown');
-    });
+  var mouseleave = function(e) {
+    setTimeout(close, close_after)
+  };
+
+  var open = function(e) {
+    e.stopPropagation();
+    $('nav ul').addClass('shown');
+  };
+
+  var close = function(e) {
+    $('nav ul').removeClass('shown');
   };
 
   var init = function() {

@@ -78,6 +78,7 @@
   }
 
   .not-logged-in-notice {
+    line-height: 1.3;
     font-size: 18px;
     margin-bottom: 22px;
     margin-top: 12px;
@@ -87,7 +88,7 @@
       background: $p-green;
       border-radius: 3px;
       color: $p-white;
-      padding: 3px 4px;
+      padding: 1px 4px 2px;
       text-decoration: none;
       transition: all .25s ease;
 
