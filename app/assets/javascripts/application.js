@@ -17,17 +17,6 @@ var show_hide_alert = function() {
 $(document).on('turbolinks:load', function() {
   $(show_hide_alert);
 
-  $(document).on('click', '.fa-bars', function(e) {
-    alert('fa-bars click');
-    e.stopPropagation();
-    $('nav ul').toggleClass('shown');
-  });
-
-  $(document).on('click', function(e) {
-    alert('fa-bars close');
-    $('nav ul').removeClass('shown');
-  });
-
   $(document).on('click', '#cancel-question', function(e) {
     e.preventDefault();
     $('#popover-view-contents .question-large').removeClass('editing');
@@ -50,6 +39,8 @@ $(document).on('turbolinks:load', function() {
     var id = $(this).closest('.answer-comment').attr('data-id');
     $('#popover-view-contents .answer-comment[data-id="' + id + '"]').removeClass('editing');
   });
+
+  Hamburger.init();
 
   AlertNotice.init({
     selector: '.alert-notice',
