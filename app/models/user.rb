@@ -35,6 +35,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :message_chains
 
+  validates :username, uniqueness: true
+
   after_commit :slack_notify, on: :create
 
   private

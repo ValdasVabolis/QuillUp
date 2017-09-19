@@ -12,7 +12,7 @@ module SlackModule
 
     def self.notify(message, attachments=nil)
       slack = Slack::Notifier.new(
-        Rails.application.secrets['slack']['webhook_url'],
+        Rails.application.secrets[:slack][:webhook_url],
         channel: '#general',
         username: "quillup-#{Rails.env}"
       )
