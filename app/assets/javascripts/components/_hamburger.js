@@ -1,11 +1,12 @@
 var Hamburger = (function($, m) {
   var initialized = false;
+  var opened = false;
 
   var subscribe = function() {
     $(document).on('click', '.fa-bars', function(e) {
       console.log('fa-bars click');
       e.stopPropagation();
-      $('nav ul').toggleClass('shown');
+      $('nav ul').addClass('shown');
     });
 
     $(document).on('click', function(e) {

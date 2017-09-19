@@ -7,8 +7,4 @@
   @include breakpoint(1022px) {
     width: auto;
   }
-
-  @include breakpoint(570px) {
-    margin-top: 0;
-  }
 }
