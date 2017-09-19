@@ -23,6 +23,7 @@
 #
 
 class User < ApplicationRecord
+  include SlackModule
 	acts_as_voter
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
