@@ -42,6 +42,10 @@ class User < ApplicationRecord
   private
 
   def slack_notify
-    SlackModule::API::notify_user_registered(self.email, User.count)
+    begin
+      SlackModule::API::notify_user_registered(self.email, User.count)
+    rescue Exception => e
+      # TODO
+    end
   end
 end
