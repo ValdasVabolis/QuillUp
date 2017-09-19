@@ -33,4 +33,12 @@ class User < ApplicationRecord
   has_many :answers
   has_many :comments
   has_many :message_chains
+
+  after_commit :slack_notify, on: :create
+
+  private
+
+  def slack_notify
+    SlackModule::API::notify_user_registered(self.email, User.count)
+  end
 end

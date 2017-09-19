@@ -1,6 +1,7 @@
 module ApplicationHelper
   def body_tag(&block)
     cls = params[:controller].gsub(/\//, '-')
+    cls << ' theme-dark'
     content_tag :body, capture(&block), class: cls, id: 'popover-parent'
   end
 
