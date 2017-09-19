@@ -5,7 +5,7 @@ module SlackModule
   class API
     # Launch Subscribers
     def self.notify_user_registered(email, total)
-      msg = "*User Created* (#{total} total)\n"
+      msg = "*User Registered* (#{total} total)\n"
       msg << "\tEmail: #{email}\n"
       self.notify msg
     end

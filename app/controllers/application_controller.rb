@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SlackModule
   protect_from_forgery with: :exception
 
   def set_previous_path
