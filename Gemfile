@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.2'
 gem 'puma', '3.7'
 
 gem 'handlebars_assets'
+gem 'airbrake', '~> 6.2'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'annotate'
 gem 'autoprefixer-rails'
