@@ -44,7 +44,7 @@ feature 'submission delete process', type: :feature, js: true do
 
     click_button 'Create'
 
-    within '.question-answer answer' do
+    within '.question-answer.answer' do
       page.accept_confirm do
         click_link 'Delete'
       end
