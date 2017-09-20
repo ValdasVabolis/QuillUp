@@ -23,6 +23,7 @@
 #
 
 class User < ApplicationRecord
+  include SlackModule
 	acts_as_voter
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
@@ -33,4 +34,18 @@ class User < ApplicationRecord
   has_many :answers
   has_many :comments
   has_many :message_chains
+
+  validates :username, uniqueness: true
+
+  after_commit :slack_notify, on: :create
+
+  private
+
+  def slack_notify
+    begin
+      SlackModule::API::notify_user_registered(self.email, User.count)
+    rescue Exception => e
+      # TODO
+    end
+  end
 end

@@ -1,5 +1,5 @@
 <div class="question-answers">
-  <% answers.reverse.each do |a| %>
+  <% answers.each do |a| %>
     <%= render partial: 'shared/question_answer', locals: { answer: a } %>
   <% end %>
   <%= will_paginate answers %>

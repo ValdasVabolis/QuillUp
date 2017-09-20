@@ -17,7 +17,7 @@ feature 'question edit process', type: :feature, js: true do
       fill_in 'Password', with: @user.password
     end
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     click_link 'New Question'
 

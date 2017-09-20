@@ -7,8 +7,7 @@
 #  email      :string
 #  message    :text
 #  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
+#  updated_at :datetime         not nu
 
 class Inquiry < ApplicationRecord
   validates :name, presence: true

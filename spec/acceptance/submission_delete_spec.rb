@@ -18,7 +18,7 @@ feature 'submission delete process', type: :feature, js: true do
       fill_in 'Password', with: @user.password
     end
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     click_link 'New Question'
 
@@ -37,7 +37,7 @@ feature 'submission delete process', type: :feature, js: true do
 
     expect(page).to have_content 'Question deleted succesfully.'
 
-    within '#form_answer' do
+    within '.form_answer' do
       fill_in 'area-answer-new', with: 'I recommend starting from the basics. You need to make sure you understand the basic principles and fundamentals first,
       then all you need to do is just practice a lot and you should be well on your way of success. Good luck!'
     end

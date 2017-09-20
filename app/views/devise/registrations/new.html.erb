@@ -1,12 +1,15 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class='form-heading'>
-    <div class='form-heading-title'>
+  <div class='form-header'>
+    <div class='form-header-title'>
       Sign Up
     </div>
-    <div class='form-heading-links'>
+    <div class='form-header-links'>
       Have an account already? <%= link_to 'Sign In', new_session_path(resource_name) %>
     </div>
+  </div>
+
+  <div class="error-explanation-wrapper">
+    <%= devise_error_messages! %>
   </div>
 
   <div>
@@ -28,11 +31,11 @@
   </div>
 
   <div>
-    <%= f.label :confirm_password %><br />
+    <%= f.label :password_confirmation, 'Confirm Password' %><br />
     <%= f.password_field :password_confirmation, autocomplete: 'off' %>
   </div>
 
   <div class='form-submit-wrapper'>
-    <%= f.submit 'Sign up', class: 'btn' %>
+    <%= f.submit 'Sign Up', class: 'btn' %>
   </div>
 <% end %>

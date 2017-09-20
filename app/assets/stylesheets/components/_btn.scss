@@ -1,7 +1,7 @@
 .btn {
-  background: $palette-white;
-  border: 1px solid $palette-black;
-  color: $palette-black;
+  background: $p-white;
+  border: 1px solid $p-black;
+  color: $p-black;
   padding: $margin / 2;
   text-decoration: none;
   display: inline-block;
@@ -11,20 +11,20 @@
   border-radius: $margin / 2;
 
   &:hover, &:active, &:focus {
-    background: $palette-black;
-    color: $palette-white;
+    background: $p-black;
+    color: $p-white;
     cursor: pointer;
   }
 }
 
 .btn-red {
-  color: $palette-red;
+  color: $p-red;
 }
 
 .btn-green {
-  color: $palette-green;
+  color: $p-green;
 }
 
 .btn-default {
-  color: $palette-grey;
+  color: $p-gray;
 }

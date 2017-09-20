@@ -1,7 +1,7 @@
 module ApplicationHelper
   def body_tag(&block)
-    ctrl = params[:controller].gsub(/\//, '-')
-    content_tag :body, capture(&block), class: ctrl, id: 'popover-parent'
+    cls = params[:controller].gsub(/\//, '-')
+    content_tag :body, capture(&block), class: cls, id: 'popover-parent'
   end
 
   def resource_name

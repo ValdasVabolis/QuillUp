@@ -20,59 +20,86 @@
 }
 
 .question-answers {
-  margin-top: 50px;
+  margin-top: 24px;
 }
 
 .question-answer {
+  margin-bottom: 0;
+  margin-top: $margin;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 
   .answer-body, textarea {
-    font-size: $font-size-big;
+    font-size: 16px;
   }
 
   #area {
     margin-top: 50px;
   }
 
-  .answer-body {
-    display: block;
-  }
-
-  #form-reply-answer, #cancel-reply {
-    display: none;
-  }
-
-  #save, #form_answer {
-    display: none;
-  }
-
   .cancel-answer {
     display: none;
   }
 
-  #reply-btn {
+  .reply-btn {
     display: inline;
   }
 
+  .answer-body {
+    display: block;
+  }
+
+  .form-reply-answer {
+    padding-left: 32px;
+    margin-bottom: 0;
+
+    input[type=submit], .cancel-reply {
+      color: $p-white;
+      width: 60px;
+      font-size: 14px;
+    }
+  }
+
+  .form-reply-answer, .cancel-reply {
+    display: none;
+  }
+
+  .cancel-reply {
+    border-radius: 6px;
+    padding: 8px;
+    color: white;
+    font-size: 22px;
+    background: $p-yellow;
+
+    &:hover {
+      background: lighten($p-yellow, 10%);
+    }
+  }
+
+  #save, .form_answer {
+    display: none;
+  }
+
   &.editing {
-    #save, .cancel-answer, #form_answer {
+    #save, .cancel-answer, .form_answer {
       display: inline;
     }
-    #edit, .answer-body, #reply-btn, #delete
+    #edit, .answer-body, .reply-btn, #delete
     {
       display: none;
     }
   }
 
   &.replying {
-    #form-reply-answer, #cancel-reply {
-      display: inline;
+    .form-reply-answer, .cancel-reply {
+      display: inline-block;
     }
-    #reply-btn, #edit, #delete {
+    .reply-btn, #edit, #delete {
       display: none;
     }
   }
-  
+
   form {
+    background: none;
     margin-top: 10px;
     padding: 0;
     width: 100%;
@@ -80,7 +107,15 @@
     & > div {
       margin: 0;
     }
-  }
 
+    .form-submit-wrapper {
+      text-align: right;
+
+      input[type=submit] {
+        padding: 6px 6px 7px;
+        position: relative;
+      }
+    }
+  }
 }
 

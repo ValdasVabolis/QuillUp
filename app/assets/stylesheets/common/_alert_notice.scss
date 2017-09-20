@@ -1,28 +1,40 @@
-.alert {
-  @include center;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  color: $palette-white;
-  font-size: 18px;
+.alert-notice {
+  bottom: -60px;
+  height: 43px;
   left: 0;
-  padding: $margin;
   position: fixed;
   right: 0;
+  z-index: 2000;
+}
+
+.alert, .notice {
+  color: $p-white;
+  border-top-left-radius: $margin / 2;
+  border-top-right-radius: $margin / 2;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 520px;
+  padding: 12px 0;
   text-align: center;
-  top: -10px;
-  transition: top 1s ease;
-  width: 420px;
-  z-index: 2;
+}
 
-  &.danger {
-    background: $palette-red-dark;  
-  }
+.alert {
+  background: $p-red;
+  box-shadow: 0px 0px $margin / 2 $margin / 3 rgba(255, 255, 0, 0.2);
+}
 
-  &.notice {
-    background: $palette-yellow;
-  }
+.notice {
+  background: $p-green;
+  box-shadow: 0px 0px $margin / 2 $margin / 3 rgba(0, 128, 0, 0.2);
+}
 
-  &.shown {
-    top: 50px;
+@include breakpoint(570px) {
+  .alert, .notice {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }

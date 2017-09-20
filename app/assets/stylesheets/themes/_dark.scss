@@ -1,0 +1,29 @@
+body.theme-dark {
+  $p-gray-light: #BBB;
+  $p-gray-dark: #555;
+  $p-gray-darker: #444;
+  $p-gray-darkest: #333;
+
+  background: $p-gray-darkest;
+  color: $p-gray-light;
+
+  & > .main-content {
+    .question-small {
+      background: $p-gray-darker;
+
+      &:nth-child(odd) {
+        background: $p-gray-dark;
+      }
+
+      .question-title a,
+      .question-author a,
+      .question-links a {
+        color: $p-white;
+      }
+    }
+
+    #popover-view {
+      background: $p-gray-darker;
+    }
+  }
+}

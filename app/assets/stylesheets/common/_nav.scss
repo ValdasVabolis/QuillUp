@@ -1,5 +1,5 @@
 nav {
-  background: $palette-gray-dark;
+  background: $p-gray-dark;
   height: $header-height !important;
   left: 0;
   margin-bottom: 0px;
@@ -10,7 +10,7 @@ nav {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
    0 1px 5px 0 rgba(0,0,0,0.12),
     0 3px 1px -2px rgba(0,0,0,0.2);
-  //border-bottom: 2px solid $palette-red;
+  //border-bottom: 2px solid $p-red;
 
   .nav-logo-image {
     padding-left: 10px;
@@ -44,19 +44,18 @@ nav {
   }
 
   li a {
-    transition: all .25s ease;
     color: #fff;
-    font-size: 14px;
-    text-decoration: none;
     display: block;
-    //height: $header-height - 2px;
-    padding: 18px 14px;
-    text-align: center;
-    width: 160px;
+    font-size: 14px;
     height: 55px;
+    padding: 18px 14px;
+    text-align: left;
+    text-decoration: none;
+    transition: all .25s ease;
+    width: 160px;
 
     &:hover, &:active, &:focus {
-      border-bottom: 5px inset $palette-red;
+      border-bottom: 5px inset $p-red;
       color: #fff;
     }
   }
@@ -69,31 +68,38 @@ nav {
     ul {
       top: 50px;
       position: fixed;
-      right: 0;
-      display: none;
+      right: -150px;
+      transition: right .5s ease;
+      transform: translateZ(0);
 
       &.shown {
         display: block;
+        right: 0;
       }
     }
 
     li {
       display: block;
       float: none;
-      background: $palette-gray-dark;
-      width: 190px;
+      background: $p-gray-dark;
+      width: 150px;
 
       span {
-        padding-left: 0px;
+        padding-left: 6px;
       }
     }
 
+    .fa-sign-out {
+      margin-left: 1px;
+    }
+
     i.fa-bars {
-      color: $palette-red;
+      color: $p-red;
       display: block !important;
       position: fixed;
       right: 12px;
       top: 6px;
+      cursor: pointer;
 
       &:hover {
         cursor: pointer;

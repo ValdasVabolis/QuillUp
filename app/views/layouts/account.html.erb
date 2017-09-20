@@ -3,13 +3,12 @@
   <%= render partial: 'shared/head' %>
   <%= body_tag do %>
     <%= render partial: 'shared/navbar' %>
-    <%= render partial: 'shared/alert' %>
-    <%= render partial: 'shared/notice' %>
+    <%= render partial: 'shared/alert_notice' %>
     <div class='main-content' id='account-content'>
       <div class='tabs tabs-private' id='account-tabs'>
         <%= render partial: 'accounts/tabs_nav' %>
         <div class="tabs-content">
-          <%= yield %>
+          <%= yield %>-
         </div>
       </div>
     </div>

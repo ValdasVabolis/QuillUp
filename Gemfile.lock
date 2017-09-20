@@ -41,6 +41,9 @@ GEM
     acts_as_votable (0.10.0)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    airbrake (6.2.1)
+      airbrake-ruby (~> 2.3, >= 2.3.1)
+    airbrake-ruby (2.3.2)
     annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
@@ -157,6 +160,7 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.2)
     nenv (0.3.0)
+    newrelic_rpm (4.4.0.336)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -244,6 +248,7 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
     shellany (0.0.1)
+    slack-notifier (2.3.1)
     slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
@@ -286,6 +291,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  airbrake (~> 6.2)
   annotate
   autoprefixer-rails
   autosize
@@ -309,6 +315,7 @@ DEPENDENCIES
   jquery-rails (= 4.3.1)
   letter_opener
   listen (= 3.0.5)
+  newrelic_rpm
   pg (= 0.21.0)
   pry
   puma (= 3.7)
@@ -318,6 +325,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (= 5.0.6)
   selenium-webdriver
+  slack-notifier
   spring
   spring-watcher-listen (= 2.0.0)
   sqlite3

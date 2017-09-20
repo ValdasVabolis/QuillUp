@@ -15,9 +15,11 @@ feature "sign in process", type: :feature, js: true do
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
     end
-    click_button 'Sign in'
+
+    click_button 'Sign In'
     expect(page).to have_content 'Signed in successfully.'
-    click_link 'Sign out'
+
+    click_link 'Sign Out'
     expect(page).to have_content 'Signed out successfully.'
   end
 end

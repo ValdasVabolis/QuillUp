@@ -1,10 +1,24 @@
 body.home {
 
   .new-question-wrapper {
-    padding: $margin 0;
     a {
       @extend .btn;
+      @include center;
+      border: none;
+      color: $p-white;
+      background: $p-green;
       font-size: $font-size-large;
+      width: 180px;
+      display: block;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-top: none;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.3);
+
+      &:hover, &:active {
+        background: lighten($p-green, 5%);
+      }
     }
   }
 
@@ -18,8 +32,10 @@ body.home {
 
   @include breakpoint(1050px) {
     #popover-view {
+      margin-top: 0;
       width: auto;
       border-radius: 0;
+      min-height: 100%;
     }
     #popover-view {
       padding: 20px 10px 10px;

@@ -1,14 +1,14 @@
 .question-small, .answer {
-  margin: 0 0 $margin;
   padding: $margin;
   clear: both;
   min-height: 86px;
   background: lighten(#eee, 3%);
   border-radius: $margin / 2;
   position: relative;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 
-  &.answer {
-    margin-bottom: 20px;
+  &.question-small {
+    margin: 0 0 $margin;
   }
 
   &:nth-child(odd) {
@@ -41,7 +41,7 @@
     left: 5.6px;
   }
 
-  
+
 
   #question-vote-up,
   #question-vote-down,
@@ -75,12 +75,13 @@
     left: 12px;
 
     a {
-      color: $palette-gray-light;
+      color: $p-gray-light;
+      text-decoration: underline;
     }
   }
 
-  .question-title, 
-  .question-author, 
+  .question-title,
+  .question-author,
   .question-links,
   .answer-links,
   .answer-body {

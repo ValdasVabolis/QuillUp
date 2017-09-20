@@ -1,5 +1,9 @@
  <% if user_signed_in? %>
   <%= render partial: 'users/questions/answers/form', locals: { question: question, answer: @answer, url: users_questions_answers_path, form_header: 'New answer' } %>
 <% else %>
-  <h2>You're not logged in. Sign up or log in to participate in the discussion.</h2>
+  <div class='not-logged-in-notice'>
+    <%= fa_icon('exclamation-triangle') %> You're not logged in.
+    <%= link_to 'Sign in', new_user_session_path, class: '' %> or
+    <%= link_to 'register', new_user_registration_path, class: '' %> to participate in the discussion.
+  </div>
 <% end %>

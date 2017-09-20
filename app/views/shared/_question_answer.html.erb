@@ -1,25 +1,27 @@
-<div>
-  <div class='question-answer answer' data-id='<%= answer.id %>'>
-    <% if answer.deleted? %>
-      <div class='answer-author'>
-        <p>Anonymous</p>
-      </div>
-    <% else %>
-      <div class='answer-author'>
-        <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
-      </div>
-    <% end %>
-    <div class='answer-body'>
-      <%= zero_width_space_interleave(answer.body).html_safe %>
+<div class='question-answer answer' data-id='<%= answer.id %>'>
+  <% if answer.deleted? %>
+    <div class='answer-author'>
+      Anonymous
     </div>
-    <%= render partial: 'users/questions/answers/form', locals: { answer: answer, question: answer.question, url: users_questions_answer_path(answer) } %>
-    <%= render partial: 'shared/answer_votes', locals: { answer: answer } %> 
+  <% else %>
+    <div class='answer-author'>
+      <%= link_to("#{answer.user.username}", user_profile_path(answer.user.username)) %>
+    </div>
+  <% end %>
+
+  <div class='answer-body'>
+    <%= answer.body %>
+  </div>
+
+  <%= render partial: 'shared/answer_votes', locals: { answer: answer } %>
+  <% if user_signed_in? %>
     <%= render partial: 'shared/answer_links', locals: { answer: answer } %>
     <%= render partial: 'shared/answer_reply', locals: { answer: answer, url: users_questions_answers_comment_path } %>
-  </div>
-  <div class='answer-comments'>
-    <% answer.comments.reverse.each do |c| %>
-        <%= render partial: 'shared/comment', locals: { comment: c } %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
+
+<div class='answer-comments' data-id='<%= answer.id %>'>
+  <% answer.comments.each do |c| %>
+    <%= render partial: 'shared/comment', locals: { comment: c } %>
+  <% end %>
 </div>

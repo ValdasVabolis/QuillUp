@@ -1,0 +1,28 @@
+.error-explanation-wrapper {
+  width: 100%;
+  background: $p-red;
+  border-radius: 6px;
+
+  #error_explanation {
+    margin-top: 0;
+    padding: 12px;
+    color: white;
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      @include center;
+      list-style: disc;
+      font-size: 15px;
+      width: 320px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+  }
+}
