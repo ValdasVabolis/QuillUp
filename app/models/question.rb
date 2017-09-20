@@ -25,6 +25,9 @@ class Question < ApplicationRecord
   validates :title, length: { minimum: 5, maximum: 200 }
   validates :body, length: { minimum: 5, maximum: 2500 }
 
+  scope :pinned, -> { where(pin: true) }
+  scope :not_pinned, -> { where(pin: false) }
+
   def vote_path(type)
     "/users/question/#{self.id}/vote/#{type}"
   end
@@ -39,6 +42,11 @@ class Question < ApplicationRecord
 
   def soft_delete!
     self.deleted = true
+    self.save
+  end
+
+  def pin!
+    self.pin = true
     self.save
   end
 end

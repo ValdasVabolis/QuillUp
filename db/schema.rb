@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170916000419) do
+ActiveRecord::Schema.define(version: 20170920170717) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170916000419) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
-    t.datetime "created_at", default: "2017-09-16 12:59:26", null: false
-    t.datetime "updated_at", default: "2017-09-16 12:59:26", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "deleted", default: false
     t.index ["cached_votes_down"], name: "index_answers_on_cached_votes_down"
     t.index ["cached_votes_score"], name: "index_answers_on_cached_votes_score"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20170916000419) do
     t.integer "user_id"
     t.integer "answer_id"
     t.text "body"
-    t.datetime "created_at", default: "2017-09-16 12:59:26", null: false
-    t.datetime "updated_at", default: "2017-09-16 12:59:26", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "deleted", default: false
     t.index ["answer_id"], name: "index_comments_on_answer_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170916000419) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+    t.boolean "pin", default: false
     t.index ["cached_votes_down"], name: "index_questions_on_cached_votes_down"
     t.index ["cached_votes_score"], name: "index_questions_on_cached_votes_score"
     t.index ["cached_votes_total"], name: "index_questions_on_cached_votes_total"

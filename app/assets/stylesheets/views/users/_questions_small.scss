@@ -5,7 +5,7 @@
   background: lighten(#eee, 3%);
   border-radius: $margin / 2;
   position: relative;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
   &.question-small {
     margin: 0 0 $margin;
@@ -41,7 +41,25 @@
     left: 5.6px;
   }
 
+  &.question-pinned {
+    box-shadow: 1px 2px 2px 1px rgba(244, 67, 54, .2);
 
+    &::after {
+      color: $p-red;
+      font-family: FontAwesome;
+      content: "\f08d";
+      position: absolute;
+      top: $margin;
+      right: $margin;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, .50);
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      background:red;
+      margin-bottom: $margin * 2;
+    }
+  }
 
   #question-vote-up,
   #question-vote-down,

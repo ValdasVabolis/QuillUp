@@ -1,6 +1,6 @@
-<div class='question-small' data-id='<%= question.id %>'>
+<%= question_small(question) do %>
   <%= render partial: 'shared/question_votes', locals: { question: question } %>
   <%= render partial: 'shared/question_title', locals: { question: question } %>
   <%= render partial: 'shared/question_author', locals: { question: question } %>
   <%= render partial: 'shared/question_links', locals: { question: question } %>
-</div> 
+<% end %>

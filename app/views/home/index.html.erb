@@ -7,7 +7,7 @@
 </div>
 
 <% @questions.each do |question| %>
-  <%= render partial: 'shared/question', locals: { question: question } %>
+  <%= render partial: 'shared/question_small', locals: { question: question } %>
 <% end %>
 
 <%= will_paginate @questions %>

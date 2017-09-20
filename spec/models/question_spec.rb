@@ -45,6 +45,63 @@ describe Question do
 
 
 
+  describe '#pin' do
+    it 'defaults to false' do
+      expect(subject.pin).to be false
+    end
+  end
+
+
+
+  describe '#pin?' do
+    it 'returned pin value' do
+      subject.pin = true
+      subject.save
+      expect(subject.pin?).to be true
+    end
+  end
+
+
+
+  describe '#pin!' do
+    it 'sets pin value to true' do
+      expect {
+        subject.pin!
+      }.to change {
+        subject.pin
+      }.from(false).to(true)
+    end
+  end
+
+
+
+  describe '#pinned' do
+    it 'returns only questions with pin: true' do
+      [true, false].each do |bool|
+        3.times { create(:question, pin: bool) }
+      end
+      vals = Question.pinned.map(&:pin)
+      expect(vals).not_to be_empty
+      expect(vals.include? false).to be false
+    end
+  end
+
+
+
+  describe '#not_pinned' do
+    it 'returns only quesions with pin: false' do
+      [true, false].each do |bool|
+        3.times { create(:question, pin: bool) }
+      end
+      vals = Question.not_pinned.map(&:pin)
+      expect(vals).not_to be_empty
+      expect(vals.include? true).to be false
+    end
+  end
+
+
+
+
   describe '#friendly_date' do
     before(:each) do
       time = DateTime.new(2000, 1, 1)

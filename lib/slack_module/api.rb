@@ -11,6 +11,7 @@ module SlackModule
     end
 
     def self.notify(message, attachments=nil)
+      return if Rails.env.test?
       slack = Slack::Notifier.new(
         Rails.application.secrets[:slack][:webhook_url],
         channel: '#general',
