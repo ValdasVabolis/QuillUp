@@ -17,7 +17,11 @@ class Users::Questions::AnswersController < ApplicationController
     @answers = @question.answers.paginate(page: params[:page]).order('created_at DESC')
     @answer = @question.answers.new(users_questions_answer_params)
     @answer.user = current_user
-    @answer.save
+    if @answer.save
+      puts 'Answer created succesfully!'
+    else
+      puts puts 'Something went wrong. Please try again.'
+    end
   end
 
   def vote
@@ -31,9 +35,9 @@ class Users::Questions::AnswersController < ApplicationController
 
   def update
     if @answer.update(users_questions_answer_params)
-      flash[:notice] = 'Answer updated succesfully!'
+      puts 'Answer updated succesfully!'
     else
-      flash[:danger] = 'Something went wrong. Please try again.'
+      puts 'Something went wrong. Please try again.'
     end
   end
 
