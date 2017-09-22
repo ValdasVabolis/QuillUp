@@ -1,0 +1,13 @@
+.public-score {
+  & > .score-details {
+    display: none;
+  }
+
+  & > .score-total {
+    &:hover {
+      & + .score-details {
+        display: block;
+      }
+    }
+  }
+}
