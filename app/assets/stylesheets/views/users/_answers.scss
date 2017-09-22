@@ -119,3 +119,9 @@
   }
 }
 
+.history-answers {
+  & > .answer {
+    margin-bottom: 0;
+    margin-top: $margin;
+  }
+}
