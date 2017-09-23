@@ -1,6 +1,6 @@
 <% @user.questions.each do |question| %>
   <% unless question.deleted? %>
-    <div>
+    <div class='question-small' data-id='<%= question.id %>'>
       <h4><%= link_to("#{question.title}", users_question_path(question)) %></h4>
       <p>Submitted on <%="#{question.friendly_date}"%></p>
     </div>

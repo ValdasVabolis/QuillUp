@@ -1,9 +1,11 @@
- <% @user.answers.each do |answer| %>
-  <% unless answer.deleted? %>
-    <div>
-      <h4><%= link_to zero_width_space_interleave(answer.question.title).html_safe, users_question_path(answer.question) %></h4>
-      <p><%= answer.body %></p>
-    </div>
+<div class="history-answers">  
+  <% @user.answers.each do |answer| %>
+    <% unless answer.deleted? %>
+      <div class='answer' data-id='<%= answer.id %>'>
+        <h4><%= link_to zero_width_space_interleave(answer.question.title).html_safe, users_question_path(answer.question) %></h4>
+        <p><%= answer.body %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-<%= will_paginate @answers %>
+  <%= will_paginate @answers %>
+</div>

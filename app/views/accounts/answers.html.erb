@@ -8,6 +8,9 @@
             method: :delete,
             data: { confirm: 'Are you sure?' }) %>
       <% end %>
+      <% if answer.deleted? %>
+        <h4>Answer anonymized.</h4>
+      <% end %>
       <h4><%= link_to zero_width_space_interleave(answer.question.title).html_safe, users_question_path(answer.question) %></h4>
       <p><%= answer.body %></p>
     </div>
