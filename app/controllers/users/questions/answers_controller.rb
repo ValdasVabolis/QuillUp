@@ -19,13 +19,14 @@ class Users::Questions::AnswersController < ApplicationController
     @answer.user = current_user
     if @answer.save
       puts 'Answer created succesfully!'
+      self.vote(:up)
     else
-      puts puts 'Something went wrong. Please try again.'
+      puts 'Something went wrong. Please try again.'
     end
   end
 
-  def vote
-    type = params[:type]
+  def vote(vote_type)
+    type = vote_type.nil? ? params[:type] : vote_type
     if current_user.send("voted_#{type}_on?", @answer)
       @answer.unvote_by current_user
     else
