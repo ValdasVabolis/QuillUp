@@ -1,6 +1,6 @@
 <div class='question-author'>
   <% if question.deleted? %>
-    Question orphaned. Submitted
+    Anonymous question. Submitted
   <% else %>
     by <%= link_to("#{question.user.username}", user_profile_path(question.user.username)) %>
   <% end %>
