@@ -23,7 +23,7 @@
     <div class='question-tools'>
       <% unless @question.deleted? %>
         <%= link_to('Edit', edit_users_question_path(@question), remote: true, id: 'edit') %>
-        <%= link_to('Delete', users_question_path(question),
+        <%= link_to('Delete', users_question_path(@question),
           remote: true,
           method: :delete,
           id: 'delete',

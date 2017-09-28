@@ -3,9 +3,9 @@ class Users::Questions::CommentsController < ApplicationController
   def create
     @comment = Comment.new({ user: current_user }.merge(users_questions_comment_params))
     if @comment.save
-    	flash[:notice] = 'Comment saved succesfully'
+    	puts 'Comment saved succesfully'
     else
-    	flash[:danger] = 'Something went wrong. Please try again.'
+    	puts 'Something went wrong. Please try again.'
     end
   end
 
@@ -17,9 +17,9 @@ class Users::Questions::CommentsController < ApplicationController
 
   def update
     if @comment.update(users_questions_comment_params)
-      flash[:notice] = 'Comment updated succesfully!'
+      puts 'Comment updated succesfully!'
     else
-      flash[:danger] = 'Something went wrong. Please try again.'
+      puts 'Something went wrong. Please try again.'
     end
   end
 
