@@ -1,18 +1,9 @@
 <nav>
-  <%= link_to root_path do %>
-    <%= image_tag 'quill_logo.svg', class: 'nav-logo-image' %>
+  <%= link_to root_path, class: 'nav-logo-text' do %>
+    Quill<span>up</span>
   <% end %>
   <ul>
-    <!--
-      TODO: find a better place for this
-    <li><%= link_to 'Contact us', new_inquiry_path %></li>-->
     <% if user_signed_in? %>
-      <!--<li>
-        <%= link_to '#' do %>
-          <%= fa_icon 'envelope' %>
-          <span>Messages</span>
-        <% end %>
-      </li>-->
       <li>
         <%= link_to my_account_path do %>
           <%= fa_icon 'user-circle-o' %>

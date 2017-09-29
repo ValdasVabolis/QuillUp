@@ -29,15 +29,16 @@ var Text = (function($, m) {
     };
 
     var on_text_keyup = function(e) {
-      update_current_count(text_el.val());
-      render_current_count();
+      var delayed = function() {
+        update_current_count(text_el.val());
+        render_current_count();
+      };
+      setTimeout(delayed, 100);
     };
 
     var init = function() {
-      text_el.on('keydown paste', function() {
-        setTimeout(on_text_keyup, 100);
-      });
-      update_current_count(text_el.val());
+      text_el.on('keyup paste', on_text_keyup);
+      text_el.trigger('keyup');
     };
 
     init();

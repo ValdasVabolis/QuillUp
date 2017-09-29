@@ -102,35 +102,35 @@ describe Question do
 
 
 
-  describe '#friendly_date' do
-    before(:each) do
-      time = DateTime.new(2000, 1, 1)
-      Timecop.travel(time)
-    end
+  # describe '#friendly_date' do
+  #   before(:each) do
+  #     time = DateTime.new(2000, 1, 1)
+  #     Timecop.travel(time)
+  #   end
 
-    after(:each) do
-      Timecop.return
-    end
+  #   after(:each) do
+  #     Timecop.return
+  #   end
 
-    it 'is formatted correctly' do
-      expect(subject.friendly_date).to eq 'Jan 1, 2000'
-    end
-  end
+  #   it 'is formatted correctly' do
+  #     expect(subject.friendly_date).to eq 'Jan 1, 2000'
+  #   end
+  # end
 
 
 
-  describe '#friendly_time' do
-    before(:each) do
-      time = DateTime.new(2000, 1, 1)
-      Timecop.freeze(time)
-    end
+  # describe '#friendly_time' do
+  #   before(:each) do
+  #     time = DateTime.new(2000, 1, 1)
+  #     Timecop.freeze(time)
+  #   end
 
-    after(:each) do
-      Timecop.return
-    end
+  #   after(:each) do
+  #     Timecop.return
+  #   end
 
-    it 'is formatted correctly' do
-      expect(subject.friendly_time).to eq '12:00 AM'
-    end
-  end
+  #   it 'is formatted correctly' do
+  #     expect(subject.friendly_time).to eq '12:00 AM'
+  #   end
+  # end
 end

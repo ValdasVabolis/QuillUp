@@ -17,6 +17,19 @@ nav {
     height: 48px;
   }
 
+  .nav-logo-text {
+    font-size: 38px;
+    color: $p-red;
+    text-decoration: none;
+    margin: 4px 4px 0px;
+    font-family: "Poppins";
+    display: inline-block;
+
+    span {
+      color: lighten($p-red, 10%);
+    }
+  }
+
   ul {
     display: inline-block;
     margin: 0;
