@@ -11,3 +11,37 @@
     }
   }
 }
+
+.user-avatar {
+  width: 100%;
+  position: relative;
+
+  .img-placeholder {
+    @include center;
+    margin-top: 0;
+    width: 300px;
+
+    .upload-button {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    input[type=file] {
+      width: 180px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 12px;
+    }
+
+    .avatar-preview {
+      & > img {
+        border-radius: 6px;
+        border-radius: 6px;
+        border: 1px solid white;
+        height: 300px;
+        width: 300px;
+      }
+    }
+  }
+  }

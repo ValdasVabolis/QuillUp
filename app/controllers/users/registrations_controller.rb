@@ -36,7 +36,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :password, 
       :password_confirmation,
       :current_password,
-      :about
+      :about,
+      :avatar
     )
   end
 end
