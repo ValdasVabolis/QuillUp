@@ -1,22 +1,13 @@
 //= require jquery
 //= require rails-ujs
+//= require underscore
 //= require turbolinks
 //= require handlebars.runtime
 //= require_tree ./templates
 //= require_tree .
 //= require autosize
 
-var show_hide_alert = function() {
-  var el = $('.alert');
-  el.addClass('shown');
-  setTimeout(function() {
-    el.removeClass('shown');
-  }, 3000);
-};
-
 $(document).on('turbolinks:load', function() {
-  $(show_hide_alert);
-
   $(document).on('click', '#cancel-question', function(e) {
     e.preventDefault();
     $('#popover-view-contents .question-large').removeClass('editing');
@@ -42,6 +33,8 @@ $(document).on('turbolinks:load', function() {
 
   Hamburger.init();
 
+  Popover.init();
+
   AlertNotice.init({
     selector: '.alert-notice',
     css: {
@@ -53,6 +46,4 @@ $(document).on('turbolinks:load', function() {
       }
     }
   });
-
-  Popover.init();
 });

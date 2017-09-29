@@ -23,7 +23,7 @@ class Question < ApplicationRecord
 
   validates_presence_of :user
   validates :title, length: { minimum: 5, maximum: 200 }
-  validates :body, length: { minimum: 5, maximum: 2500 }
+  validates :body, length: { maximum: 10000 }
 
   scope :pinned, -> { where(pin: true) }
   scope :not_pinned, -> { where(pin: false) }

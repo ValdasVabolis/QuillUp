@@ -23,8 +23,10 @@ Rails.application.routes.draw do
     get 'account/answers', to: 'accounts#answers'
   end
 
+  post 'validate', to: 'validation#check'
+
   # /users
-  namespace :users do 
+  namespace :users do
     get 'questions/:id', to: 'questions#show', constraints: { id: /\d*/ }
     authenticate :user do
       resources :messages, only: [:new, :create]

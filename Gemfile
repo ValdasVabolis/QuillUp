@@ -29,6 +29,7 @@ gem 'sass-rails', '5.0.6'
 gem 'slack-notifier'
 gem 'turbolinks', '5.0.1'
 gem 'uglifier', '3.2.0'
+gem 'underscore-rails'
 gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do

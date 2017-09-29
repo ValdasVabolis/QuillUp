@@ -273,6 +273,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    underscore-rails (1.8.3)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.3.0)
@@ -333,6 +334,7 @@ DEPENDENCIES
   turbolinks (= 5.0.1)
   tzinfo-data
   uglifier (= 3.2.0)
+  underscore-rails
   web-console (= 3.3.0)
   will_paginate (~> 3.1.0)
 
