@@ -9,7 +9,9 @@ end
 
 gem 'rails', '~> 5.1.2'
 gem 'puma', '3.7'
-
+gem 'cloudinary'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'handlebars_assets'
 gem 'airbrake', '~> 6.2'
 gem 'acts_as_votable', '~> 0.10.0'

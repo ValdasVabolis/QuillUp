@@ -1,0 +1,14 @@
+common: &common
+  cloudinary_cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  cloudinary_api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  cloudinary_api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
+  cloudinary_url: <%= ENV['CLOUDINARY_URL'] %>
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common
