@@ -1,5 +1,5 @@
 <div class="question-votes <%= 'question-belonging-to-user' if question.user == current_user %>" data-id="<%= question.id %>">
-  <%= question_vote_button(question, :up) %>
+  <%= question_vote_button(question, :up) unless current_user == question.user %>
   <%= question_vote_score(question) %>
-  <%= question_vote_button(question, :down) %>
+  <%= question_vote_button(question, :down) unless current_user == question.user %>
 </div>

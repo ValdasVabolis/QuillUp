@@ -23,7 +23,6 @@ class Users::QuestionsController < ApplicationController
     @question.user = current_user
     if @question.save
       flash[:notice] = 'Question created succesfully!'
-      self.vote(:up)
       redirect_to root_url
     else
       flash[:danger] = 'Something went wrong. Please try again.'
@@ -39,8 +38,8 @@ class Users::QuestionsController < ApplicationController
     @question.soft_delete!
   end
 
-  def vote(vote_type = nil)
-    type = vote_type.nil? ? params[:type] : vote_type
+  def vote
+    type = params[:type]
     if current_user.send("voted_#{type}_on?", @question)
       @question.unvote_by current_user
     else
