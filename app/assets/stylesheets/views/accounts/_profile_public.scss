@@ -11,3 +11,11 @@
     }
   }
 }
+
+.profile-avatar-public {
+  & > img {
+    border-radius: 50%;
+    height: 128px;
+    width: 128px;
+  }
+}

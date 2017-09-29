@@ -1,4 +1,7 @@
 <div class='profile-container'>
+  <div class='profile-avatar-public'>
+    <%= avatar_image_tag(current_user) %>
+  </div>
   <p>Username: <b><%= @user.username %></b></p>
   <p>Member since: <b><%= @user.created_at.to_s[0...10] %></b></p>
   <div class='public-score'>

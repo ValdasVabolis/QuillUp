@@ -1,3 +1,6 @@
+<div class='profile-avatar-private'>
+  <%= avatar_image_tag(current_user) %>
+</div>
 <p>Username: <b><%= current_user.username %></b></p>
 <p>Email: <b><%= current_user.email %></b></p>
 <p>Member since: <b><%= current_user.created_at.to_s[0...10] %></b></p>
