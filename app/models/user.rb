@@ -24,6 +24,7 @@
 
 class User < ApplicationRecord
   include SlackModule
+  mount_uploader :avatar, AvatarUploader
 	acts_as_voter
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
