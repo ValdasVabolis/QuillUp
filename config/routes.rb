@@ -28,11 +28,11 @@ Rails.application.routes.draw do
   # /users
   namespace :users do
     get 'questions/:id', to: 'questions#show', constraints: { id: /\d*/ }
+    match 'question/:id/vote/:type', to: 'questions#vote', via: :put
     authenticate :user do
       resources :messages, only: [:new, :create]
       get 'questions/exit', to: 'questions#exit', as: 'questions_exit'
       resources :questions, except: [:show]
-      match 'question/:id/vote/:type', to: 'questions#vote', via: :put
       namespace :questions do
         resources :comments, only: [:edit, :destroy, :update]
         resources :answers, except: [:new, :show]

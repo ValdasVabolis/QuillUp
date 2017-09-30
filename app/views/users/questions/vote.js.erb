@@ -1,1 +1,7 @@
-$('.question-votes[data-id=<%= @question.id %>]').replaceWith($('<%= j render(partial: "shared/question_votes", locals: { question: @question }) %>')); 
+if('<% user_signed_in? %>') {
+  alert('User signed in');
+  $('.question-votes[data-id=<%= @question.id %>]')
+    .replaceWith($('<%= j render(partial: "shared/question_votes", locals: { question: @question }) %>')); 
+} else {
+  alert('Please sign in to vote on submissions.');
+}

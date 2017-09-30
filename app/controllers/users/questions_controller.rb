@@ -40,10 +40,12 @@ class Users::QuestionsController < ApplicationController
 
   def vote
     type = params[:type]
-    if current_user.send("voted_#{type}_on?", @question)
-      @question.unvote_by current_user
-    else
-      @question.vote_by voter: current_user, vote: type
+    unless current_user.nil?
+      if current_user.send("voted_#{type}_on?", @question)
+        @question.unvote_by current_user
+      else
+        @question.vote_by voter: current_user, vote: type
+      end
     end
   end
 
