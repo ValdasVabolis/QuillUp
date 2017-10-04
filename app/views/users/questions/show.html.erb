@@ -38,7 +38,7 @@
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
 
   <% if @question.answers.blank? %>
-    No one has answered this question yet.
+    It appears that no one has answered this question yet. Become the first person to do so!
   <% else %>
     Showing <%= @question.answers.count %> answers.
   <% end %>
