@@ -3,10 +3,10 @@
     <div class='profile-avatar-public'>
       <%= avatar_image_tag(user) %>
     </div>
-    <h4><%= user.username %></b></h4>
-    <p>Member since: <b><%= user.created_at.to_s[0...10] %></b></p>
+    <!-- <h2><%= user.username %></h2> -->
+    <h2>John McGreg</h2>
     <div class='public-score'>
-      <h2>Submission score</h2>
+      Submission score:
       <span class='score-total'>Total score: <%= user_score_sum_all(user) %></span>
       <div class='score-details'>
         <p>Question: <b><%= user_score_sum(user, :question) %></b></p>
@@ -14,12 +14,14 @@
         <p>Comment: <b><%= user_score_sum(user, :comment) %></b></p>
       </div>
     </div>
+    Member since: <b><%= user.created_at.to_s[0...10] %>
     <div class='about-me'>
       <%= user_about_me(user) %>
     </div>
     <div>
       <%= link_to 'Send a message', new_users_message_path, class: 'btn' %>
     </div>
+    
    </div>
 </div>
 
