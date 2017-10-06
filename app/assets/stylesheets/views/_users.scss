@@ -7,17 +7,26 @@ body.users {
     width: 100%;
   }
 
+  .tabs-public {
+    position: absolute;
+    top: 0;
+    padding-left: 320px;
+  }
+
   .profile-container, .tabs {
     min-height: 100%;
-    float: left;
+    position: absolute;
+    top: 0;
   }
 
   .profile-container {
     background: $p-gray-dark;
-    width: 25%;
+    width: 320px;
+    z-index: 1;
   }
 
   .tabs {
-    width: 75%;
+    padding-left: 320px;
+    width: 100%;
   }
 }

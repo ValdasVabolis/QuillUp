@@ -7,21 +7,26 @@
     <h2>John McGreg</h2>
     <div class='public-score'>
       Submission score:
-      <span class='score-total'>Total score: <%= user_score_sum_all(user) %></span>
+      <div class='score-total'>Total score: <%= user_score_sum_all(user) %></div>
       <div class='score-details'>
         <p>Question: <b><%= user_score_sum(user, :question) %></b></p>
         <p>Answer: <b><%= user_score_sum(user, :answer) %></b></p>
         <p>Comment: <b><%= user_score_sum(user, :comment) %></b></p>
       </div>
     </div>
-    Member since: <b><%= user.created_at.to_s[0...10] %>
-    <div class='about-me'>
-      <%= user_about_me(user) %>
+    <div class='member-since'>
+      Member since: <%= user.created_at.to_s[0...10] %>
     </div>
-    <div>
+    <div class='about-me'>
+      <!-- <h4>About me:</h4><%= user.about %> -->
+      About me: 
+      <p>
+        I'm a big fan of football and stuff. I also am a Quill user. Test.
+      </p>
+    </div>
+    <div class='message-wrapper'>
       <%= link_to 'Send a message', new_users_message_path, class: 'btn' %>
     </div>
-    
    </div>
 </div>
 

@@ -5,19 +5,21 @@
     text-align: center;
 
     color: white;
-  }
 
-  .public-score {
-    & > .score-details {
-      display: none;
+    .public-score {
+      margin-top: 20px;
     }
 
-    & > .score-total {
-      &:hover {
-        & + .score-details {
-          display: block;
-        }
-      }
+    .member-since {
+      margin-top: 20px;
+    }
+
+    .about-me {
+      margin-top: 20px;
+    }
+
+    .message-wrapper {
+      margin-top: 20px;
     }
   }
 
