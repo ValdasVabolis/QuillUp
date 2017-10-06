@@ -1,0 +1,23 @@
+body.users {
+  height: 100%;
+
+  .main-content {
+    margin-top: $header-height;
+    height: 100%;
+    width: 100%;
+  }
+
+  .profile-container, .tabs {
+    min-height: 100%;
+    float: left;
+  }
+
+  .profile-container {
+    background: $p-gray-dark;
+    width: 25%;
+  }
+
+  .tabs {
+    width: 75%;
+  }
+}

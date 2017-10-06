@@ -1,21 +1,36 @@
-.public-score {
-  & > .score-details {
-    display: none;
+.profile-container {
+
+  .profile-overview {
+    // center things
+    // can
+    // not
+    // do
+    // this
+    margin-top: 40px;
+    text-align: center;
+
+    color: $p-white;
   }
 
-  & > .score-total {
-    &:hover {
-      & + .score-details {
-        display: block;
+  .public-score {
+    & > .score-details {
+      display: none;
+    }
+
+    & > .score-total {
+      &:hover {
+        & + .score-details {
+          display: block;
+        }
       }
     }
   }
-}
 
-.profile-avatar-public {
-  & > img {
-    border-radius: 50%;
-    height: 128px;
-    width: 128px;
+  .profile-avatar-public {
+    & > img {
+      border-radius: 50%;
+      height: 128px;
+      width: 128px;
+    }
   }
 }

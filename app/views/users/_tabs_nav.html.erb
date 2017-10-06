@@ -1,6 +1,6 @@
 <div class='tabs-nav'>
   <ul>
-    <% [:profile, :questions, :answers].each do |name| %>
+    <% [:questions, :answers].each do |name| %>
       <%= public_tab(name, @user.username) %>
     <% end %>
   </ul>

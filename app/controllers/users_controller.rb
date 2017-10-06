@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user
+	before_action :set_user, only: [:questions, :answers]
 	layout 'profile'
 
 	def index
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
 	# /users/username
   def profile
+    redirect_to users_profile_questions_path(params[:username])
   end
 
   # /users/:username/questions

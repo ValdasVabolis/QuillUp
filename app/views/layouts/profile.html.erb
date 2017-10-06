@@ -5,12 +5,13 @@
     <%= render partial: 'shared/navbar' %>
     <%= render partial: 'shared/alert_notice' %>
     <div class='main-content'>
+      <%= render partial: 'users/profile', locals: { user: @user } %>
       <div class='tabs tabs-public' id='users-tabs'>
         <%= render partial: 'users/tabs_nav' %>
         <div class="tabs-content">
           <%= yield %>
         </div>
-    </div>
+      </div>
     </div>
     <div id='popover-backdrop'></div>
     <div id='popover-view-wrapper'>
