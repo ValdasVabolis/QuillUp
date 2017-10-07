@@ -1,5 +1,5 @@
 .profile-container {
-  
+
   width: 320px;
   position: absolute;
   z-index: 1;
@@ -28,7 +28,10 @@
     }
 
     .member-since {
-      margin-top: 20px;
+      margin-top: 5px;
+      font-size: $font-size-small;
+      color: $p-gray-light;
+      font-style: italic;
     }
 
     .about-me {

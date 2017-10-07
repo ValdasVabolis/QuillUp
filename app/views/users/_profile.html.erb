@@ -4,7 +4,12 @@
       <%= avatar_image_tag(user) %>
     </div>
     <!-- <h2><%= user.username %></h2> -->
-    <div class='profile-title'>John McGreg</div>
+    <div class='profile-title'>
+      <%= user.username %>
+    </div>
+    <div class='member-since'>
+      Registered <%= distance_of_time_in_words(user.created_at, Time.now) %> ago
+    </div>
     <div class='about-me'>
       <!-- <h4>About me:</h4><%= user.about %> -->
       <p>
@@ -18,9 +23,6 @@
         <p>Answer: <b><%= user_score_sum(user, :answer) %></b></p>
         <p>Comment: <b><%= user_score_sum(user, :comment) %></b></p>
       </div>
-    </div>
-    <div class='member-since'>
-      Member since: <%= user.created_at.to_s[0...10] %>
     </div>
     <div class='message-wrapper'>
       <%= link_to 'Send a message', new_users_message_path, class: 'btn' %>
