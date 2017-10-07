@@ -1,3 +1,9 @@
 .tabs.tabs-private .tabs-nav li {
   width: 25%;
 }
+
+@include breakpoint(550px) {
+  .tabs.tabs-private .tabs-nav li {
+    width: 100%;
+  }
+}
