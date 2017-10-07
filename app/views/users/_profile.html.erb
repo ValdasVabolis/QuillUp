@@ -4,10 +4,15 @@
       <%= avatar_image_tag(user) %>
     </div>
     <!-- <h2><%= user.username %></h2> -->
-    <h2>John McGreg</h2>
+    <div class='profile-title'>John McGreg</div>
+    <div class='about-me'>
+      <!-- <h4>About me:</h4><%= user.about %> -->
+      <p>
+        I'm a big fan of football and stuff. I also am a Quill user. Test.
+      </p>
+    </div>
     <div class='public-score'>
-      Submission score:
-      <div class='score-total'>Total score: <%= user_score_sum_all(user) %></div>
+      <div class='score-total'>Score: <%= user_score_sum_all(user) %></div>
       <div class='score-details'>
         <p>Question: <b><%= user_score_sum(user, :question) %></b></p>
         <p>Answer: <b><%= user_score_sum(user, :answer) %></b></p>
@@ -16,13 +21,6 @@
     </div>
     <div class='member-since'>
       Member since: <%= user.created_at.to_s[0...10] %>
-    </div>
-    <div class='about-me'>
-      <!-- <h4>About me:</h4><%= user.about %> -->
-      About me: 
-      <p>
-        I'm a big fan of football and stuff. I also am a Quill user. Test.
-      </p>
     </div>
     <div class='message-wrapper'>
       <%= link_to 'Send a message', new_users_message_path, class: 'btn' %>

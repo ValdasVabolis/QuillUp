@@ -1,4 +1,8 @@
 .profile-container {
+  
+  width: 320px;
+  position: absolute;
+  z-index: 1;
 
   .profile-overview {
     margin-top: 40px;
@@ -8,6 +12,19 @@
 
     .public-score {
       margin-top: 20px;
+      .score-total {
+        font-size: $font-size-huge;
+        margin-bottom: 5px;
+        color: $p-green-light;
+      }
+      .score-details {
+        font-size: $font-size-small;
+      }
+    }
+
+    .profile-title {
+      margin-top: 15px;
+      font-size: $font-size-giant;
     }
 
     .member-since {
