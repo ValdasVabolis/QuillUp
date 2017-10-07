@@ -14,9 +14,18 @@
 
 .profile-avatar-private {
   & > img {
+    margin-top: 25px;
+    margin-bottom: 25px;
     border-radius: 50%;
     height: 128px;
     width: 128px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: transform 0.2s;
+    &:hover {
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.3);
+    }
   }
 }
 

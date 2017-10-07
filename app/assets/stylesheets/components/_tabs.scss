@@ -12,7 +12,7 @@
 
   .tabs-nav {
 
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
     &, ul, li, a {
       position: relative;
@@ -30,24 +30,33 @@
 
       &.selected a {
         color: $p-white;
-        height: 45px;
         background: $p-green;
+        transition: background 0.2s;
+        &:hover {
+          background: $p-green-light;
+        }
       }
     }
 
     a {
-      height: 40px;
+      color: $p-black;
+      height: 45px;
       padding: 6px;
       display: block;
       font-size: 26px;
       text-align: center;
       text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      &:hover {
+        color: $p-white;
+        background: $p-peaceful-blue;
+      }
     }
 
     @include breakpoint(550px) {
       margin-bottom: 64px;
       ul {
-        height: 165px;
+        height: 180px;
       }
       
       a {
