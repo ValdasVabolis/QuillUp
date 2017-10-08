@@ -25,11 +25,14 @@ form {
     font-size: $font-size-big;
     padding: $margin / 2;
     width: 100%;
-
-    &, &:focus {
+    transition: box-shadow 0.5s;
+    & {
       outline: none;
       border: none;
       @include box_shadow(2);
+    }
+    &:focus {
+      @include box_shadow(3);
     }
   }
 
