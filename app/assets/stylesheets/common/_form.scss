@@ -1,7 +1,6 @@
 form {
   @include fontawesome-checkboxes;
   @include center;
-  background: $p-white;
   border-radius: $margin;
   padding: $margin * 2;
   font-size: $font-size-large;
@@ -30,7 +29,7 @@ form {
     &, &:focus {
       outline: none;
       border: none;
-      border: 1px solid $p-black;
+      @include box_shadow(2);
     }
   }
 
