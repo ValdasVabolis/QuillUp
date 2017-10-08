@@ -1,33 +1,114 @@
-.tabs {
+.tabs-private {
 
-  @include breakpoint(550px) {
-    margin-top: -14px;
+    @include breakpoint(550px) {
+      margin-top: -14px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tabs-nav {
+
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+      &, ul, li, a {
+        position: relative;
+      }
+
+      ul {
+        display: block;
+        height: 45px;
+        width: 100%;
+      }
+
+      li {
+        display: inline-block;
+        float: left;
+
+        &.selected a {
+          color: $p-white;
+          background: $p-green;
+          transition: background 0.2s;
+          &:hover {
+            background: $p-green-light;
+          }
+        }
+      }
+
+      a {
+        color: $p-black;
+        height: 45px;
+        padding: 6px;
+        display: block;
+        font-size: 26px;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+        &:hover {
+          color: $p-white;
+          background: $p-peaceful-blue;
+        }
+      }
+
+      @include breakpoint(550px) {
+        margin-bottom: 64px;
+        ul {
+          height: 180px;
+        }
+        
+        a {
+          border-radius: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+      }
+    }
+
+    .tabs-content {
+      clear: both;
+      margin-top: 20px;
+      @include breakpoint(550px) {
+        text-align: center;
+      }
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 15px;
+
+
+      li {
+        display: none;
+      }
+
+      li.selected {
+        display: inherit;
+      }
   }
+}
 
+.tabs-public {
+  position: relative;
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-
   .tabs-nav {
-
     box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
     &, ul, li, a {
       position: relative;
     }
-
     ul {
       display: block;
       height: 45px;
       width: 100%;
     }
-
     li {
       display: inline-block;
       float: left;
-
       &.selected a {
         color: $p-white;
         background: $p-green;
@@ -37,7 +118,6 @@
         }
       }
     }
-
     a {
       color: $p-black;
       height: 45px;
@@ -51,39 +131,6 @@
         color: $p-white;
         background: $p-peaceful-blue;
       }
-    }
-
-    @include breakpoint(550px) {
-      margin-bottom: 64px;
-      ul {
-        height: 180px;
-      }
-      
-      a {
-        border-radius: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
-      }
-    }
-  }
-
-  .tabs-content {
-    clear: both;
-    margin-top: 20px;
-    @include breakpoint(550px) {
-      text-align: center;
-    }
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-
-
-    li {
-      display: none;
-    }
-
-    li.selected {
-      display: inherit;
     }
   }
 }

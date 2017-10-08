@@ -11,22 +11,50 @@ body.users {
     position: absolute;
     top: 0;
     padding-left: 320px;
+    @include breakpoint(750px) {
+      padding-left: 0px;
+      position: relative;
+      .tabs-nav {
+        ul {
+        }
+        li {
+          border-radius: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          width: 100%;
+        }
+      }
+    }
   }
 
   .profile-container, .tabs {
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     min-height: 100%;
     position: absolute;
     top: 0;
+    @include breakpoint(750px) {
+      min-height: 150px;
+      height: 512px;
+      z-index: 0;
+      position: relative;
+    }
   }
 
   .profile-container {
     background: $p-gray-dark;
     width: 320px;
     z-index: 1;
+    @include breakpoint(750px) {
+      width: 100%;
+      z-index: 0;
+    }
   }
 
   .tabs {
     padding-left: 320px;
     width: 100%;
+    @include breakpoint(750px) {
+      padding-left: 0px;
+    }
   }
 }

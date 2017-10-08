@@ -3,12 +3,18 @@
   width: 320px;
   position: absolute;
   z-index: 1;
+  height: 512px;
+
 
   .profile-overview {
-    margin-top: 40px;
     text-align: center;
 
-    color: white;
+    color: $p-white;
+
+    @include breakpoint(750px) {
+      position: absolute;
+      margin-top: 35px;   
+    }
 
     .public-score {
       margin-top: 20px;
