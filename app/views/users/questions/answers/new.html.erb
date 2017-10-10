@@ -3,7 +3,7 @@
 <% else %>
   <div class='not-logged-in-notice'>
     <%= fa_icon('exclamation-triangle') %> You're not logged in.
-    <%= link_to 'Sign in', new_user_session_path, class: '' %> or
-    <%= link_to 'register', new_user_registration_path, class: '' %> to participate in the discussion.
+    <%= link_to 'Sign In', new_user_session_path, class: '' %> or
+    <%= link_to 'Sign Up', new_user_registration_path, class: '' %> to participate in the discussion.
   </div>
 <% end %>
