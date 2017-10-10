@@ -4,7 +4,7 @@
       Sign Up
     </div>
     <div class='form-header-links'>
-      Have an account already? <%= link_to 'Sign In', new_session_path(resource_name) %>
+      Have an account already? <%= link_to t(:sign_in), new_session_path(resource_name) %>
     </div>
   </div>
 
@@ -36,6 +36,6 @@
   </div>
 
   <div class='form-submit-wrapper'>
-    <%= f.submit 'Sign Up', class: 'btn' %>
+    <%= f.submit t(:sign_up), class: 'btn' %>
   </div>
 <% end %>

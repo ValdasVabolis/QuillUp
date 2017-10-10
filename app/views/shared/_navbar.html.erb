@@ -3,30 +3,36 @@
     Quill<span>up</span>
   <% end %>
   <ul>
+    <!-- <li> -->
+      <% link_to '', 'http://en.quillup.com', class: 'nav-locale-en' %>
+    <!-- </li> -->
+    <!-- <li> -->
+      <% link_to '', 'http://lt.quillup.com', class: 'nav-locale-lt' %>
+    <!-- </li> -->
     <% if user_signed_in? %>
       <li>
         <%= link_to my_account_path do %>
           <%= fa_icon 'user-circle-o' %>
-          <span>My Account</span>
+          <span><%= t :account %></span>
         <% end %>
       </li>
       <li>
         <%= link_to destroy_user_session_path, method: :delete do %>
           <%= fa_icon 'sign-out' %>
-          <span>Sign Out</span>
+          <span><%= t :sign_out %></span>
         <% end %>
       </li>
     <% else %>
       <li>
         <%= link_to new_user_registration_path do %>
           <%= fa_icon 'user-plus' %>
-          <span>Sign Up</span>
+          <span><%= t :sign_up %></span>
         <% end %>
       </li>
       <li>
         <%= link_to new_user_session_path do %>
           <%= fa_icon 'sign-in' %>
-          <span>Sign In</span>
+          <span><%= t :sign_in %></span>
         <% end %>
       </li>
     <% end %>

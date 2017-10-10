@@ -16,7 +16,7 @@ module Saasapp
     # -- all .rb files in that directory are automatically loaded.
 
     config.autoload_paths += Dir["#{Rails.root}/lib/**/"]
-    
+
     config.active_record.default_timezone = :local
   end
 end
