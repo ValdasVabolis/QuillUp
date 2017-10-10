@@ -90,48 +90,48 @@ lt:
     - Lapkritis
     - Gruodis
   datetime:
-  distance_in_words:
-    about_x_hours:
-      one: apie 1 valandą
-      other: apie %{count} valandų
-    about_x_months:
-      one: apie 1 mėnesį
-      other: apie %{count} mėnesių
-    about_x_years:
-      one: apie 1 metus
-      other: apie %{count} metus
-    almost_x_years:
-      one: beveik 1 metus
-      other: beveik %{count} metus
-    half_a_minute: pusė minutės
-    less_than_x_minutes:
-      one: mažiau negu pusė minutės
-      other: mažiau negu %{count} minutes
-    less_than_x_seconds:
-      one: mažiau negu vieną sekundę
-      other: mažiau negu %{count} sekundžių
-    over_x_years:
-      one: over 1 year
-      other: over %{count} years
-    x_days:
-      one: 1 day
-      other: "%{count} days"
-    x_minutes:
-      one: 1 minute
-      other: "%{count} minutes"
-    x_months:
-      one: 1 month
-      other: "%{count} months"
-    x_years:
-      one: 1 year
-      other: "%{count} years"
-    x_seconds:
-      one: 1 second
-      other: "%{count} seconds"
-  prompts:
-    day: Day
-    hour: Hour
-    minute: Minute
-    month: Month
-    second: Seconds
-    year: Year
+    distance_in_words:
+      about_x_hours:
+        one: apie 1 valandą
+        other: apie %{count} valandų
+      about_x_months:
+        one: apie 1 mėnesį
+        other: apie %{count} mėnesių
+      about_x_years:
+        one: apie 1 metus
+        other: apie %{count} metus
+      almost_x_years:
+        one: beveik 1 metus
+        other: beveik %{count} metus
+      half_a_minute: pusė minutės
+      less_than_x_minutes:
+        one: mažiau negu pusė minutės
+        other: mažiau negu %{count} minutes
+      less_than_x_seconds:
+        one: mažiau negu vieną sekundę
+        other: mažiau negu %{count} sekundžių
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
