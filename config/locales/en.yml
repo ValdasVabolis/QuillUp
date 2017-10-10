@@ -40,7 +40,8 @@ en:
   profile: "Profile"
   settings: "Settings"
   characters_minimum: "Characters Minimum"
-
+  no_questions_submitted: "You haven't submitted any questions yet!"
+  no_answers_submitted: "You haven't submitted any answers yet!"
 
 
 
@@ -54,7 +55,6 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    -
     - Jan
     - Feb
     - Mar

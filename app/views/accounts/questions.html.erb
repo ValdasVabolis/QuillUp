@@ -20,7 +20,7 @@
 <%= will_paginate @questions %>
 
 <% if current_user.questions.empty? %>
-  <h2>You haven't submitted any questions yet!</h2>
+  <h2><%= t(:no_questions_submitted) %></h2>
 <% end %>
 
 

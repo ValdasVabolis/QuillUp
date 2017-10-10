@@ -7,6 +7,10 @@ form {
   top: $margin * 4;
   width: 520px;
 
+  #question-title-counter, #question-area-counter {
+    margin-top: 15px;
+  }
+
   div {
     margin-top: $margin * 2;
   }

@@ -2,11 +2,11 @@
   <% @answers.each do |answer| %>
     <div class='answer' data-id='<%= answer.id %>'>
       <% if user_signed_in? %>
-         <%= link_to('Delete',
+         <%= link_to(t(:delete),
             users_questions_answer_path(answer),
             remote: true,
             method: :delete,
-            data: { confirm: 'Are you sure?' }) %>
+            data: { confirm: t(:are_you_sure) }) %>
       <% end %>
       <% if answer.deleted? %>
         <h4>Answer anonymized.</h4>
@@ -17,6 +17,6 @@
   <% end %>
   <%= will_paginate @answers %>
   <% if current_user.answers.empty? %>
-    <p>You haven't submitted any answers yet!</p>
+    <p><%= t(:no_answers_submitted) %></p>
   <% end %>
 </div>
