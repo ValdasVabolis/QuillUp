@@ -7,6 +7,7 @@ en:
   email: "Email"
   password: "Password"
   password_confirmation: "Confirm Password"
+  password_current: "Current Password"
   remember_me: "Remember me"
   forgot_your_password: "Forgot your password?"
   didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
@@ -34,6 +35,7 @@ en:
   registered: "Registered"
   ago: "ago"
   score: "Score"
+  total: "Total"
   send_a_message: "Send a message"
   have_an_account: "Have an account already?"
   reply_to_this_answer: "Reply to this answer"
@@ -42,6 +44,12 @@ en:
   characters_minimum: "Characters Minimum"
   no_questions_submitted: "You haven't submitted any questions yet!"
   no_answers_submitted: "You haven't submitted any answers yet!"
+  about_me: "About me"
+  leave_blank: "leave blank if you don't want to change it"
+  update: "Updated"
+  delete_my_account: "Delete my account"
+  avatar: "Avatar"
+  question_created_succesfully: "Question created succesfully!"
 
 
 

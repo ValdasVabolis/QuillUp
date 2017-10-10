@@ -2,7 +2,7 @@
   <% unless question.deleted? %>
     <div class='question-small' data-id='<%= question.id %>'>
       <h4><%= link_to("#{question.title}", users_question_path(question)) %></h4>
-      <p>Submitted on <%="#{question.friendly_date}"%></p>
+      <p><%= t(:submitted) %> <%=  t(:on_date) %> <%="#{question.friendly_date}"%></p>
     </div>
   <% end %>
 <% end %>

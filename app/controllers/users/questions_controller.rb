@@ -22,7 +22,7 @@ class Users::QuestionsController < ApplicationController
     @question = Question.new(create_users_question_params)
     @question.user = current_user
     if @question.save
-      flash[:notice] = 'Question created succesfully!'
+      flash[:notice] = t(:question_created_succesfully)
       redirect_to root_url
     else
       flash[:danger] = 'Something went wrong. Please try again.'

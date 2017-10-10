@@ -7,6 +7,7 @@ lt:
   email: "El. paštas"
   password: "Slaptažodis"
   password_confirmation: "Pakartokite Slaptažodį"
+  password_current: "Dabartinis Slaptažodis"
   remember_me: "Prisiminti mane"
   forgot_your_password: "Pamiršote savo slaptažodį?"
   didnt_receive_unlock_instructions: "Negavote naujo prisijungimo instrukcijų?"
@@ -34,6 +35,7 @@ lt:
   registered: "Registravosi"
   ago: "prieš"
   score: "Taškai"
+  total: "Iš viso"
   question: "Iš klausimų"
   answer: "Iš atsakymų"
   comment: "Iš komentarų"
@@ -45,6 +47,13 @@ lt:
   characters_minimum: "Simboliai Mažiausiai"
   no_questions_submitted: "Jūs nepateikėte nei vieno klausimo!"
   no_answers_submitted: "Jūs nepateikėte nei vieno atsakymo!"
+  about_me: "Apie mane"
+  leave_blank: "palikite tuščią jeigu nenorite pakeisti"
+  update: "Atnaujinti"
+  delete_my_account: "Ištrinti mano paskyrą"
+  avatar: "Avataras"
+  question_created_succesfully: "Sėkmingai pateikėte klausimą!"
+
   date:
     abbr_day_names:
     - Sekm

@@ -1,16 +1,16 @@
 <div class='profile-avatar-private'>
   <%= avatar_image_tag(current_user) %>
 </div>
-<p>Username: <b><%= current_user.username %></b></p>
-<p>Email: <b><%= current_user.email %></b></p>
+<p><%= t(:username) %>: <b><%= current_user.username %></b></p>
+<p><%= t(:email) %>: <b><%= current_user.email %></b></p>
 <p>Member since: <b><%= current_user.created_at.to_s[0...10] %></b></p>
 <div class='private-score'>
-  <h2>Submission score</h2>
-  <span class='score-total'>Total: <%= user_score_sum_all(current_user) %></span>
+  <h2><%= t(:score) %></h2>
+  <span class='score-total'><%= t(:total) %>: <%= user_score_sum_all(current_user) %></span>
   <div class='score-details'>
-    <p>Question: <b><%= user_score_sum(current_user, :question) %></b></p>
-    <p>Answer: <b><%= user_score_sum(current_user, :answer) %></b></p>
-    <p>Comment: <b><%= user_score_sum(current_user, :comment) %></b></p>
+    <p><%= t(:question) %>: <b><%= user_score_sum(current_user, :question) %></b></p>
+    <p><%= t(:answer) %>: <b><%= user_score_sum(current_user, :answer) %></b></p>
+    <p><%= t(:comment) %> <b><%= user_score_sum(current_user, :comment) %></b></p>
   </div>
 </div>
 <div class='about-me'>
