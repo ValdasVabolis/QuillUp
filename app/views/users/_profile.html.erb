@@ -8,7 +8,7 @@
       <%= user.username %>
     </div>
     <div class='member-since'>
-      Registered <%= distance_of_time_in_words(user.created_at, Time.now) %> ago
+      <%= t(:registered) %> <%= t(:ago) %> <%= distance_of_time_in_words(user.created_at, Time.now) %> 
     </div>
     <div class='about-me'>
       <!-- <h4>About me:</h4><%= user.about %> -->
@@ -23,15 +23,16 @@
       </p>
     </div>
     <div class='public-score'>
-      <div class='score-total'>Score: <%= user_score_sum_all(user) %></div>
+      <div class='score-total'><%= t(:score) %>: <%= user_score_sum_all(user) %></div>
+
       <div class='score-details'>
-        <p>Question: <b><%= user_score_sum(user, :question) %></b></p>
-        <p>Answer: <b><%= user_score_sum(user, :answer) %></b></p>
-        <p>Comment: <b><%= user_score_sum(user, :comment) %></b></p>
+        <p><%= t(:question) %>: <b><%= user_score_sum(user, :question) %></b></p>
+        <p><%= t(:answer) %>: <b><%= user_score_sum(user, :answer) %></b></p>
+        <p><%= t(:comment) %>: <b><%= user_score_sum(user, :comment) %></b></p>
       </div>
     </div>
     <div class='message-wrapper'>
-      <%= link_to 'Send a message', new_users_message_path, class: 'btn' %>
+      <%= link_to "#{t(:send_a_message)}", new_users_message_path, class: 'btn' %>
     </div>
    </div>
 </div>

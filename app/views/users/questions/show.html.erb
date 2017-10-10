@@ -22,12 +22,12 @@
   <% if user_signed_in? && current_user == @question.user %>
     <div class='question-tools'>
       <% unless @question.deleted? %>
-        <%= link_to('Edit', edit_users_question_path(@question), remote: true, id: 'edit') %>
-        <%= link_to('Delete', users_question_path(@question),
+        <%= link_to(t(:edit), edit_users_question_path(@question), remote: true, id: 'edit') %>
+        <%= link_to(t(:delete), users_question_path(@question),
           remote: true,
           method: :delete,
           id: 'delete',
-          data: { confirm: 'Are you sure?'
+          data: { confirm: t(:are_you_sure)
         }) %>
       <% end %>
     </div>
@@ -38,9 +38,9 @@
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
 
   <% if @question.answers.blank? %>
-    It appears that no one has answered this question yet. Become the first person to do so!
+    <%= t :no_one_answered_yet %>
   <% else %>
-    Showing <%= @question.answers.count %> answers.
+     <!--<%= @question.answers.count %> <%= t :showing_answers  %>-->
   <% end %>
 
   <%= render partial: 'shared/question_answers',  locals: { answers: @answers } %>

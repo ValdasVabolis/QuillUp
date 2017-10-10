@@ -15,9 +15,9 @@
     <p id='area-answer-counter-new'></p>
   </div>
   <div>
-    <%= f.submit 'Create Answer' %>
+    <%= f.submit t(:create_answer) %>
     <% if answer.persisted? %>
-      <%= link_to('Cancel', '#', class: 'btn-red cancel-answer') %>
+      <%= link_to(t(:cancel), '#', class: 'btn-red cancel-answer') %>
     <% end %>
   </div>
 <% end %>
