@@ -8,7 +8,7 @@
       <%= user.username %>
     </div>
     <div class='member-since'>
-      <%= t(:registered) %> <%= t(:ago) %> <%= distance_of_time_in_words(user.created_at, Time.now) %> 
+      <%= t(:registered) %> <%= distance_of_time_in_words(user.created_at, Time.now) %> <%= t(:ago) %>
     </div>
     <div class='about-me'>
       <!-- <h4>About me:</h4><%= user.about %> -->
