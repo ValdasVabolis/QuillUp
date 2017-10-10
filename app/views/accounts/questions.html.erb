@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <% if question.deleted? %>
-      <h4>Anonymous question.</h4>
+      <h4><%= t(:anonymous_question) %>.</h4>
     <% end %>
     <h4><%= link_to("#{question.title}", users_question_path(question)) %></h4>
   </div>

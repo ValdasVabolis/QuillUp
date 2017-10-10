@@ -1,6 +1,6 @@
-if('<% user_signed_in? %>') {
+<% if user_signed_in? %>
   $('.question-votes[data-id=<%= @question.id %>]')
     .replaceWith($('<%= j render(partial: "shared/question_votes", locals: { question: @question }) %>')); 
-} else {
+<% else %>
   alert('Please sign in to vote on submissions.');
-}
+<% end %>
