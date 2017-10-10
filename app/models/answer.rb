@@ -7,7 +7,7 @@ class Answer < ApplicationRecord
 
   belongs_to :user
   belongs_to :question
-  has_many :comments
+  has_many :comments, dependent: :destroy
   validates :body, presence: true, length: { minimum: 1, maximum: 5000 }
   validate :user_account_confirmed, if: :user
 
