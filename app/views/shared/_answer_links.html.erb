@@ -1,16 +1,16 @@
 <div class="answer-links">
   <% if answer.user == current_user %>
 		<% unless answer.deleted? %>
-      <%= link_to('Delete', users_questions_answer_path(answer),
+      <%= link_to(t(:delete), users_questions_answer_path(answer),
        	remote: true,
         method: :delete,
         id: 'delete',
-        data: { confirm: 'Are you sure?' }
+        data: { confirm: t(:are_you_sure) }
       ) %>
     <% end %>
   <% end %>
   <%= link_to(
-    'Reply to this answer',
+    t(:reply_to_this_answer),
     users_questions_answer_replies_path(answer),
  	  class: 'reply-btn',
     remote: true, method: :post
