@@ -3,7 +3,7 @@
 </div>
 <p><%= t(:username) %>: <b><%= current_user.username %></b></p>
 <p><%= t(:email) %>: <b><%= current_user.email %></b></p>
-<p>Member since: <b><%= current_user.created_at.to_s[0...10] %></b></p>
+<p><!--  Member since: --> <b><%= #current_user.created_at.to_s[0...10] %></b></p> -->
 <div class='private-score'>
   <h2><%= t(:score) %></h2>
   <span class='score-total'><%= t(:total) %>: <%= user_score_sum_all(current_user) %></span>
