@@ -4,11 +4,11 @@ body.home {
     a {
       @extend .btn;
       @include center;
+      width: 185px;
       border: none;
       color: $p-white;
       background: $p-green;
       font-size: $font-size-large;
-      width: 220px;
       margin-bottom: 16px;
       display: block;
       border-top: none;

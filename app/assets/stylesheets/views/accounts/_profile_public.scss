@@ -8,12 +8,13 @@
 
   .profile-overview {
     text-align: center;
+    width: 100%;
 
     color: $p-white;
 
     @include breakpoint(750px) {
       position: absolute;
-      margin-top: 35px;   
+      margin-top: 35px;
     }
 
     .public-score {
