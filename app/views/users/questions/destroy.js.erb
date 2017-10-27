@@ -1,6 +1,9 @@
 var question_sm = $('.question-small[data-id="<%= @question.id %>"]')
 var question_lg = $('.question-large[data-id="<%= @question.id %>"]')
-question_sm.find('.question-author').html('Question orphaned. Submitted on <%= @question.friendly_date %> at <%= @question.friendly_time %>');
+
+question_sm.find('.question-author').html('Anonymous question. Submitted on <%= @question.friendly_date %> at <%= @question.friendly_time %>');
 question_sm.find('.question-links > .question-tools, .question-avatar').remove();
 question_lg.find('.question-date').html('Question deleted succesfully.').css('color','red');
 question_lg.find('.question-tools').remove();
+question_sm.find('.question-actions').remove();
+question_sm.prepend($('<h4><%= t(:anonymous_question) %></h4>'));
