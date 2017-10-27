@@ -54,11 +54,11 @@
       }
 
       @include breakpoint(550px) {
-        margin-bottom: 64px;
+        margin-bottom: 32px;
         ul {
           height: 180px;
         }
-        
+
         a {
           border-radius: 0px;
           margin-left: 0px;

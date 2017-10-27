@@ -2,7 +2,7 @@ form {
   @include fontawesome-checkboxes;
   @include center;
   border-radius: $margin;
-  padding: $margin * 2;
+  //padding: $margin * 2;
   font-size: $font-size-large;
   top: $margin * 4;
   width: 520px;
