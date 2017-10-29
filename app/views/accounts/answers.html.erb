@@ -1,13 +1,6 @@
 <div class='history-answers'>
   <% @answers.each do |answer| %>
     <div class='answer' data-id='<%= answer.id %>'>
-      <% if user_signed_in? %>
-         <%= link_to(t(:delete),
-            users_questions_answer_path(answer),
-            remote: true,
-            method: :delete,
-            data: { confirm: t(:are_you_sure) }) %>
-      <% end %>
       <% if answer.deleted? %>
         <h4>Answer anonymized.</h4>
       <% end %>

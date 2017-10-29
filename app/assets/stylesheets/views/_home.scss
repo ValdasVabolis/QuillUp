@@ -4,7 +4,7 @@ body.home {
     a {
       @extend .btn;
       @include center;
-      width: 185px;
+      width: 180px;
       border: none;
       color: $p-white;
       background: $p-green;

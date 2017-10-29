@@ -33,7 +33,7 @@ form {
     & {
       outline: none;
       border: none;
-      @include box_shadow(2);
+      box-shadow: $shadow-form-input;
     }
     &:focus {
       @include box_shadow(3);

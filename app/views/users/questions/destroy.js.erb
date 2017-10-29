@@ -5,5 +5,3 @@ question_sm.find('.question-author').html('Anonymous question. Submitted on <%= 
 question_sm.find('.question-links > .question-tools, .question-avatar').remove();
 question_lg.find('.question-date').html('Question deleted succesfully.').css('color','red');
 question_lg.find('.question-tools').remove();
-question_sm.find('.question-actions').remove();
-question_sm.prepend($('<h4><%= t(:anonymous_question) %></h4>'));

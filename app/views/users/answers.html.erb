@@ -1,4 +1,4 @@
-<div class="history-answers">  
+<div class='history-answers'>
   <% @user.answers.each do |answer| %>
     <% unless answer.deleted? %>
       <div class='answer' data-id='<%= answer.id %>'>
