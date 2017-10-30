@@ -121,7 +121,6 @@
 
 .history-answers {
   & > .answer {
-    margin-bottom: 0;
-    margin-top: $margin;
+    margin: 0 0 $margin;
   }
 }
