@@ -10,25 +10,25 @@
 $(document).on('turbolinks:load', function() {
   $(document).on('click', '#cancel-question', function(e) {
     e.preventDefault();
-    $('#popover-view-contents .question-large').removeClass('editing');
+    $('.question-large').removeClass('editing');
   });
 
   $(document).on('click', '.cancel-answer', function(e) {
     e.preventDefault();
     var id = $(this).closest('.question-answer').attr('data-id');
-    $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('editing');
+    $('.question-answer[data-id="' + id + '"]').removeClass('editing');
   });
 
   $(document).on('click', '.cancel-reply', function(e) {
     e.preventDefault();
     var id = $(this).closest('.question-answer').attr('data-id');
-    $('#popover-view-contents .question-answer[data-id="' + id + '"]').removeClass('replying');
+    $('.question-answer[data-id="' + id + '"]').removeClass('replying');
   });
 
   $(document).on('click', '#cancel-comment', function(e) {
     e.preventDefault();
     var id = $(this).closest('.answer-comment').attr('data-id');
-    $('#popover-view-contents .answer-comment[data-id="' + id + '"]').removeClass('editing');
+    $('.answer-comment[data-id="' + id + '"]').removeClass('editing');
   });
 
   Hamburger.init();
