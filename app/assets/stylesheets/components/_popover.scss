@@ -53,6 +53,23 @@
   }
 }
 
+#popover-expand {
+  color: $p-gray-dark;
+  position: absolute;
+  transition: color $delay ease;
+  top: 64px;
+  right: 24px;
+
+  i {
+    font-size: 24px;
+  }
+
+  &:hover {
+    color: $p-peaceful-blue;
+    cursor: pointer;
+  }
+}
+
 // popover shown
 #popover-parent.showing-popover {
   overflow: hidden;

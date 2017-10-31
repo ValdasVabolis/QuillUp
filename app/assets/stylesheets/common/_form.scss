@@ -34,6 +34,7 @@ form {
       outline: none;
       border: none;
       box-shadow: $shadow-form-input;
+      border-radius: 1px;
     }
     &:focus {
       @include box_shadow(3);

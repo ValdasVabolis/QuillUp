@@ -9,6 +9,7 @@
     </div>
   <% end %>
   <%= will_paginate @answers %>
+
   <% if current_user.answers.empty? %>
     <p><%= t(:no_answers_submitted) %></p>
   <% end %>
