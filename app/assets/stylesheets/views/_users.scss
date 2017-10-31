@@ -30,7 +30,6 @@ body.users {
   .profile-container, .tabs {
     box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     min-height: 100%;
-    position: absolute;
     top: 0;
     @include breakpoint(750px) {
       min-height: 150px;
@@ -41,12 +40,18 @@ body.users {
   }
 
   .profile-container {
+    position: fixed;
+    top: 50px;
     background: $p-gray-dark;
     width: 320px;
     z-index: 1;
+
     @include breakpoint(750px) {
       width: 100%;
       z-index: 0;
+      top: 0px;
+      position: relative;
+
     }
   }
 
