@@ -15,7 +15,7 @@
   </div>
 
   <div>
-    <%= f.label t(:password) %><br />
+    <%= f.label :password, t(:password) %><br />
     <%= f.password_field :password,
       autocomplete: 'off',
       value: Rails.env.development? ? 'testtest' : '' %>
