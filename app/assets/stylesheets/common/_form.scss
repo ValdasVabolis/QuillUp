@@ -33,6 +33,8 @@ form {
     & {
       outline: none;
       border: none;
+      -moz-box-shadow: $shadow-form-input;
+      -webkit-box-shadow: $shadow-form-input;
       box-shadow: $shadow-form-input;
     }
     &:focus {
