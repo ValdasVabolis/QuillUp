@@ -59,7 +59,7 @@ nav {
 
   li {
     float: left;
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 0;
@@ -77,14 +77,13 @@ nav {
 
   li a:not(.nav-locale-en):not(.nav-locale-lt) {
     color: #fff;
-    display: block;
+    display: inline-block;
     font-size: 14px;
     height: 55px;
     padding: 16px 14px;
-    text-align: left;
     text-decoration: none;
     transition: all .25s ease;
-    width: 175px;
+    width: 170px;
 
     &:hover, &:active, &:focus {
       border-bottom: 5px inset $p-red;
