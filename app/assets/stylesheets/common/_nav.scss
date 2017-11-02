@@ -78,6 +78,7 @@ nav {
   li a:not(.nav-locale-en):not(.nav-locale-lt) {
     color: #fff;
     display: inline-block;
+    text-align: center;
     font-size: 14px;
     height: 55px;
     padding: 16px 14px;
@@ -89,6 +90,7 @@ nav {
       border-bottom: 5px inset $p-red;
       color: #fff;
     }
+
   }
 
   i.fa-bars {
@@ -118,6 +120,10 @@ nav {
       span {
         padding-left: 6px;
       }
+    }
+
+    li a:not(.nav-locale-en):not(.nav-locale-lt) {
+      text-align: left;
     }
 
     .fa-sign-out {

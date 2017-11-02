@@ -10,7 +10,7 @@ var Hamburger = (function($, m) {
   };
 
   var mouseleave = function(e) {
-    setTimeout(close, close_after)
+    //setTimeout(close, close_after)
   };
 
   var open = function(e) {
