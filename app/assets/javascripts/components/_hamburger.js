@@ -15,7 +15,11 @@ var Hamburger = (function($, m) {
 
   var open = function(e) {
     e.stopPropagation();
-    $('nav ul').addClass('shown');
+    if($('nav ul').hasClass('shown')) {
+      $('nav ul').removeClass('shown');
+    } else {
+      $('nav ul').addClass('shown');
+    }
   };
 
   var close = function(e) {

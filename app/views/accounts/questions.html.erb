@@ -8,10 +8,9 @@
 <% end %>
 
 <%= will_paginate @questions %>
-<!-- TODO: update the status if submission empty and new answer created -->
-<!-- <% if current_user.questions.empty? %>
-  <h2><%= t(:no_questions_submitted) %></h2>
-<% end %> -->
+<% if current_user.questions.empty? %>
+  <%= t(:no_questions_submitted) %>
+<% end %>
 
 
 
