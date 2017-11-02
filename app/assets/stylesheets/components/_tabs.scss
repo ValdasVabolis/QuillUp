@@ -32,9 +32,6 @@
           color: $p-white;
           background: $p-green;
           transition: background 0.2s;
-          &:hover {
-            background: $p-green-light;
-          }
         }
       }
 
@@ -113,9 +110,6 @@
         color: $p-white;
         background: $p-green;
         transition: background 0.2s;
-        &:hover {
-          background: $p-green-light;
-        }
       }
     }
     a {
@@ -131,6 +125,7 @@
         color: $p-white;
         background: $p-peaceful-blue;
       }
+
     }
   }
 }

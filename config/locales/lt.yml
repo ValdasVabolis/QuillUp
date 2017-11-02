@@ -53,6 +53,7 @@ lt:
   delete_my_account: "Ištrinti mano paskyrą"
   avatar: "Avataras"
   question_created_succesfully: "Sėkmingai pateikėte klausimą!"
+  danger_zone: "Pavojaus Zona!"
 
   date:
     abbr_day_names:

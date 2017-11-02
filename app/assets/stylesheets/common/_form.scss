@@ -2,13 +2,16 @@ form {
   @include fontawesome-checkboxes;
   @include center;
   border-radius: $margin;
-  //padding: $margin * 2;
   font-size: $font-size-large;
   top: -5px;
   width: 520px;
 
   #question-title-counter, #question-area-counter {
     margin-top: 15px;
+  }
+
+  &.new_user {
+    margin-top: 128px;
   }
 
   div {
@@ -27,6 +30,7 @@ form {
   textarea {
     margin-top: $margin;
     font-size: $font-size-big;
+    font-family: 'Roboto', sans-serif;
     padding: $margin / 2;
     width: 100%;
     transition: box-shadow 0.5s;
@@ -104,5 +108,22 @@ form {
   @include breakpoint(570px) {
     border-radius: 0;
     width: 100%;
+  }
+}
+
+.delete-account-wrapper {
+  margin-top: 64px;
+  h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  input[type=submit] {
+    border: none;
+    color: $p-white;
+    background: $p-red;
+    &:hover, &:active, &:focus {
+      background: lighten($p-red, 5%);
+    }
   }
 }

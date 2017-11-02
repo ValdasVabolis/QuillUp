@@ -55,7 +55,12 @@
   <div class='form-submit-wrapper'>
     <%= f.submit t(:update) %>
   </div>
-<% end %>
 
-<p><%= button_to t(:delete_my_account), registration_path(resource_name), data: { confirm: t(:are_you_sure) }, method: :delete %></p>
+<% end %>
+<div class='delete-account-wrapper'>
+  <h4><%= t :danger_zone %></h4>
+  <p><%= button_to t(:delete_my_account), registration_path(resource_name), data: { confirm: t(:are_you_sure) }, method: :delete %></p>
+</div>
+
+
 

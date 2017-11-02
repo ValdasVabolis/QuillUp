@@ -46,10 +46,11 @@ en:
   no_answers_submitted: "You haven't submitted any answers yet!"
   about_me: "About me"
   leave_blank: "leave blank if you don't want to change it"
-  update: "Updated"
+  update: "Update"
   delete_my_account: "Delete my account"
   avatar: "Avatar"
   question_created_succesfully: "Question created succesfully!"
+  danger_zone: "Danger Zone!"
 
 
 
