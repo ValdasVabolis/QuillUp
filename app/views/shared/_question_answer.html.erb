@@ -10,7 +10,7 @@
   <% end %>
 
   <div class='answer-body'>
-    <%= markdown(answer.body) %>
+    <%= answer.body %>
   </div>
 
   <%= render partial: 'shared/answer_votes', locals: { answer: answer } %>
