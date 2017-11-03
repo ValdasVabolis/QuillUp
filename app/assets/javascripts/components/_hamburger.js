@@ -1,25 +1,27 @@
 var Hamburger = (function($, m) {
   var initialized = false;
   var opened = false;
-  var close_after = 3000;
 
   var subscribe = function() {
-    $(document).on('click', '.fa-bars', open);
-    $(document).on('click', close);
-    $(document).on('mouseleave', 'nav ul', mouseleave);
+    $(document).on('click', '.c-hamburger', click);
+    //$(document).on('click', '.c-hamburger', toggle)
   };
 
-  var mouseleave = function(e) {
-    //setTimeout(close, close_after)
+  var click = function(e) {
+    e.stopPropagation();
+    if(opened) {
+      $('.c-hamburger').removeClass('is-active');
+      close(e);
+    } else {
+      $('.c-hamburger').addClass('is-active');
+      open(e);
+    }
+    /* opened ? close(e) : open(e); */
+    opened = !opened;
   };
 
   var open = function(e) {
-    e.stopPropagation();
-    if($('nav ul').hasClass('shown')) {
-      $('nav ul').removeClass('shown');
-    } else {
-      $('nav ul').addClass('shown');
-    }
+    $('nav ul').addClass('shown');
   };
 
   var close = function(e) {
