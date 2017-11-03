@@ -1,5 +1,5 @@
 <div class='question-large' data-id="<%= @question.id %>">
-  <h2><%= zero_width_space_interleave(@question.title).html_safe %></h2>
+  <h2><%= @question.title %></h2>
 
   <div class='question-date'>
     <% if @question.deleted? %>

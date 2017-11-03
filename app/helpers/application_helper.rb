@@ -23,8 +23,4 @@ module ApplicationHelper
     port = '35729'
     javascript_include_tag "http://#{local_ip}:#{port}/livereload.js?snipver=1"
   end
-
-  def zero_width_space_interleave(string)
-    string.split.map { |s| s.split(/(#{'.' * 1})/).reject(&:empty?).join('&#8203;') }.join(' ')
-  end
 end
