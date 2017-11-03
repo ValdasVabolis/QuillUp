@@ -10,7 +10,7 @@
   </div>
 
   <div class='question-body'>
-    <%= @question.body %>
+    <%= markdown(@question.body) %>
   </div>
 
   <%= render partial: 'users/questions/form', locals: {
