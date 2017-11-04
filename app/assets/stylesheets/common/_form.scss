@@ -14,6 +14,13 @@ form {
     margin-top: 128px;
   }
 
+  &.question-new {
+    width: 670px;
+    textarea {
+      height: 256px;
+    }
+  }
+
   div {
     margin-top: $margin * 2;
   }
@@ -102,9 +109,16 @@ form {
     font-style: italic;
   }
 
-  @include breakpoint(570px) {
+  @include breakpoint(700px) {
     border-radius: 0;
     width: 100%;
+    &.question-new {
+      width: 100%;
+    }
+    .question-title-group, .question-body-group, .form-submit-wrapper {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
   }
 }
 

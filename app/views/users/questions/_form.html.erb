@@ -26,6 +26,6 @@
   </div>
   <div class='form-submit-wrapper'>
     <%= link_to(t(:cancel), '#', id: 'cancel-question', class: 'btn-red') if question.persisted? %>
-    <%= f.submit question.persisted? ? t(:save) : t(:create) %>
+    <%= f.submit question.persisted? ? t(:save) : t(:submit) %>
   </div>
 <% end %>

@@ -30,6 +30,7 @@ lt:
   create_answer: "Pateikti Atsakymą"
   anonymous_question: "Anonimiškas klausimas"
   submitted: "Pateikta"
+  submit: "Pateikti"
   by: "uždavė"
   on_date: ""
   registered: "Registravosi"
