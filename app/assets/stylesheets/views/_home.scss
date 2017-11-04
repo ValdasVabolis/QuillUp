@@ -31,6 +31,8 @@ body.home {
   }
 
   @include breakpoint(1050px) {
+    margin-left: 4px;
+    margin-right: 4px;
     #popover-view {
       margin-top: 0;
       width: auto;

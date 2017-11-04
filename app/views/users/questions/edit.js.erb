@@ -10,6 +10,7 @@ if(question.hasClass('editing')) {
   Text.limit({
     text_selector: '#question-area',
     count_selector: '#question-area-counter',
+    default_css: { color: '#9E9E9E' },
     limit: 5000
   });
 	question.addClass('editing');

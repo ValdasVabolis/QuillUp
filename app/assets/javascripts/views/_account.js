@@ -18,6 +18,7 @@ $(document).on('turbolinks:load', function() {
     Text.limit({
       text_selector: '#about-me',
       count_selector: '#about-me-counter',
+      default_css: { color: '#9E9E9E' },
       limit: 200
     });
   }

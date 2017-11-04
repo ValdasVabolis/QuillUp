@@ -8,6 +8,7 @@ if(answer.hasClass('replying')) {
   Text.limit({
     text_selector: area,
     count_selector: '#reply-area-counter',
+    default_css: { color: '#9E9E9E' },
     limit: 1000
   });
 	answer.addClass('replying');

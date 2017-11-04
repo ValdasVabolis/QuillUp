@@ -115,9 +115,12 @@ form {
     &.question-new {
       width: 100%;
     }
+    .form-header {
+      margin-bottom: 64px;
+    }
     .question-title-group, .question-body-group, .form-submit-wrapper {
-      margin-left: 8px;
-      margin-right: 8px;
+      margin-left: 4px;
+      margin-right: 4px;
     }
   }
 }
