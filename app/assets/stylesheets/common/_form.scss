@@ -34,6 +34,7 @@ form {
   input[type=password],
   select,
   textarea {
+    border-radius: $margin / 2;
     margin-top: $margin;
     font-size: $font-size-big;
     font-family: 'Roboto', sans-serif;

@@ -95,6 +95,8 @@ nav {
 
   @include breakpoint(700px) {
     ul {
+      box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      border-bottom-left-radius: $margin / 2;
       top: 50px;
       position: fixed;
       right: -150px;
