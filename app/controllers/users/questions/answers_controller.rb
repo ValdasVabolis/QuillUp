@@ -44,7 +44,7 @@ class Users::Questions::AnswersController < ApplicationController
   def destroy
     @answer.soft_delete!
   end
- 
+
   private
   def set_users_questions_answer
     @answer = Answer.find(params[:id])

@@ -1,6 +1,8 @@
 form {
   @include fontawesome-checkboxes;
   @include center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   border-radius: $margin;
   font-size: $font-size-large;
   top: -5px;
