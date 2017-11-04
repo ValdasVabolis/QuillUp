@@ -1,7 +1,6 @@
 form {
   @include fontawesome-checkboxes;
   @include center;
-  border-radius: $margin;
   font-size: $font-size-large;
   top: -5px;
   width: 520px;
@@ -113,7 +112,6 @@ form {
   }
 
   @include breakpoint(700px) {
-    border-radius: 0;
     width: 100%;
     &.question-new {
       width: 100%;
