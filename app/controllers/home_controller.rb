@@ -4,4 +4,8 @@ class HomeController < ApplicationController
                          .paginate(page: params[:page])
                          .order('pin DESC, created_at DESC')
   end
+
+  def cv
+
+  end
 end

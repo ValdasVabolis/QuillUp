@@ -1,0 +1,164 @@
+.cv {
+  .ispejimas-mobiliems {
+    display: none;
+    color: $p-white;
+    p {
+      margin-bottom: 100px;
+    }
+    @include breakpoint(700px) {
+      display: block;
+    }
+  }
+
+
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-top: 20px;
+  height: 2500px;
+
+  .pavadinimas,{
+    color: $p-white;
+    margin-top: 80px;
+    @include center;
+    text-align: center;
+  }
+  .portretas {
+    text-align: center;
+    margin-top: $margin * 4;
+    img {
+      width: 256px;
+      height: 256px;
+      border-radius: 50%;
+    }
+  }
+  .aprasymas {
+    display: inline-block;
+    ul {
+      text-align: center;
+      .intro {
+        font-size: $font-size-large;
+      }
+      li {
+        font-size: 15px;
+        margin-top: $margin * 1.5;
+      }
+    }
+
+    color: $p-white;
+    margin-top: $margin * 2.5;
+    height: 200px;
+    border-radius: $margin / 2;
+  }
+  .kontaktai {
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:'Roboto', sans-serif, sans-serif;font-size:20px;padding:15px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-family:'Roboto', sans-serif, sans-serif;font-size:20px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-yw4l{vertical-align:top}
+    text-decoration: none;
+    color: $p-white;
+    text-align: center;
+    margin-top: $margin * 4;
+    .fa, .tg-yw4l {
+      text-decoration: none;
+      &:hover {
+          text-shadow: 0px 0px 4px #fff;
+      }
+    }
+    i {
+      font-size: $font-size-giant;
+      margin-right: 5px;
+    }
+    span {
+      margin-right: $margin;
+    }
+    .tg {
+      @include center;
+      color: $p-white;
+      border-collapse: collapse;
+      border-radius: $margin / 2;
+    }
+  }
+
+  .section {
+    margin-top: $margin * 5;
+    margin-bottom: $margin * 2.5;
+  }
+
+  .edukacija {
+    .fa-bullhorn {
+      font-size: 30px;
+      padding-right: 20px;
+    }
+    margin-top: $margin * 4;
+    color: $p-white;
+    .antraste {
+      margin-top: $margin * 4;
+      text-align: center;
+    }
+    .edu-pastaba {
+      margin-top: $margin * 2;
+    }
+    h2 {
+      margin-bottom: $margin * 2;
+    }
+    ul {
+      margin-top: $margin * 4;
+      li {
+        font-style: italic;
+      }
+    }
+  }
+
+  .patirtis {
+
+    h2 {
+      margin-bottom: $margin * 2;
+    }
+    margin-top: $margin * 4;
+    color: $p-white;
+    .antraste {
+      margin-top: $margin * 4;
+      text-align: center;
+    }
+    ul {
+      margin-top: $margin * 4;
+
+    }
+  }
+
+  .gebejimai {
+    h2 {
+      margin-bottom: $margin * 2;
+    }
+    margin-top: $margin * 4;
+    color: $p-white;
+    .antraste {
+      margin-top: $margin * 4;
+      text-align: center;
+    }
+     ul {
+      margin-top: $margin * 4;
+      li {
+        list-style-type: disc;
+        margin-top: $margin;
+      }
+
+    }
+  }
+
+  .pabaiga {
+    text-align: center;
+
+    h2 {
+      margin-top: $margin * 4;
+      margin-bottom: $margin * 2;
+      color: $p-white;
+    }
+    span {
+      font-style: italic;
+      color: $p-white;
+    }
+  }
+}

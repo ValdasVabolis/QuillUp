@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :inquiries, only: [:new, :create]
-
+  get 'manocv', to: 'home#cv', as: 'my_cv'
   # get 'users/question/:id', to: 'users/questions#show'db
   # public profiles
   get 'users/:username', to: 'users#index', as: 'user_profile'
