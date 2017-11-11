@@ -38,7 +38,7 @@ var Text = (function($, m) {
 
     var init = function() {
       text_el.on('keyup paste', on_text_keyup);
-      text_el.trigger('keyup');
+      on_text_keyup();
     };
 
     init();

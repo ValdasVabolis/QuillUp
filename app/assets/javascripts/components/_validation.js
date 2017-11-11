@@ -28,7 +28,6 @@ var Validation = (function($, m) {
         var errors = response.errors;
         var model_lower = o.model.toLowerCase();
         submit_btn.prop('disabled', Object.keys(errors).length > 0);
-        console.log(Object.keys(errors).length);
         submit_btn.closest('form').toggleClass('invalid', Object.keys(errors).length > 0);
         for(k in errors) {
           var input_name = model_lower + '[' + k + ']';
