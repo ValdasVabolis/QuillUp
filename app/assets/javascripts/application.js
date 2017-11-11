@@ -36,9 +36,12 @@ $(document).on('turbolinks:load', function() {
   Popover.init({
     after_exit: function() {
       if(window.history.pushState) {
-          window.history.pushState('', '/', window.location.href.slice(0, window.location.href.indexOf('#')))
+        var hash_index = window.location.href.indexOf('#');
+        var slice_index = hash_index === -1 ? 0 : hash_index;
+        var slice = window.location.href.slice(0, slice_index);
+        window.history.pushState('', '/', slice);
       } else {
-          window.location.hash = '';
+        window.location.hash = '';
       }
     }
   });
