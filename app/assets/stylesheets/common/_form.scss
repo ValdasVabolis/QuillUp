@@ -10,6 +10,14 @@ form {
     margin-top: 15px;
   }
 
+  .async-error {
+    color: #9E9E9E;
+    font-size: $font-size-base;
+    padding-left: $margin / 2;
+    font-style: italic;
+    margin-top: 12px;
+  }
+
   &.question-new {
     width: 670px;
     textarea {
