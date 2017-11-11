@@ -1,14 +1,19 @@
 var Popover = (function($) {
+  var initialized = false;
   var active_cass = 'showing-popover';
   var exit_selector = '#popover-exit';
   var view_selector = '#popover-view';
   var view_contents_selector = '#popover-view-contents';
   var parent_selector = '#popover-parent';
   var popover_showing = false;
+  var after_exit = null;
 
-  var init = function() {
+  var init = function(opts) {
+    if(initialized) return;
+    after_exit = opts.after_exit;
     clear();
     subscribe();
+    initialized = true;
   };
 
   var subscribe = function() {
@@ -53,6 +58,7 @@ var Popover = (function($) {
   var exit = function() {
     $(parent_selector).removeClass(active_cass);
     popover_showing = false;
+    if(after_exit) after_exit();
   };
 
   var showing = function() {

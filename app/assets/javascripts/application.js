@@ -33,7 +33,15 @@ $(document).on('turbolinks:load', function() {
 
   Hamburger.init();
 
-  Popover.init();
+  Popover.init({
+    after_exit: function() {
+      if(window.history.pushState) {
+          window.history.pushState('', '/', window.location.href.slice(0, window.location.href.indexOf('#')))
+      } else {
+          window.location.hash = '';
+      }
+    }
+  });
 
   AlertNotice.init({
     selector: '.alert-notice',

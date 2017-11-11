@@ -5,6 +5,5 @@ $(document).on('turbolinks:load', function() {
     $('.nav-logo-text').html('Valdas');
     $('.nav-logo-text').append('<span>Vabolis</span>');
     $('body').css('background-color', '#424242');
-
   }
 });
