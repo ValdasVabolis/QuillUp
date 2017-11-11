@@ -11,7 +11,7 @@ form {
   }
 
   .async-error {
-    color: #9E9E9E;
+    color: $p-red;
     font-size: $font-size-base;
     padding-left: $margin / 2;
     font-style: italic;

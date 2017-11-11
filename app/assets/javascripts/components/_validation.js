@@ -36,7 +36,7 @@ var Validation = (function($, m) {
           if(errors[k].length === 0) {
             input.prev('.async-error').remove();
           }
-          var error_el = $('<div class="async-error">' + errors[k] + '</div>');
+          var error_el = $('<div class="async-error">' + '* ' + errors[k] + '</div>');
           if(input.parent().find('.async-error').length === 0) {
             input.before(error_el);
           } else {
