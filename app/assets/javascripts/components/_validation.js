@@ -35,7 +35,8 @@ var Validation = (function($, m) {
           var input = $('input[name="' + input_name + '"]');
           var error_el = $('<div class="async-error">' + errors[k] + '</div>');
           if(input.parent().find('.async-error').length === 0) {
-            input.parent().prepend(error_el);
+            console.log('asdf');
+            input.before(error_el);
           } else {
             input.parent().find('.async-error').replaceWith(error_el);
           }
