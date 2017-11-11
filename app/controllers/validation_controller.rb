@@ -7,7 +7,7 @@ class ValidationController < ApplicationController
     model_instance.valid?
 
     model_errors = model_instance.errors.to_h
-
+    model_errors.delete :user
     model_attributes = model_columns_symbolized(model_const)
 
     respond_to do |format|

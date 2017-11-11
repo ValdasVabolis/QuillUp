@@ -4,13 +4,10 @@ form {
   font-size: $font-size-large;
   top: -5px;
   width: 520px;
+  margin-top: 128px;
 
   #question-title-counter, #question-area-counter {
     margin-top: 15px;
-  }
-
-  &.new_user {
-    margin-top: 128px;
   }
 
   &.question-new {
@@ -91,11 +88,19 @@ form {
       color: $p-white;
       background: $p-green;
       font-size: $font-size-large;
-
       &:hover, &:active, &:focus {
         background: lighten($p-green, 5%);
       }
     }
+  }
+
+  &.invalid .form-submit-wrapper input[type=submit] {
+    background: $p-gray !important;
+    &:hover, &:active, &:focus {
+      background: $p-gray !important;
+      cursor: not-allowed;
+    }
+
   }
 
   .form-rememberable {

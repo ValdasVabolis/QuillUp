@@ -2,12 +2,13 @@ var Validation = (function($, m) {
   function Validator(config) {
     var o = config;
     var el = $(o.selector);
+    var submit_btn = $(o.button)
 
     var subscribe = function() {
-      console.log('asdfffff');
       el.on('keyup paste', 'input[type=text], textarea', on_change);
     };
 
+    // TODO: validate the API
     var validate_config = function() {
 
     };
@@ -17,16 +18,18 @@ var Validation = (function($, m) {
       var data = $.extend(true, el.serializeObject(), {
         model: o.model
       });
-      console.log('asdf');
+      submit_btn.prop('disabled', true);
       $.ajax({
         method: 'POST',
         url: o.endpoint,
         data: data
       }).done(function(response) {
-        $('#validation').html(JSON.stringify(response, null, 2))
         var async_error = el.find('.async-error');
         var errors = response.errors;
         var model_lower = o.model.toLowerCase();
+        submit_btn.prop('disabled', Object.keys(errors).length > 0);
+        console.log(Object.keys(errors).length);
+        submit_btn.closest('form').toggleClass('invalid', Object.keys(errors).length > 0);
         for(k in errors) {
           var input_name = model_lower + '[' + k + ']';
           var input = $('input[name="' + input_name + '"]');
@@ -54,20 +57,17 @@ var Validation = (function($, m) {
     }
   };
 }(jQuery));
-
-
-
-
-// $(document).on('turbolinks:load', function() {
-//   Validation.init({
-//     selector: '#form-question',
-//     model: 'Question',
-//     endpoint: '/validate',
-//     validate: [
-//       'title',
-//       'body'
-//     ]
-//   });
-// });
+$(document).on('turbolinks:load', function() {
+  Validation.init({
+    selector: '#form-question',
+    model: 'Question',
+    endpoint: '/validate',
+    button: '#form-question input[type=submit]',
+    validate: [
+      'title',
+      'body'
+    ]
+  });
+});
 
 
