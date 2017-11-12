@@ -1,7 +1,7 @@
 <% @user.questions.each do |question| %>
   <% unless question.deleted? %>
     <div class='question-small' data-id='<%= question.id %>'>
-      <h4><%= link_to("#{question.title}", users_question_path(question)) %></h4>
+      <p><%= link_to("#{question.title}", users_question_path(question)) %></p>
       <p><%= t(:submitted) %> <%=  t(:on_date) %> <%="#{question.friendly_date}"%></p>
     </div>
   <% end %>

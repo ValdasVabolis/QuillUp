@@ -27,6 +27,18 @@ nav {
     span {
       color: lighten($p-red, 10%);
     }
+
+    .nav-logo-text-small {
+      display: none;
+    }
+    @include breakpoint(190px) {
+      .nav-logo-text-small {
+        display: inherit;
+      }
+      .nav-logo-text-large {
+        display: none;
+      }
+    }
   }
 
   ul {
