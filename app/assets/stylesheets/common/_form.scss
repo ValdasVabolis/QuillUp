@@ -10,6 +10,16 @@ form {
     margin-top: 15px;
   }
 
+  .g-recaptcha {
+    width: auto !important;
+    height: auto !important;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    text-align: -o-center;
+    text-align: -ms-center;
+    margin-top: $margin * 4;
+  }
+
   .async-error {
     color: $p-red;
     font-size: $font-size-base;
