@@ -22,8 +22,8 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates_presence_of :user
-  validates :title, length: { minimum: 5, maximum: 200 }
-  validates :title, format: /\d/
+  validates_length_of :title, minimum: 5, maximum: 200
+  validates_format_of :title, with: /d/
   validates :body, length: { maximum: 10000 }
 
   scope :pinned, -> { where(pin: true) }

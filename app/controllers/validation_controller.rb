@@ -6,7 +6,7 @@ class ValidationController < ApplicationController
     model_instance = model_const.new(model_args)
     model_instance.valid?
 
-    model_errors = model_instance.errors.to_h
+    model_errors = model_instance.errors.to_h_pro
     model_errors.delete :user
     model_attributes = model_columns_symbolized(model_const)
 
