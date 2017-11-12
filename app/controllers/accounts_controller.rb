@@ -1,9 +1,9 @@
 class AccountsController < ApplicationController
   before_action :authenticate_user!
   layout 'account'
-  
+
   def profile
-  	
+
   end
 
   def questions
@@ -11,6 +11,6 @@ class AccountsController < ApplicationController
   end
 
   def answers
-    @answers = current_user.answers.paginate(page: params[:page]).order('created_at DESC')
+    @answers = current_user.answers.includes(:question).paginate(page: params[:page]).order('created_at DESC')
   end
 end

@@ -60,6 +60,9 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
+    bullet (5.6.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.1.0)
     capybara (2.15.1)
       addressable
@@ -295,6 +298,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
+    uniform_notifier (1.10.0)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.3.0)
@@ -319,6 +323,7 @@ DEPENDENCIES
   autosize
   better_errors
   binding_of_caller
+  bullet
   byebug
   capybara
   carrierwave
