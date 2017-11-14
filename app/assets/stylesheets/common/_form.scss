@@ -4,7 +4,6 @@ form {
   font-size: $font-size-large;
   top: -5px;
   width: 520px;
-  margin-top: 128px;
 
   #question-title-counter, #question-area-counter {
     margin-top: 15px;
@@ -28,7 +27,12 @@ form {
     margin-top: 12px;
   }
 
+  &.new_user {
+    margin-top: 128px;
+  }
+
   &.question-new {
+    margin-top: 128px;
     width: 670px;
     textarea {
       height: 256px;
