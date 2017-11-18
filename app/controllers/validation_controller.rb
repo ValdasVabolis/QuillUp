@@ -13,9 +13,7 @@ class ValidationController < ApplicationController
     respond_to do |format|
       format.json {
         render json: {
-          errors: Hash[model_attributes.map { |attr|
-            [attr, []]
-          }].merge(model_errors)
+          errors: model_errors
         }
       }
     end

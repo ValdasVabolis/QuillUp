@@ -3,8 +3,8 @@ def seed_development
     User.create({
       username: Faker::Name.unique.name.gsub(/[\s\.\']/, ''),
       email: Faker::Internet.unique.email,
-      password: "asdf1234",
-      password_confirmation: "asdf1234",
+      password: 'asdf1234',
+      password_confirmation: 'asdf1234',
       confirmed_at: DateTime.now
     })
   end
@@ -12,8 +12,8 @@ def seed_development
   users << User.create({
     username: 'test',
     email: 'test@test.com',
-    password: "testtest",
-    password_confirmation: "testtest",
+    password: "test231",
+    password_confirmation: "test231",
     confirmed_at: DateTime.now
   })
 
@@ -62,7 +62,7 @@ def seed_development
 
   def reply_to_question(question)
    question_answers = []
-   Random.rand(1..20).times do |n|
+   Random.rand(3..20).times do |n|
      puts "creating reply #{n} for question..."
      answer = Answer.new({
        question: question,

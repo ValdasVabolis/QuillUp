@@ -3,7 +3,6 @@ common: &common
   cloudinary_api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
   cloudinary_api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   cloudinary_url: <%= ENV['CLOUDINARY_URL'] %>
-  g_recaptcha_sitekey: <% ENV['G_RECAPTCHA_SITEKEY'] %>
 
 development:
   <<: *common
