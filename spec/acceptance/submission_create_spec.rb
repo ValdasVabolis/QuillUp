@@ -31,7 +31,7 @@ feature 'submission create process', type: :feature, js: true do
       Are there any better ways to learn?'
     end
 
-    click_button 'Create'
+    click_button 'Submit'
 
     expect(page).to have_content 'Question created succesfully!'
 
