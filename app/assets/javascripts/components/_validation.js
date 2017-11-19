@@ -27,8 +27,6 @@ var Validation = (function($, m) {
         var async_error = el.find('.async-error');
         var errors = response.errors;
         var model_lower = o.model.toLowerCase();
-        var i = 0;
-        console.log(Object.keys(errors).length);
         submit_btn.prop('disabled', Object.keys(errors).length > 0);
         submit_btn.closest('form').toggleClass('invalid', Object.keys(errors).length > 0);
         for(k in errors) {

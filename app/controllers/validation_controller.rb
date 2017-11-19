@@ -5,7 +5,6 @@ class ValidationController < ApplicationController
     model_args = model_params(model_name, model_const)
     model_instance = model_const.new(model_args)
     model_instance.valid?
-
     model_errors = model_instance.errors.to_h_pro
     model_errors.delete :user
     model_attributes = model_columns_symbolized(model_const)
@@ -13,7 +12,9 @@ class ValidationController < ApplicationController
     respond_to do |format|
       format.json {
         render json: {
-          errors: model_errors
+          errors: Hash[model_attributes.map { |attr|
+            [attr, []]
+          }].merge(model_errors)
         }
       }
     end
