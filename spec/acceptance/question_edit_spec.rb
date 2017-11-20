@@ -25,11 +25,10 @@ feature 'question edit process', type: :feature, js: true do
       fill_in 'question-title', with: 'What is the best way to learn Math in 21st century?'
       fill_in 'question-area', with: 'I have been learning Math using the textbooks that my university provides, however, it does not suffice.
       Are there any better ways to learn?'
-      click_button 'Create'
+      click_button 'Submit'
     end
 
-    click_link 'Answers'
-    click_link 'Edit'
+    find(".question-small[data-id=#{Question.last.id}] .question-links a").click
 
     within '#form-question' do
       fill_in 'question-area', with: 'Actually, I decided to not learn Math. I found it to be very boring and tedious, but thanks for all the help.'

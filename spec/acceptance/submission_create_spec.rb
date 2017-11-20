@@ -56,7 +56,7 @@ feature 'submission create process', type: :feature, js: true do
       fill_in 'reply-area', with: 'I agree with everything you have said, but there is one small problem: too much practice can cause a burn out. Make sure
       to take a rest every hour or so and drink a lot of water. It should drastically improve your learning experience.'
 
-      click_button 'Create'
+      click_button 'Submit'
     end
 
     within '.comment-author' do
