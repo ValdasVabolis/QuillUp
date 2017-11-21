@@ -28,7 +28,7 @@ feature 'question edit process', type: :feature, js: true do
       click_button 'Submit'
     end
 
-    find(".question-small[data-id=#{Question.last.id}] .question-links a").click
+    page.execute_script "$('.question-small[data-id=#{Question.last.id}] .question-links a').click()"
 
     within '#form-question' do
       fill_in 'question-area', with: 'Actually, I decided to not learn Math. I found it to be very boring and tedious, but thanks for all the help.'

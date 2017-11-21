@@ -29,7 +29,7 @@ feature 'submission delete process', type: :feature, js: true do
       click_button 'Submit'
     end
 
-    click_link 'Answers'
+    page.execute_script "$('.question-small[data-id=#{Question.last.id}] .question-links a').click()"
 
     page.accept_confirm do
       click_link 'Delete'

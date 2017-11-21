@@ -35,7 +35,7 @@ feature 'submission create process', type: :feature, js: true do
 
     expect(page).to have_content 'Question created succesfully!'
 
-    click_link 'Answers'
+    page.execute_script "$('.question-small[data-id=#{Question.last.id}] .question-links a').click()"
 
     within '.form_answer' do
       fill_in 'area-answer-new', with: 'I recommend starting from the basics. You need to make sure you understand the basic principles and fundamentals first,
