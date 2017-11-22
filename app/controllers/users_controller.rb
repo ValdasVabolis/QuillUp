@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   # /users/:username/answers
   def answers
-    @answers = @user.answers.paginate(page: params[:page]).order('created_at DESC')
+    @answers = @user.answers.includes(:question).paginate(page: params[:page]).order('created_at DESC')
   end
 
   private

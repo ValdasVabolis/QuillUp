@@ -1,9 +1,11 @@
-<% @user.questions.each do |question| %>
-  <% unless question.deleted? %>
-    <div class='question-small' data-id='<%= question.id %>'>
-      <p><%= link_to("#{question.title}", users_question_path(question)) %></p>
-      <p><%= t(:submitted) %> <%=  t(:on_date) %> <%="#{question.friendly_date}"%></p>
-    </div>
+<div class='history-questions'>
+  <% @questions.each do |question| %>
+    <% unless question.deleted? %>
+      <div class='question-small' data-id='<%= question.id %>'>
+        <h4><%= link_to("#{question.title}", users_question_path(question)) %></h4>
+        <h6><%= t(:submitted) %> <%=  t(:on_date) %> <%="#{question.friendly_date}"%></h6>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-<%= will_paginate @questions %>
+  <%= will_paginate @questions %>
+</div>

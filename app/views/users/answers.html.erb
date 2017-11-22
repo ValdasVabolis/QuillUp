@@ -1,9 +1,10 @@
 <div class='history-answers'>
-  <% @user.answers.each do |answer| %>
+  <% @answers.each do |answer| %>
     <% unless answer.deleted? %>
       <div class='answer' data-id='<%= answer.id %>'>
         <h4><%= link_to answer.question.title, users_question_path(answer.question) %></h4>
         <p><%= answer.body %></p>
+        <p><%= t(:submitted) %> <%=  t(:on_date) %> <%="#{answer.friendly_date}"%></p>
       </div>
     <% end %>
   <% end %>
