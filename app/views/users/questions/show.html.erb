@@ -38,7 +38,7 @@
   <%= render template: 'users/questions/answers/new', layout: false, locals: { question: @question, answer: @answer } %>
 
   <% if @question.answers.blank? %>
-    <%= #t :no_one_answered_yet %>
+    <!--<%= t :no_one_answered_yet %>-->
   <% else %>
      <!--<%= @question.answers.count %> <%= t :showing_answers  %>-->
   <% end %>
