@@ -12,7 +12,6 @@ require 'with_friendly_date_time'
 #  updated_at :datetime         not null
 #  deleted    :boolean          default(FALSE)
 #
-
 class Question < ApplicationRecord
   include WithFriendlyDateTime
 
