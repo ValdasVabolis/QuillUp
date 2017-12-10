@@ -1,4 +1,4 @@
-<%= form_with(model: question, url: url, remote: true, id: 'form-question', class: (question.persisted? ? 'question-edit' : 'question-new')) do |f| %>
+<%= form_with(model: question, url: url, html: { autocomplete: "off"}, remote: true, id: 'form-question', class: (question.persisted? ? 'question-edit' : 'question-new')) do |f| %>
   <div class='form-header'>
     <h2><%= form_header %></h2>
   </div>
